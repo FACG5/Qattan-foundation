@@ -6,6 +6,7 @@ ___
 The Qattan Foundation doesn't have a technical support system , they store there data in Excel files , they need for their employees to be able to file a ticket when they have a problem in their devices to the I.T department , also they need to be able to send a loan device application to the I.T , They need to add all the new devices and modify it's awnership
 
 ### Our Solution
+Building a website that enable the employee to send a ticket (technical support | Loan ) to the I.T department , the I.T will be able to take an action on it , to have a full report .
 ___
 ## User Journey:
 > As a Qattan Employee:
