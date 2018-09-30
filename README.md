@@ -3,7 +3,7 @@
 [Our Prototype](https://www.figma.com/file/gr4zjSyliBV6CC1Dn6ezqJvJ/Triple-%22S%22?node-id=124%3A100)
 ___
 ## Problem Statement
-The Qattan Foundation doesn't have a technical support system , they store there data in Excel files , they need for their employees to be able to file a ticket when they have a problem in their devices to the I.T department , also they need to be able to send a loan device application to the I.T , 
+The Qattan Foundation doesn't have a technical support system , they store there data in Excel files , they need for their employees to be able to file a ticket when they have a problem in their devices to the I.T department , also they need to be able to send a loan device application to the I.T , They need to add all the new devices and modify it's awnership
 
 ### Our Solution
 ___
