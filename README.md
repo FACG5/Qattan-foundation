@@ -39,7 +39,7 @@ ___
 run `npm  test` in your terminal
 ___
 ## DataBase Schema 
-![](https://files.gitter.im/gazaskygeeks/qattan-foundation/VuUW/qattan-DB.png)
+![](https://files.gitter.im/gazaskygeeks/qattan-foundation/CHv6/Qattan.png)
 ___
 ## Tech stack
 
