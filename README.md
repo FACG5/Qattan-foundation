@@ -29,6 +29,19 @@ ___
 - Express.js
 - PostgreSQL
 ___
+## User Journey:
+- As a Qattan Employee: "I want a system that would make requeting maintance from the techinical support department
+convenient" 
+
+- As a Qattan Employee: "I want a manner thorugh which I can file a ticket for technical support without having to use the
+old traditional way of calling which often leads to forgetfulness or late responses"
+
+- As a Qattan employee" I would like a way that would make applaying for loan requests of gadgets easy and fast"
+
+- As a Qattan manager: "I would like an easy, fast manner through which I can view all the latest tickets and responses from the tech.support department without having to view traditional paper reports."
+
+- As a Qattan technical support employee: "I want to be able to view all techinical support requests all in one place and to be able to respond promptly"
+___
 ## Our Team
 
 Asala KM
