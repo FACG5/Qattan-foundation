@@ -35,7 +35,7 @@ ___
 ___
 ## how to run the tests
 
-run `npm  test` in yo
+run `npm  test` in your terminal
 ___
 ## Tech stack
 
