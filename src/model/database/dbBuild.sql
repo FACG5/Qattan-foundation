@@ -27,11 +27,11 @@ CREATE TABLE status_type (
 
 CREATE TABLE ticket (
     ticket_no SERIAL PRIMARY KEY,
-    ticket_date DATE NOT NULL,
+    ticket_date DATE  DEFAULT NOW(),
     employee VARCHAR REFERENCES employee(name)  ON UPDATE CASCADE,
     department VARCHAR REFERENCES department(department)  ON UPDATE CASCADE,
     problem_type VARCHAR REFERENCES problem_type(type)  ON UPDATE CASCADE,
-    status_type VARCHAR REFERENCES status_type(status)  ON UPDATE CASCADE,
+    status_type VARCHAR REFERENCES status_type(status)  ON UPDATE CASCADE DEFAULT 'not solved',
     subject VARCHAR NOT NULL,
     duration INTEGER,
     technical_desc TEXT,
