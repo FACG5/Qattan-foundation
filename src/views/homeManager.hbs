@@ -1,0 +1,16 @@
+<section>
+    <h2 class="page-title" >الرئيسية</h2>
+    <div class="ticket-view">
+         <h3>طلبات تنتظر استجابة:</h3>
+        <h3>اليك  آخر الطلبات</h3>
+        {{#each response}}
+            <a href="/{{type}}?id={{ticket_no}}" >
+                <div class={{type}} id={{ticket_no}}>
+                    <h3>{{ticket_no}}</h3>
+                    <h5>{{employee}}</h5>
+                    <p>{{problem_type}}</p>
+                </div>
+            </a>
+        {{/each }}
+    </div>
+</section>
