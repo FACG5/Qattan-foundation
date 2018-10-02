@@ -1,4 +1,4 @@
-const dbConnection = require('../dbConnection');
+const dbConnection = require('../database/dbConnection');
 
 const getLatestTicket = () => new Promise((resolve, reject) => {
   const sql = {

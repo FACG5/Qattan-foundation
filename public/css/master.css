@@ -1,0 +1,99 @@
+/*  
+                ----    General Style    ---- 
+*/
+
+/*   #98012e   #c00036   #5a6e7b   #8e8378   #e5e5e5  #fff  */
+
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: 'Mada', sans-serif;
+}
+a,
+a:active,
+a:visited,
+a:hover{
+    color: #ffffff;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+header{
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    max-height: 100px;
+    min-height: 100px;
+    padding: 10px 60px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 1px 1px 1px 2px rgba(0,0,0,0.2)
+}
+header .title{
+    /* font-family: 'Frutiger LT W20 65 Bold'; */
+    /* font-family: 'El Messiri', sans-serif; */
+    font-family: 'Mada', sans-serif;
+    color: #5a6e7b;
+    padding: 10px 50px;
+}
+header .title p{
+    color:#c00036;
+    text-align: left;
+}
+header .logo{
+    width: 120px;
+    padding: 5px 0;
+}
+header .logo img{
+    width: 100%;
+}
+.sidebar{
+    background: #5a6e7b;
+    color:#fff !important;
+    height: 100vh;
+    position: fixed;
+    width: 250px;
+    padding-top: 120px;
+    text-align: center;
+    box-shadow: 1px 1px 1px 2px rgba(255, 255, 255, 0.2);
+}
+main{
+    background: #e5e5e54a;
+    display:grid;
+    color: #5a6e7b;
+    padding:0px 300px 0px 20px;
+}
+section a{
+    color: #5a6e7b !important;
+}
+section{
+    padding-top: 120px;
+    overflow: hidden;
+    min-height: 100vh;
+    font-family: sans-serif;
+}
+
+h2.page-title {
+    display: table;
+    white-space: nowrap;
+    font-size: 33px;
+    text-align: center;
+    text-transform: uppercase;
+}
+h2.page-title::after, h2.page-title::before{
+    border-top: 1px solid #c00036;
+    content: '';
+    display: table-cell;
+    position: relative;
+    top: 0.7em;
+    width: 45%;
+}
+h2.page-title::after{
+    right: 1.5%;
+}
+h2.page-title::before{
+    left: 1.5%;
+}
