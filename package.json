@@ -3,11 +3,9 @@
   "version": "1.0.0",
   "description": "[Our Prototype](https://www.figma.com/file/gr4zjSyliBV6CC1Dn6ezqJvJ/Triple-%22S%22?node-id=124%3A100) ___ ## Problem Statement The Qattan Foundation doesn't have a technical support system , they store there data in Excel files , they need for their employees to be able to file a ticket when they have a problem in their devices to the I.T department , also they need to be able to send a loan device application to the I.T , They need to add all the new devices and modify it's awnership",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -22,13 +20,20 @@
   "devDependencies": {
     "eslint": "^5.6.1",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-node": "^7.0.1",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-standard": "^4.0.0"
+    "nodemon": "^1.18.4",
+    "supertest": "^3.3.0",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.1"
   },
   "dependencies": {
-    "eslint": "^5.6.1"
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "cookie": "^0.3.1",
+    "cookie-parser": "^1.4.3",
+    "env2": "^2.2.2",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0"
   }
 }
