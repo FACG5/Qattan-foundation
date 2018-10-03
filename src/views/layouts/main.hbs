@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="ar">
+
+<head>
+    {{>head}}
+</head>
+
+<body>
+
+
+    {{#if headerFound}}
+        <header>
+          {{>header}}
+        </header>
+    {{/if}}
+
+
+    <main>
+        {{{body}}}
+    </main>
+
+
+    {{#if footerFound}}
+        <footer>
+            {{>footer}}
+        </footer>
+    {{/if}}
+
+
+    {{#each javascript}}
+        <script src="./js/{{this}}.js"></script>
+    {{/each}}
+
+</body>
+
+
+</html>

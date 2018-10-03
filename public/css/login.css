@@ -12,6 +12,14 @@ body {
   justify-content: center;
   flex-direction: column;
 }
+main{
+  margin-top: 30px;
+  background-color: #F7F7F8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
 .logo {
   margin-bottom: 30px;
@@ -72,7 +80,7 @@ button[type=submit]:hover {
   bottom: 0;
   width: 20px;
   -webkit-mask: url(../img/person.svg) no-repeat center;
-  mask: url(../img/person.svg) no-repeat center;
+  mask: url(public/img/person.svg) no-repeat center;
   background-color: #A3ABAF;
 }
 
@@ -97,6 +105,7 @@ button[type=submit]:hover {
     font-size: 12px;
     margin-bottom: 10px;
   color: #C00036;
+  font-weight: bold;
 
 }
 /********************** Media Query *********************/
