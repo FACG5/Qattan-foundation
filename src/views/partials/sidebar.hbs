@@ -1,0 +1,29 @@
+<div class="sidebar">
+    <div id="sidebar">
+    <div class="top-info"> 
+        <span class="fas fa-user fa-4x"></span> 
+        <p ID="username" class="name">اصالة</p>
+        <p>مرحبا بك</p>
+    </div>
+    <ul class="mainul">
+        <li class="mainli"><a class="manage-item" href="/"> <i class="fas fa-home"></i>الرئيسية</a></li>
+        <li class="mainli"><a class="manage-item" href="/inventory"> <i class="fas fa-boxes"></i>اﻷجهزة/ المعدات</a></li>                      
+        <li class="mainli"><a class="manage-item" href="/support"> <i class="fas fa-users"></i>الدعم الفني</a></li>                   
+        <li class="mainli"><a class="manage-item" href="/loans"> <i class="fas fa-boxes"></i>اﻹستعارة</a></li>                    
+        <li class="mainli"><a class="manage-item" href="/report"><i class="fas fa-file"></i>التقارير</a></li>
+        <li class="mainli"><a class="manage-item" href="/signout"><i class="fas fa-sign-out-alt"></i>خروج</a></li>
+    </ul>
+    </div>
+    <div id="toggle-btn" onclick="toggleSidebar(this)">
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+</div>
+<script>
+    function toggleSidebar(ref) {
+  ref.classList.toggle('active');
+  document.getElementById('sidebar').classList.toggle('active');
+}
+</script>
