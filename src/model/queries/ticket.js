@@ -12,7 +12,7 @@ const getTicketByName = (name) => {
     text: 'SELECT * FROM ticket Where employee = $1;',
     values: [name],
   };
-  dbConnection.query(sql);
+  return dbConnection.query(sql);
 };
 
 const getTicketDetails = (id)  => {
@@ -20,7 +20,7 @@ const getTicketDetails = (id)  => {
     text: 'SELECT * FROM ticket Where ticket_no = $1;',
     values: [id],
   };
-  dbConnection.query(sql);
+  return dbConnection.query(sql);
 };
 
 const getSupports = () => {
@@ -28,7 +28,7 @@ const getSupports = () => {
     text: 'SELECT * FROM ticket Where type =$1',
     values: ['support'],
   };
-  dbConnection.query(sql);
+  return dbConnection.query(sql);
 };
 
 const getLoans = () => {
@@ -36,7 +36,7 @@ const getLoans = () => {
     text: 'SELECT * FROM ticket Where type =$1',
     values: ['loan'],
   };
-  dbConnection.query(sql);
+  return dbConnection.query(sql);
 };
 
 module.exports = {
