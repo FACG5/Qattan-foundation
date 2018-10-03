@@ -4,7 +4,6 @@ const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
 const compression = require('compression');
 const controllers = require('./controllers');
-const helpers = require('./views/helpers/index');
 
 const app = express();
 
@@ -24,7 +23,6 @@ app.engine(
     layoutsDir: path.join(__dirname, 'views', 'layouts'),
     partialsDir: path.join(__dirname, 'views', 'partials'),
     defaultLayout: 'main',
-    helpers,
   }),
 );
 
