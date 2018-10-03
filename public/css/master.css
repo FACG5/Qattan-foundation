@@ -1,0 +1,290 @@
+/*  
+                ----    General Style    ---- 
+*/
+
+/*   #98012e   #c00036   #5a6e7b   #8e8378   #e5e5e5  #fff  */
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: 'Mada', sans-serif;
+}
+a,
+a:active,
+a:visited,
+a:hover{
+    color: #ffffff;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+
+
+/* 
+
+    ----    S M A L L        S C R E E N    ---- 
+
+*/
+
+@media only screen and (max-width:600px){
+    header{
+        background: #fff;
+        display: flex;
+        justify-content: space-between;
+        max-height: 80px;
+        min-height: 80px;
+        padding: 10px;
+        position: fixed;
+        width: 100%;
+        box-shadow: 1px 1px 1px 2px rgba(0,0,0,0.2)
+    }
+    header .title{
+        display: none;
+    }
+    header .logo{
+        width: 90px;
+        padding: 5px 0;
+    }
+    header .logo img{
+        width: 100%;
+    }
+    #sidebar {
+        position:absolute;
+        z-index: 1000;
+        top:0px;
+        left:0px;
+        width:200px;
+        height:100vh;
+        background:#5a6e7b;
+        transform-origin:right;
+        transform:perspective(1200px) rotateY(90deg);
+        transition:all 500ms ease;
+        padding: 40px 0px;
+      }
+      #sidebar.active {
+        transform:perspective(1200px) rotateY(0deg);
+      } 
+      #toggle-btn {
+        position:absolute;
+        left:30px;
+        top:20px;
+        transition:left 200ms linear 0ms,transform 300ms ease 100ms;
+      }
+      #toggle-btn.active {
+        left:210px;
+        transform:rotate(360deg);
+      }
+      #toggle-btn span {
+        position:relative;
+        top:0px;
+        display:block;
+        background:#5a6e7b;
+        width:25px;
+        height:3px;
+        margin:5px 0px;
+        cursor:pointer;
+        transition:transform 300ms ease 200ms;
+      }
+      #toggle-btn.active span:nth-child(1) {
+        top:10px;
+        transform:rotate(45deg);
+      }
+      #toggle-btn.active span:nth-child(2) {
+        opacity:0;
+      }
+      #toggle-btn.active span:nth-child(3) {
+        top:-10px;
+        transform:rotate(-45deg);
+      }   
+      .sidebar .top-info{
+        margin-bottom:5px;
+        color: #CCC;
+        text-align: center;
+    }
+    .sidebar .top-info span{
+        font-size: 30px;
+    }
+    .sidebar .top-info P{
+        font-size: 18px;
+    }   
+      .mainli{
+        color:#E5E5E5 !important;
+        text-transform: capitalize;
+        font-size:16px;
+        width:100%;
+        height:60px;
+        display: block;
+        border-bottom:1px solid #CCC;
+        line-height:70px;
+        transition: all 0.5s ease-in;
+        padding-right:10px;
+    }
+    .mainli i{
+        display: inline-block;
+        margin-left:5%;
+    }
+    .mainli a{
+        transition: all 0.5s ease-in;
+    }
+    .mainli:hover {
+        text-indent: 10px;
+        background:#E5E5E5 ;
+    }
+    .mainli:hover a{
+        color: #c00036 !important;
+    }
+
+    main{
+        background: #e5e5e54a;
+        display:grid;
+        color: #5a6e7b;
+        padding:0px 10px 0px 10px;
+    }
+    section a{
+        color: #5a6e7b !important;
+    }
+    section{
+        padding-top:100px;
+        overflow: hidden;
+        min-height: 100vh;
+        font-family: sans-serif;
+    }
+    
+    h2.page-title {
+        display: table;
+        white-space: nowrap;
+        font-size: 20px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    h2.page-title::after, h2.page-title::before{
+        border-top: 1px solid #c00036;
+        content: '';
+        display: table-cell;
+        position: relative;
+        top: 0.7em;
+        width: 45%;
+    }
+    h2.page-title::after{
+        right: 1.5%;
+    }
+    h2.page-title::before{
+        left: 1.5%;
+    }
+}
+
+/* 
+
+    ----    L A R G E      S C R E E N    ---- 
+
+*/
+
+@media(min-width:601px){
+    header{
+        background: #fff;
+        display: flex;
+        justify-content: space-between;
+        max-height: 100px;
+        min-height: 100px;
+        padding: 10px 80px;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 1px 1px 1px 2px rgba(0,0,0,0.2)
+    }
+    header .title{
+        font-family: 'Mada', sans-serif;
+        color: #5a6e7b;
+        padding: 10px 30px;
+    }
+    header .title p{
+        color:#c00036;
+        text-align: left;
+    }
+    header .logo{
+        width: 150px;
+        padding: 5px 30px 0px 0px;;
+    }
+    header .logo img{
+        width: 100%;
+    }
+    .sidebar{
+        background: #5a6e7b;
+        color:#fff !important;
+        height: 100vh;
+        position: fixed;
+        width: 250px;
+        padding-top: 120px;
+        box-shadow: 1px 1px 1px 2px rgba(255, 255, 255, 0.2);
+    }
+    .sidebar .top-info{
+        margin-bottom:10px;
+        color: #CCC;
+        text-align: center;
+    }
+    .mainli{
+        color:#E5E5E5 !important;
+        text-transform: capitalize;
+        font-size:16px;
+        width:100%;
+        height:60px;
+        display: block;
+        border-bottom:1px solid #CCC;
+        line-height:70px;
+        transition: all 0.5s ease-in;
+        padding-right: 20px;
+    }
+    .mainli i{
+        display: inline-block;
+        margin-left:5%;
+    }
+    .mainli a{
+        transition: all 0.5s ease-in;
+    }
+    .mainli:hover {
+        text-indent: 10px;
+        background:#E5E5E5 ;
+    }
+    .mainli:hover a{
+        color: #c00036 !important;
+    }
+
+    main{
+        background: #e5e5e54a;
+        display:grid;
+        color: #5a6e7b;
+        padding:0px 300px 0px 20px;
+    }
+    section a{
+        color: #5a6e7b !important;
+    }
+    section{
+        padding-top: 120px;
+        overflow: hidden;
+        min-height: 100vh;
+        font-family: sans-serif;
+    }
+    
+    h2.page-title {
+        display: table;
+        white-space: nowrap;
+        font-size: 33px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    h2.page-title::after, h2.page-title::before{
+        border-top: 1px solid #c00036;
+        content: '';
+        display: table-cell;
+        position: relative;
+        top: 0.7em;
+        width: 45%;
+    }
+    h2.page-title::after{
+        right: 1.5%;
+    }
+    h2.page-title::before{
+        left: 1.5%;
+    }
+}
