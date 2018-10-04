@@ -47,7 +47,7 @@ signButton.addEventListener('click', () => {
         if (res.Error) {
           errMsg.textContent = res.Error;
         } else {
-          window.location = '/';
+          window.location = res.result;
         }
       })
       .catch(() => {
