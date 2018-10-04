@@ -6,7 +6,6 @@ const homeManager = require('./homeManager');
 router.route('/login')
   .get(get)
   .post(post);
-
 router.get('/', homeManager.get);
 
 module.exports = router;

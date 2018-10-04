@@ -61,8 +61,8 @@ exports.get = (req, res) => {
     title: 'صفحة تسجيل الدخول',
     headerFound: false,
     footerFound: false,
-    style: ['login'],
-    javascript: ['login'],
+    style: 'login',
+    dom: 'login',
   });
 };
 // Post Route
