@@ -3,14 +3,24 @@
 <head>
     {{>head}}
 </head>
-    <body>
-        {{>header}}
-        <main>
-            {{>sidebar}}
-            {{{body}}}
-        </main>
-        {{>footer}}       
-    </body>
+        {{#if manager}}
+            <body>
+                {{>headerManager}}
+                <main>
+                    {{>sidebarManager}}
+                    {{{body}}}
+                </main>
+                {{footer}}
+            </body>
+        {{else}}
+         <body>
+            {{>header}}
+            <main>
+                {{{body}}}
+            </main>
+            {{footer}}
+        </body>
+        {{/if}}
 
     {{#if dom}}
         <script src="/js/{{dom}}.js"></script>
