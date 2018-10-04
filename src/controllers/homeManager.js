@@ -1,4 +1,6 @@
-const { getLatestTicket, getTicketCount, getNotSolvedCount, getSolvedCount } = require('../model/queries/ticket');
+const {
+  getLatestTicket, getTicketCount, getNotSolvedCount, getSolvedCount,
+} = require('../model/queries/ticket');
 
 exports.get = (req, res, next) => {
   getLatestTicket()
