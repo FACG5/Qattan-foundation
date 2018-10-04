@@ -1,6 +1,4 @@
-/* global document */
-/* global window */
-/* global fetch */
+/* global document fetch window */
 const name = document.querySelector('.name');
 const password = document.querySelector('.password');
 const errMsg = document.querySelector('.errMsg');

@@ -56,7 +56,7 @@ const createCookie = (user, res, next) => {
 
 
 // Get Route
-exports.get = (req, res) => {
+exports.getUser = (req, res) => {
   res.render('login', {
     title: 'صفحة تسجيل الدخول',
     headerFound: false,
@@ -66,7 +66,7 @@ exports.get = (req, res) => {
   });
 };
 // Post Route
-exports.post = (req, res, next) => {
+exports.postUser = (req, res, next) => {
   if (checkUserData(req.body)) {
     createCookie(req.body, res, next);
   } else {
