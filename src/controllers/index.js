@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { get, post } = require('./login.js');
+const { getUser, postUser } = require('./login.js');
 const homeManager = require('./homeManager');
 
 // Login Routes
 router.route('/login')
-  .get(get)
-  .post(post);
-  
+  .get(getUser)
+  .post(postUser);
+
 router.get('/', homeManager.get);
 
 module.exports = router;
