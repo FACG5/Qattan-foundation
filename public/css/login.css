@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Cairo');
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cairo', sans-serif;
+}
+
+body {
+  background-color: #F7F7F8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+main{
+  margin-top: 30px;
+  background-color: #F7F7F8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.logo {
+  margin-bottom: 30px;
+}
+
+img {
+  height: 100px;
+  weight: 150px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 20px;
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.26);
+}
+
+input[type=text], [type=password] {
+  border: none;
+  margin-bottom: 30px;
+  padding: 10px 30px;
+  direction: rtl;
+  border-bottom: 1px solid #A3ABAF;
+  color: #A3ABAF;
+  outline: none;
+}
+
+::placeholder {
+  color: #A3ABAF;
+}
+
+button[type=submit] {
+  background-color: #C00036;
+  border: none;
+  color: #fff;
+  outline: none;
+  border-radius: 7px;
+  padding: 5px 10px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+button[type=submit]:hover {
+  cursor: pointer;
+}
+
+.person {
+  position: relative;
+}
+
+.person:before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: -30;
+  bottom: 0;
+  width: 20px;
+  -webkit-mask: url(../img/person.svg) no-repeat center;
+  mask: url(public/img/person.svg) no-repeat center;
+  background-color: #A3ABAF;
+}
+
+.lock {
+  position: relative;
+}
+
+.lock:before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: -30;
+  bottom: 0;
+  width: 20px;
+  -webkit-mask: url(../img/lock.svg) no-repeat center;
+  mask: url(../img/lock.svg) no-repeat center;
+  background-color: #A3ABAF;
+}
+.errMsg{
+  margin: 0 auto;
+    direction: rtl;
+    font-size: 12px;
+    margin-bottom: 10px;
+  color: #C00036;
+  font-weight: bold;
+
+}
+/********************** Media Query *********************/
+
+@media only screen and (max-width: 500px) {
+
+  .form {
+    background-color: #F7F7F8;
+    box-shadow: none;
+
+  }
+  input[type=text], [type=password] {
+    border-bottom: 1px solid #A3ABAF;
+    background-color: inherit;
+  }
+}
