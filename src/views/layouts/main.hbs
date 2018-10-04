@@ -1,38 +1,33 @@
 <!DOCTYPE html>
-
-<html lang="ar">
-
+<html lang="ar" dir="rtl">
 <head>
     {{>head}}
 </head>
+        {{#if manager}}
+            <body>
+                {{>headerManager}}
+                <main>
+                    {{>sidebarManager}}
+                    {{{body}}}
+                </main>
+                {{footer}}
+            </body>
+        {{else}}
+         <body>
+            {{>header}}
+            <main>
+                {{{body}}}
+            </main>
+            {{footer}}
+        </body>
+        {{/if}}
 
-<body>
-
-
-    {{#if headerFound}}
-        <header>
-          {{>header}}
-        </header>
+    {{#if dom}}
+        <script src="/js/{{dom}}.js"></script>
     {{/if}}
 
-
-    <main>
-        {{{body}}}
-    </main>
-
-
-    {{#if footerFound}}
-        <footer>
-            {{>footer}}
-        </footer>
+   {{#if script}}
+    <script src="/js/{{script}}.js"></script>
     {{/if}}
-
-
-    {{#each javascript}}
-        <script src="./js/{{this}}.js"></script>
-    {{/each}}
-
-</body>
-
 
 </html>
