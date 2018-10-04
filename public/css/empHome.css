@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    background-color: #E5E5E5;
+    font-size: 10px;
+}
+
+nav {
+    position: relative;
+    width: 100%;
+    height: 90px;
+    top: 0;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+}
+
+/*logo*/
+.logo-img {
+    width: 150px;
+    height: 75px;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+/*logo*/
+/*Hamburger bar icon*/
+.icon {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 8px;
+    right: 0;
+    cursor: pointer;
+}
+
+.hamburger {
+    width: 30px;
+    height: 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(179, 8, 56, 0.932);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    transition: .5s;
+}
+
+.hamburger:before,
+.hamburger:after {
+    content: '';
+    width: 30px;
+    height: 3px;
+    position: absolute;
+    background-color: rgba(179, 8, 56, 0.932);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    transition: .5s;
+}
+
+.hamburger:before {
+    top: 10px;
+}
+
+.hamburger:after {
+    top: -10px;
+}
+
+.icon.change .hamburger {
+    background: rgba(0, 0, 0, 0);
+    box-shadow: none;
+}
+
+.icon.change .hamburger:before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.icon.change .hamburger:after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/*Hamburger bar icon*/
+
+/* user info section */
+.user {
+    height: 200px;
+    width: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.user-logo {
+    width: 70px;
+    height: 70px;
+    right: 1rem;
+    position: absolute;
+
+}
+
+.user-info {
+    font-size: 20px;
+    display: block;
+    position: absolute;
+    right: 9rem;
+}
+
+.user-info:nth-child(2) {
+    font-size: 20px;
+    display: block;
+    position: absolute;
+    right: 9rem;
+    top: 3rem;
+}
+
+/* user info section */
