@@ -1,9 +1,12 @@
-const Router = require('express').Router();
+const router = require('express').Router();
 const { get, post } = require('./login.js');
+const homeManager = require('./homeManager');
 
 // Login Routes
-Router.route('/login')
+router.route('/login')
   .get(get)
   .post(post);
 
-module.exports = Router;
+router.get('/', homeManager.get);
+
+module.exports = router;
