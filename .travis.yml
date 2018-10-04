@@ -1,6 +1,10 @@
-language: node_js
-node_js:
-node
-before_script:
-psql -c "CREATE DATABASE vtest;" -U postgres
-psql -c "CREATE USER vtest WITH PASSWORD '123';" -U postgres
+ {
+  "os": "linux",
+  "dist": "trusty",
+  "group": "stable",
+  ".result": "configured",
+  "node_js": [
+    "node"
+  ],
+  "language": "node_js"
+}
