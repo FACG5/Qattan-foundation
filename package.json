@@ -7,9 +7,6 @@
     "start": "node src/index.js",
     "dev": "nodemon src/index.js"
   },
-  "engines": {
-    "node": "8.10.0"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FACG5/Qattan-foundation.git"
