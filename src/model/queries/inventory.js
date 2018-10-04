@@ -60,10 +60,24 @@ const addInventory = (newInventory) => {
   return dbConnection.query(sql);
 };
 
-const updateInventory = (itEmployee, status, ticketNo) => {
+const updateInventory = (description,
+  employee, place, warranty, serialNo, processor, ram, hd1, hd2, notes, netport, status, id) => {
   const sql = {
-    text: 'UPDATE ticket SET status_type = $1, it_employee = $2 WHERE ticket_no = $3;',
-    values: [itEmployee, status, ticketNo],
+    text: 'UPDATE inventory SET description = $1, employee = $2, place = $3, warranty = $4, serial_no = $5, processor = $6, ram =$7, hd1 =$8, hd2 =$9, notes= $10, netport = $11, status =$12 where id=$13;',
+    values: [
+      description,
+      employee,
+      place,
+      warranty,
+      serialNo,
+      processor,
+      ram,
+      hd1,
+      hd2,
+      notes,
+      netport,
+      status,
+      id],
   };
   return dbConnection.query(sql);
 };
