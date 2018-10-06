@@ -6,8 +6,10 @@ const homeManager = require('./homeManager');
 
 const supports = require('./support');
 
-router.get('/', homeManager.get);
+router.route('/')
+  .get(homeManager.get);
 
-router.get('/support', supports.get);
+router.route('/support')
+  .get(supports.get);
 
 module.exports = router;
