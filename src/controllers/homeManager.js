@@ -13,7 +13,7 @@ exports.get = async (req, res, next) => {
     // we define the result that returns from each promise in a variable.
     // for example, latestTicket will have the same value as what is returned
     // inside the .then() method of the getLatestTicket() promise.
-    // for example, when we write getLatestTicket().then(result), the "result" stored inside the .then
+    // Meaning, when we write getLatestTicket().then(result), the "result" stored inside the .then
     // is the same as the const latestTicket in the line below.
     const latestTicket = await getLatestTicket();
     const ticketCount = await getTicketCount();
