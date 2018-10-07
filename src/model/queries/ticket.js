@@ -48,16 +48,16 @@ const getNotSolvedCount = () => {
 
 const getSupports = () => {
   const sql = {
-    text: 'SELECT * FROM ticket Where type like $1',
-    values: ['support'],
+    text: 'SELECT * FROM ticket WHERE type like $1 and status_type NOT LIKE $2;',
+    values: ['support', 'solved'],
   };
   return dbConnection.query(sql);
 };
 
 const getLoans = () => {
   const sql = {
-    text: 'SELECT * FROM ticket Where type like $1',
-    values: ['loan'],
+    text: 'SELECT * FROM ticket WHERE type like $1 and status_type NOT LIKE $2;',
+    values: ['loan', 'solved'],
   };
   return dbConnection.query(sql);
 };
