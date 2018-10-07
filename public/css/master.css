@@ -272,6 +272,7 @@ ul{
         font-size: 33px;
         text-align: center;
         text-transform: uppercase;
+        width: 100%;
     }
     h2.page-title::after, h2.page-title::before{
         border-top: 1px solid #c00036;

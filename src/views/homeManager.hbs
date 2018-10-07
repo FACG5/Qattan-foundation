@@ -1,0 +1,20 @@
+<section>
+    <h2 class="page-title" >الرئيسية</h2>
+    <div class="ticket-view">
+        <h3> بطاقات مفتوحة: {{#each tNotSolved}}<span>{{count}}</span>{{/each}}</h3>
+         <h3>بطاقات مغلقة :{{#each tSolved}}<span>{{count}}</span>{{/each}}</h3>
+        <h3>المجموع:{{#each tCount}}<span>{{count}}</span>{{/each}}</h3>
+
+         <h3>طلبات تنتظر استجابة:</h3>
+        <h3>اليك  آخر الطلبات</h3>
+        {{#each result}}
+            <a>
+                <div class={{type}} id={{ticket_no}}>
+                    <h3>{{ticket_no}}</h3>
+                    <h5>{{employee}}</h5>
+                    <p>{{problem_type}}</p>
+                </div>
+            </a>
+        {{/each }}
+    </div>
+</section>
