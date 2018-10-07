@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    {{>head}}
+</head>
+    <body>
+        {{>header}}
+        <main>
+            {{>sidebar}}
+            {{{body}}}
+        </main>
+        {{>footer}}       
+    </body>
+
+    {{#if dom}}
+        <script src="/js/{{dom}}.js"></script>
+    {{/if}}
+
+   {{#if script}}
+    <script src="/js/{{script}}.js"></script>
+    {{/if}}
+
+</html>

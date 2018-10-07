@@ -4,29 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
     <link rel="stylesheet" href="./css/empHome.css">
     <title>Qattan Foundation Technical Support and Loans</title>
 </head>
 <body>
     <header>
-    <nav>
+   <nav>
         <div class="logo">
             <img src="./img/logo.svg" alt="logo" class="logo-img">
         </div>
-        <div class="icon" onclick="move(this)">
+        <div class="icon" onclick="move(this), show()">
             <div class="hamburger">
             </div>
         </div>
-    </nav>
+        <div class="overlay">
+        <div class="overlay-content">
+            <a href="#">الرئيسية</a>
+            <a href="#">تذكرة جديدة</a>
+            <a href="#">تسجيل خروج</a>
+        </div>
+        </div>
+    </nav> 
     <div class="user">
     <div class="user-logo">
         <img src="img/woman.svg" alt="user-logo">
     </div>
     
-    <span class="user-info">:اسم الموظف</span>
-    <span class="user-info">:المركز الوظيفي</span>
+    <span class="user-info">:اسم الموظف - </span>
+    <span class="user-info">:المركز الوظيفي -</span>
     </div>
     </header>
+    <section>
+        <h2 class="greet">مرحبا بك في طلبات الدعم الفني</h2>
+        <main>
+        <div class="tab-sect">
+            <h1>طلباتك</h1>
+            <h4>اضافة جديد</h4>
+        </div>
+        </main>
+        <div class="tabs">
+            <button class="tab-btn"  onclick="openTab(event, 'done')">تم التنفيذ</button>
+            <button class="tab-btn" onclick="openTab(event, 'undone')">قيد التنفيذ</button>
+        </div>
+        <div id="done" class="content">
+            Don
+        </div>
+        <div id="undone" class="content">
+            Ongoing
+        </div>
+    </section>
     <script src="./js/empHome.js"></script>
 </body>
 </html>

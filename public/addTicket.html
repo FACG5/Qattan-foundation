@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/addTicket.css">
+    <title>Add ticket</title>
+</head>
+<body>
+    <header>
+        <nav>
+        <div class="logo">
+            <img src="./img/logo.svg" alt="logo" class="logo-img">
+        </div>
+        <div class="icon" onclick="move(this), show()">
+            <div class="hamburger">
+            </div>
+        </div>
+        <div class="overlay">
+                <div class="overlay-content">
+                    <a href="#">الرئيسية</a>
+                    <a href="#">تذكرة جديدة</a>
+                    <a href="#">تسجيل خروج</a>
+                </div>
+                </div>
+    </nav>
+    </header>
+<section>
+    <div class="tabs">
+        <button class="tab-btn"  onclick="openTab(event, 'done')"> 
+        طلب استعارة</button>
+        <button class="tab-btn" onclick="openTab(event, 'undone')">الدعم الفني</button>
+    </div>
+    <!-- borrow -->
+    <div  id="done" class="content"> 
+        <h2 class="title">ادخل البيانات</h2>
+        <form>
+            <input type="text" placeholder="صنف الجهاز">
+            <input type="text" placeholder="الجهاز/الاداة">
+            <input type="text" placeholder="(المدة(ساعة/يوم">
+            <textarea placeholder="…السبب"></textarea>
+            <button class="tab-btn">تقديم</button>
+    </form>
+    </div>
+    <!-- tech.support -->
+    <div id="undone" class="content">
+            <h2 class="title">ادخل البيانات</h2>
+            <form>
+                <input type="text" placeholder="الجهاز/الاداة">
+                <input type="text" placeholder="نوع المشكلة">
+                <input type="text" placeholder="(المدة(ساعة/يوم">
+                <textarea placeholder="…السبب"></textarea>
+                <input type="text" placeholder="(الاولوية(منخفضة,متوسطة,عالية">
+                <button class="tab-btn">تقديم</button>
+        </form>
+    </div>
+</section>
+<script src="./js/empHome.js"></script> 
+</body>
+</html>
