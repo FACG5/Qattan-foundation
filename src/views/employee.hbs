@@ -1,0 +1,34 @@
+ <section>
+        <h2 class="greet">مرحبا بك في طلبات الدعم الفني</h2>
+        <main>
+        <div class="tab-sect">
+            <h1>طلباتك</h1>
+            <h4>اضافة جديد</h4>
+        </div>
+        </main>
+        <div class="tabs">
+            <button class="tab-btn"  onclick="openTab(event, 'done')">تم التنفيذ</button>
+            <button class="tab-btn" onclick="openTab(event, 'undone')">قيد التنفيذ</button>
+        </div>
+        <div id="done" class="content">
+            <section>
+                {{#each result}}
+                <div class={{status_type}}>
+                    
+                        <h1>{{ticket_no}}</h1>
+                        <p>{{problem_type}}</p>
+                        <p>{{subject}}</p>
+                        <p>{{ticket_date}}</p>
+                        </div>
+                    {{/each}}
+                
+            </section>
+        </div>
+        <div id="undone" class="content">
+            <section>
+                <div>
+                     
+                </div>
+            </section>
+        </div>
+    </section>
