@@ -21,6 +21,9 @@ nav {
 
 /*logo*/
 .logo-img {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 150px;
     height: 75px;
     margin-left: 50px;
@@ -208,7 +211,7 @@ h4 {
 
 .content{
     width: 80%;
-    height: 100px;
+    height: 350px;
     text-align: center;
     margin: 0 auto;
     box-shadow: 0 0 10px 1px rgba(0,0,0,.2);
