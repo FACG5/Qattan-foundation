@@ -1,0 +1,16 @@
+<section>
+ <h2 class="page-title" >طلبات الدعم الفني</h2>
+      <div class="ticket-view">
+        <h3>اليك قائمة الطلبات</h3>
+        {{#each response}}
+                <div>
+                    <ul class="ticket-list">
+                    <a href="support/:{{ticket_no}}"><li>{{subject}} </li></a>
+                    </ul>
+                </div>
+        {{/each }}
+    </div>
+
+</section>
+
+
