@@ -4,6 +4,8 @@ const updateBtn = document.getElementById('update-btn');
 const updateSection = document.querySelector('.update-section');
 const closeBtn = document.querySelector('#close-btn');
 const doneBtn = document.querySelector('#done-btn');
+const error = document.querySelector('.error');
+const ticketNo = document.querySelector('#ticket-no');
 
 const editSection = document.querySelector('.update-section');
 
@@ -28,7 +30,7 @@ closeBtn.addEventListener('click', () => {
   updateBtn.style.visibility = 'visible';
 });
 
-doneBtn.addEventListener('click', () => {
+doneBtn.addEventListener('click', (e) => {
   if (status && itEmployee && desc) {
     const url = window.location.href;
     const splitUrl = url.split('/');
@@ -48,9 +50,9 @@ doneBtn.addEventListener('click', () => {
       .then(response => response.json())
       .then((response) => {
         window.location = '/support';
-        console.log(response.res);
       })
-      .catch((error) => {
+      .catch((err) => {
+        error.textContent = 'THERE IS ERROR';
       });
   }
 });
