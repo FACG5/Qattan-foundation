@@ -1,0 +1,13 @@
+<section>
+ <h2 class="page-title" >طلبات الاستعارة</h2>
+      <div class="ticket-view">
+        <h3>اليك قائمة الطلبات</h3>
+        {{#each result}}
+                <div>
+                    <ul class="ticket-list">
+                    <a href="loan/:{{ticket_no}}"><li>{{subject}} </li></a>
+                    </ul>
+                </div>
+        {{/each }}
+    </div>
+</section>
