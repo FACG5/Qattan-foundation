@@ -3,15 +3,9 @@ const express = require('express');
 const router = express.Router();
 
 const homeManager = require('./homeManager');
-
-router.get('/', homeManager.get);
-
-<<<<<<< Updated upstream
-=======
+const supports = require('./support');
 const loans = require('./loans');
-
 const supportDetails = require('./supportDetails');
-
 const loanDetails = require('./loanDetails');
 
 router.route('/')
@@ -26,7 +20,6 @@ router.route('/loans')
 router.route('/support/:id')
   .get(supportDetails.get)
   .put(supportDetails.put);
->>>>>>> Stashed changes
 
 router.route('/loan/:id')
   .get(loanDetails.get)
