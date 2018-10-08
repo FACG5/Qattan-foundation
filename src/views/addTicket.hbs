@@ -19,12 +19,18 @@
     <div id="undone" class="content">
             <h2 class="title">ادخل البيانات</h2>
             <form>
-                <input type="text" placeholder="الجهاز/الاداة">
-                <input type="text" placeholder="نوع المشكلة">
-                <input type="text" placeholder="(المدة(ساعة/يوم">
-                <textarea placeholder="…السبب"></textarea>
-                <input type="text" placeholder="(الاولوية(منخفضة,متوسطة,عالية">
-                <button class="tab-btn">تقديم</button>
+            <select name="type" class="type">
+                    <option>Hardware</option>
+                    <option>Software</option>
+                    </select>
+                <input type="text" placeholder="الموضوع" class="title">
+                <textarea placeholder=" ماهي مشكلتك؟" class="problemStat"></textarea>
+                <select name="priority" class="priority">
+                <option value="عالية">عالية</option>
+                    <option value="متوسطة">متوسطة</option>
+                    <option value="منخفضة">منخفضة</option>
+                </select>
+                <button class="tab-btn" id="submitSupport">تقديم</button>
         </form>
     </div>
 </section>

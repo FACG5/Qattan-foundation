@@ -1,22 +1,33 @@
-const { getTicketByName } = require('../model/queries/ticket');
+const {
+  getTicketByName
+} = require('../model/queries/ticket');
 
 exports.get = (req, res, next) => {
   const name = 'salwa';
   getTicketByName(name)
     .then((response) => {
       const result = (response.rows);
-      console.log(result[0].status_type);
-      result.forEach((x)=> {
-        if(x.status_type == "not solved") {
-          console.log(x.status_type)}
-      })
+      let resultSolved = [];
+      let resultWaiting = [];
+      result.forEach((x) => {
+        console.log(111111111111111111,x);
+       
+        if (x.status_type === 'solved') {
+          resultSolved.push(x);
+        } else {
+          resultWaiting.push(x);
+        }
+      });
+  //   console.log(resultSolved[0]);
+  // console.log(resultWaiting[0]);
+
       res.render('employee', {
         title: 'الرئيسية',
         style: 'empHome',
         dom: 'empHome',
         manager: false,
-        // resultSolved ,
-        // resultWaiting ,
+        resultSolved,
+        resultWaiting,
       });
     })
     .catch(err => next(err));

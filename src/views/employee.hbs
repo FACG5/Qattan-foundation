@@ -12,7 +12,7 @@
         </div>
         <div id="done" class="content">
             <section>
-                {{#each result}}
+                {{#each resultSolved}}
                 <div class={{status_type}}>
                     
                         <h1>{{ticket_no}}</h1>
@@ -27,7 +27,14 @@
         <div id="undone" class="content">
             <section>
                 <div>
-                  <h1>hhhhhhhh</h1>   
+                  {{#each resultWaiting}}
+                <div class={{status_type}}>
+                        <h1>{{ticket_no}}</h1>
+                        <p>{{problem_type}}</p>
+                        <p>{{subject}}</p>
+                        <p>{{ticket_date}}</p>
+                        </div>
+                    {{/each}}
                 </div>
             </section>
         </div>
