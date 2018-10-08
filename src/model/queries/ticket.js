@@ -88,10 +88,14 @@ const addTicket = (newTicket) => {
   return dbConnection.query(sql);
 };
 
-const updateTicket = (itEmployee, status, ticketNo) => {
+const updateTicket = (data) => {
+  const {
+    statusType, itEmployeeName, description, ticketNo,
+  } = data;
+
   const sql = {
-    text: 'UPDATE ticket SET status_type = $1, it_employee = $2 WHERE ticket_no = $3;',
-    values: [itEmployee, status, ticketNo],
+    text: 'UPDATE ticket SET status_type = $1, it_employee = $2, technical_desc = $3 WHERE ticket_no = $4;',
+    values: [statusType, itEmployeeName, description, ticketNo],
   };
   return dbConnection.query(sql);
 };
