@@ -24,7 +24,7 @@ router.route('/loans')
 router.route('/employeeHome')
   .get(employee.get);
 
-router.route('/addTicket')
-  .get(addTicket.get);
+// router.route('/addTicket')
+// .get(addTicket.get);
 
 module.exports = router;
