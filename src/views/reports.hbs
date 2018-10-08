@@ -1,0 +1,32 @@
+<section>
+ <h2 class="page-title" >التقارير</h2>
+      <div class="ticket-view">
+        <h3>اليك التقارير</h3>
+        <label for="min-date">Choose Min. date:</label>
+         <input type="date" name="min-date" id="min-date">
+<br>
+        <label for="max-date">Choose Max. date:</label>
+        <input type="date" name="max-date" id="max-date">
+        <br>
+        <button type="submit" id="btn-period">Print The Result</button>
+<p class="error"></p>
+
+        {{#each result}}
+                <div>
+                    <ul class="ticket-list">
+                    <li>{{employee}}</li>
+                    <li>{{ticket_date}}</li>
+                    <li>{{subject}}</li>
+                    <li>{{problem_type}}</li>
+                    <li>{{status_type}}</li>
+                    <li>{{employee}}</li>
+                    <li>{{it_employee}}</li>
+                    <li>{{technical_desc}}</li>
+                    </ul>
+                </div>
+                  <hr>
+        {{/each }}
+        <hr>
+    </div>
+
+</section>

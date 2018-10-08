@@ -2,7 +2,14 @@ const dbConnection = require('../database/dbConnection');
 
 const getLatestTicket = () => {
   const sql = {
-    text: 'SELECT * FROM ticket ORDER BY ticket_no DESC',
+    text: 'SELECT * FROM ticket ORDER BY ticket_no DESC LIMIT 5;',
+  };
+  return dbConnection.query(sql);
+};
+
+const getAllTicket = () => {
+  const sql = {
+    text: 'SELECT * FROM ticket ORDER BY ticket_no DESC;',
   };
   return dbConnection.query(sql);
 };
@@ -69,7 +76,8 @@ const getTicketByStatus = (status) => {
   };
   return dbConnection.query(sql);
 };
-const getTicketByPeriod = (minPeriod, maxPeriod) => {
+const getTicketByPeriod = (data) => {
+  const { minPeriod, maxPeriod } = data;
   const sql = {
     text: 'SELECT * FROM ticket Where ticket_date between $1 and $2 order by ticket_date asc',
     values: [minPeriod, maxPeriod],
@@ -88,16 +96,21 @@ const addTicket = (newTicket) => {
   return dbConnection.query(sql);
 };
 
-const updateTicket = (itEmployee, status, ticketNo) => {
+const updateTicket = (data) => {
+  const {
+    statusType, itEmployeeName, description, ticketNo,
+  } = data;
+
   const sql = {
-    text: 'UPDATE ticket SET status_type = $1, it_employee = $2 WHERE ticket_no = $3;',
-    values: [itEmployee, status, ticketNo],
+    text: 'UPDATE ticket SET status_type = $1, it_employee = $2, technical_desc = $3 WHERE ticket_no = $4;',
+    values: [statusType, itEmployeeName, description, ticketNo],
   };
   return dbConnection.query(sql);
 };
 
 module.exports = {
   getLatestTicket,
+  getAllTicket,
   getTicketByName,
   getTicketDetails,
   getTicketCount,
