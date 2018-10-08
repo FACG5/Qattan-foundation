@@ -79,7 +79,7 @@ const getTicketByStatus = (status) => {
 const getTicketByPeriod = (data) => {
   const { minPeriod, maxPeriod } = data;
   const sql = {
-    text: 'SELECT * FROM ticket Where ticket_date between $1 and $2 order by ticket_date asc',
+    text: 'SELECT * FROM ticket Where ticket_date between $1 and $2 order by ticket_date desc',
     values: [minPeriod, maxPeriod],
   };
   return dbConnection.query(sql);

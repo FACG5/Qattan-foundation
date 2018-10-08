@@ -7,9 +7,7 @@ const supports = require('./support');
 const loans = require('./loans');
 const loanDetails = require('./loanDetails');
 const supportDetails = require('./supportDetails');
-
 const reports = require('./reports');
-const reportDate = require('./reports');
 
 router.route('/')
   .get(homeManager.get);
@@ -19,12 +17,10 @@ router.route('/support')
 
 router.route('/loans')
   .get(loans.get);
-router.route('/reports')
+
+router.route('/report')
   .get(reports.get)
   .post(reports.post);
-
-router.route('/reports/date')
-  .get(reportDate.get);
 
 router.route('/loan/:id')
   .get(loanDetails.get)

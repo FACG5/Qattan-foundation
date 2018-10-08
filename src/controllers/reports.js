@@ -19,11 +19,16 @@ exports.get = async (req, res, next) => {
 
 exports.post = (req, res, next) => {
   const data = req.body;
-  getTicketByPeriod(data)
-    .then((response) => {
-      res.send(response.rows);
-    })
-    .catch((err) => {
-      next(err);
-    });
+  const { minPeriod, maxPeriod } = data;
+  if (minPeriod !== '' && maxPeriod !== '') {
+    getTicketByPeriod(data)
+      .then((response) => {
+        res.json(response.rows);
+      })
+      .catch((err) => {
+        next(err);
+      });
+  } else {
+    res.status(400).json({ msg: 'Plaese Enter The Period' });
+  }
 };
