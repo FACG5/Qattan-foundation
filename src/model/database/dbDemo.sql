@@ -7,3 +7,7 @@ INSERT INTO ticket (employee,department,problem_type,subject,duration,technical_
  ('salwa','qss','hardware','help',5,'description','support'),('mohammed','information technology','hardware','help',5,'description','support'),('mohammed','information technology','hardware','help',5,'description','loan');
 
 INSERT INTO inventory (ass_no, inventory_id, name,employee) VALUES (145,777855,'camira','ons'), (455,5664544,'laptop','salwa'), (555,65656,'PC','mohammed');
+INSERT INTO brand (brand) VALUES ('brand1'),('brand2'),('brand3');
+INSERT INTO device (device) VALUES ('device1'),('device2'),('device3');
+INSERT INTO place (place) VALUES ('place1'),('place2'),('place3');
+INSERT INTO vendor (vendor) VALUES ('vendor1'),('vendor2'),('vendor3');

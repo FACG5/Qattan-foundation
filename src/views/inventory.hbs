@@ -1,0 +1,139 @@
+<section>
+    <h2 class="page-title" >الأدوات/الأجهزة</h2>
+    <div class="inventory-view">
+{{#each inventories}}
+<h6>Inventory id {{this.id}}</h6>
+{{#if this.ass_no}}
+<h6>assign number {{this.ass_no}}</h6>
+{{/if}}
+{{#if this.inventory_id}}
+<h6>ID{{this.inventory_id}}</h6>
+{{/if}}
+{{#if this.device}}
+<h6>Device Type {{this.device}}</h6>
+{{/if}}
+{{#if this.name}}
+<h6>Name{{this.name}}</h6>
+{{/if}}
+{{#if this.brand}}
+<h6>Device Brand{{this.brand}}</h6>
+{{/if}}
+{{#if this.description}}
+<h6>Discription{{this.description}}</h6>
+{{/if}}
+{{#if this.cdkey}}
+<h6>CD Key{{this.cdkey}}</h6>
+{{/if}}
+{{#if this.employee}}
+<h6>employee (owner){{this.employee}}</h6>
+{{/if}}
+{{#if this.place}}
+<h6>Place{{this.place}}</h6>
+{{/if}}
+{{#if this.vendor}}
+<h6>vendor{{this.vendor}}</h6>
+{{/if}}
+{{#if this.price_usd}}
+<h6>Price{{this.price_usd}}</h6>
+{{/if}}
+{{#if this.price_nis}}
+<h6>Price/NIS{{this.price_nis}}</h6>
+{{/if}}
+{{#if this.purchase_date}}
+<h6>purchase date{{this.purchase_date}}</h6>
+{{/if}}
+{{#if this.warranty}}
+<h6>warranty{{this.warranty}}</h6>
+{{/if}}
+{{#if this.serial_no}}
+<h6>Serial Number{{this.serial_no}}</h6>
+{{/if}}
+{{#if this.processor}}
+<h6>processor{{this.processor}}</h6>
+{{/if}}
+{{#if this.ram}}
+<h6>Ram{{this.ram}}</h6>
+{{/if}}
+{{#if this.hd1}}
+<h6>hd1{{this.hd1}}</h6>
+{{/if}}
+{{#if this.hd2}}
+<h6>hd2{{this.hd2}}</h6>
+{{/if}}
+{{#if this.notes}}
+<h6>notes{{this.notes}}</h6>
+{{/if}}
+{{#if this.netport}}
+<h6>netport{{this.netport}}</h6>
+{{/if}}
+{{#if this.status}}
+<h6>status{{this.status}}</h6>
+{{/if }}
+<button type="button" name="button"> <a href="/updateInventoryPage/{{this.id}}">edit</a> </button>
+<hr>
+{{/each}}
+    </div>
+    <div class="addInventory">
+      <div class="search">
+        <select>
+          {{#each brands}}
+          <option value="{{this.brand}}">{{this.brand}}</option>
+          {{/each}}
+        </select>
+
+        <select>
+          {{#each devices}}
+          <option value="{{this.device}}">{{this.device}}</option>
+          {{/each}}
+        </select>
+      </div>
+<!-- ****************************************ADDING SECTION *********************************** -->
+<h1>أدخل البيانات </h1>
+<input type="number" name="" value="1" placeholder="ID" class="inventoryId">
+<select class="device">
+  {{#each devices}}
+  <option value="{{this.device}}">{{this.device}}</option>
+  {{/each}}
+</select>
+<input type="text" name="" value=""placeholder="Name" class="name">
+<select class="brand">
+  {{#each brands}}
+  <option value="{{this.brand}}">{{this.brand}}</option>
+  {{/each}}
+</select>
+<input type="text" name="" value=""placeholder="description" class="description">
+<input type="text" name="" value="" placeholder="CDKey" class="cdkey">
+<select class="employee">
+  {{#each employees}}
+  <option value="{{this.name}}">{{this.name}}</option>
+  {{/each}}
+</select>
+
+<select class="place">
+  {{#each places}}
+  <option value="{{this.place}}">{{this.place}}</option>
+  {{/each}}
+</select>
+
+<select class="vendor">
+  {{#each vendors}}
+  <option value="{{this.vendor}}">{{this.vendor}}</option>
+  {{/each}}
+</select>
+<input type="number" name="" value="1" placeholder="priceUsd" class="priceUsd">
+<input type="number" name="" value="1" placeholder="priceNis" class="priceNis">
+<input type="date" name="" value="" class="purchaseDate">
+<input type="number" name="" value="1" placeholder="warranty" class="warranty">
+<input type="text" name="" value="" placeholder="Serial No" class="serialNo">
+<input type="text" name="" value="" placeholder="processor" class="processor">
+<input type="text" name="" value="" placeholder="ram" class="ram">
+<input type="number" name="" value="1" placeholder="hd1" class="hd1">
+<input type="number" name="" value="1" placeholder="hd2" class="hd2">
+<input type="text" name="" value="" placeholder="Note" class="notes">
+<input type="text" name="" value="" placeholder="netport" class="netport">
+<input type="number" name="" value="1" placeholder="status" class="status">
+
+<button type="submit" name="button" class="addInventButton"> إضافة</button>
+
+    </div>
+</section>
