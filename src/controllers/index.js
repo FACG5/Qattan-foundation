@@ -5,7 +5,6 @@ const router = express.Router();
 const homeManager = require('./homeManager');
 const supports = require('./support');
 const loans = require('./loans');
-const supportDetails = require('./supportDetails');
 const loanDetails = require('./loanDetails');
 
 router.route('/')
@@ -16,10 +15,6 @@ router.route('/support')
 
 router.route('/loans')
   .get(loans.get);
-
-router.route('/support/:id')
-  .get(supportDetails.get)
-  .put(supportDetails.put);
 
 router.route('/loan/:id')
   .get(loanDetails.get)
