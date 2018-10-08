@@ -1,0 +1,44 @@
+<section>
+    <h2 class="page-title" >تفاصيل بطاقة الطلب</h2>
+    <div class="ticket-view">
+        {{#each result}}
+            <a>
+                <div class={{type}} id={{ticket_no}}>
+                    <h3 id="ticket-no">{{ticket_no}}</h3>
+                    <h5>{{employee}}</h5>
+                    <p>{{problem_type}}</p>
+                    <h5>{{status_type}}</h5>
+                    <h4>{{type}}</h4>
+                    <button id="update-btn" type="submit">اتخاذ اجراء</button>
+                </div>
+<hr>
+<hr>
+<hr>
+
+                <div class="update-section">
+                    <label for="status">Status</label>
+                    <select id="status" required name="status" placeholder="Status">
+                        <option value="{{this.status_type}}">{{this.status_type}}</option>
+                        <option value="solved">solved</option>
+                        <option value="in progress">in progress</option>
+                    </select>
+                     <p id="status-error" class="error"></p>
+
+                      <label for="it-emp">IT Employee</label>
+                    <input type="text" id="it-employee" required name="it-emp" placeholder="IT Employee" value="{{this.it_employee}}">
+                     <p id="employee-error" class="error"></p>
+
+
+                        <label for="desc">Tech.Desc</label>
+                      <input type="text" id="desc" required name="desc" placeholder="Description" value="{{this.technical_desc}}">
+                     <p id="desc-error" class="error"></p>
+
+
+                    <button id="done-btn" type="submit">تم</button>
+                    <button id="close-btn" type="submit">اغلاق</button>
+                </div>
+            </a>
+        {{/each }}
+        <p class="error"></p>
+    </div>
+</section>
