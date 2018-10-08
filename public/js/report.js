@@ -23,12 +23,27 @@ const inProgressBtn = document.querySelector('#in-progress-button');
 
 const solved = document.querySelectorAll('.solved');
 const notSolved = document.querySelectorAll('.not');
-const inProgress = document.querySelectorAll('.progress');
+const inProgress = document.querySelectorAll('.in');
 
 periodSection.style.display = 'none';
 switchType.style.display = 'none';
 switchStatus.style.display = 'none';
 reportSection.style.display = 'none';
+// loans.forEach((element) => {
+//   element.style.display = 'none';
+// });
+// supports.forEach((element) => {
+//   element.style.display = 'none';
+// });
+// solved.forEach((element) => {
+//   element.style.display = 'none';
+// });
+// notSolved.forEach((element) => {
+//   element.style.display = 'none';
+// });
+// inProgress.forEach((element) => {
+//   element.style.display = 'none';
+// });
 
 periodBtn.addEventListener('click', () => {
   periodSection.style.display = 'block';
@@ -54,11 +69,9 @@ loanBtn.addEventListener('click', () => {
   switchStatus.style.display = 'none';
   switchType.style.display = 'block';
   reportSection.style.display = 'block';
-
   loans.forEach((element) => {
     element.style.display = 'block';
   });
-
   supports.forEach((element) => {
     element.style.display = 'none';
   });
@@ -109,7 +122,7 @@ notSolvedBtn.addEventListener('click', () => {
   });
 });
 
-inProgress.addEventListener('click', () => {
+inProgressBtn.addEventListener('click', () => {
   periodSection.style.display = 'none';
   switchStatus.style.display = 'block';
   switchType.style.display = 'none';
@@ -156,8 +169,16 @@ filterBtn.addEventListener('click', () => {
       .then((response) => {
         if (response.msg) {
           error.textContent = response.msg;
+          periodResult.style.display = 'none';
         } else {
-          response.map((element) => {
+          if (response.length === 0) {
+            error.textContent = 'There Is No Date';
+            periodResult.style.display = 'none';
+            return false;
+          }
+          return response.map((element) => {
+            error.textContent = '';
+            periodResult.style.display = 'block';
             const myDate = element.ticket_date.split('T')[0];
             const ticketNo = createElement('h4', 'ticket-no', element.ticket_no);
             const date = createElement('h5', 'date', myDate);
