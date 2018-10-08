@@ -1,0 +1,36 @@
+<section>
+    <div class="tabs">
+        <button class="tab-btn"  onclick="openTab(event, 'done')"> 
+        طلب استعارة</button>
+        <button class="tab-btn" onclick="openTab(event, 'undone')">الدعم الفني</button>
+    </div>
+    <!-- borrow -->
+    <div  id="done" class="content"> 
+        <h2 class="title">ادخل البيانات</h2>
+        <form>
+            <input type="text" placeholder="صنف الجهاز">
+            <input type="text" placeholder="الجهاز/الاداة">
+            <input type="text" placeholder="(المدة(ساعة/يوم">
+            <textarea placeholder="…السبب"></textarea>
+            <button class="tab-btn">تقديم</button>
+    </form>
+    </div>
+    <!-- tech.support -->
+    <div id="undone" class="content">
+            <h2 class="title">ادخل البيانات</h2>
+            <form>
+            <select name="type" class="type">
+                    <option>Hardware</option>
+                    <option>Software</option>
+                    </select>
+                <input type="text" placeholder="الموضوع" class="title">
+                <textarea placeholder=" ماهي مشكلتك؟" class="problemStat"></textarea>
+                <select name="priority" class="priority">
+                <option value="عالية">عالية</option>
+                    <option value="متوسطة">متوسطة</option>
+                    <option value="منخفضة">منخفضة</option>
+                </select>
+                <button class="tab-btn" id="submitSupport">تقديم</button>
+        </form>
+    </div>
+</section>
