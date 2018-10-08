@@ -11,4 +11,8 @@ const dbBuild = (fileName, cb) => {
   });
 };
 
+dbBuild('dbBuild.sql',(err,result)=>{
+  console.log(result);
+  
+});
 module.exports = dbBuild;

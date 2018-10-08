@@ -79,14 +79,28 @@ const getTicketByPeriod = (minPeriod, maxPeriod) => {
 
 const addTicket = (newTicket) => {
   const {
-    employee, department, problemType, subject, duration, technicalDesc, type,
+    employee, department, problemType, subject, duration, technicalDesc, type,priority,
   } = newTicket;
   const sql = {
-    text: 'INSERT INTO ticket (employee,department,problem_type,subject,duration,technical_desc,type) VALUES ($1, $2, $3, $4, $5, $6, $7);',
-    values: [employee, department, problemType, subject, duration, technicalDesc, type],
+    text: 'INSERT INTO ticket (employee,department,problem_type,subject,duration,technical_desc,type, priority) VALUES ($1, $2, $3, $4, $5, $6, $7, $8);',
+    values: [employee, department, problemType, subject, duration, technicalDesc, type, priority],
   };
   return dbConnection.query(sql);
 };
+// const obj = {
+//   employee: "salwa",
+//   department: "qss",
+//   problemType: "hardware",
+//   subject: "whatever",
+//   duration: 1,
+//   technicalDesc: "anything",
+//   type: "support",
+//   priority: "عالية"
+// }
+
+// addTicket(obj).then((result) => {
+//   console.log(result);
+// });
 
 const updateTicket = (data) => {
   const {
