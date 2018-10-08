@@ -24,7 +24,6 @@ exports.put = (req, res, next) => {
       res.send(data);
     })
     .catch((err) => {
-      console.log(err);
       next(err);
     });
 };
