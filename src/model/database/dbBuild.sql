@@ -22,7 +22,7 @@ CREATE TABLE problem_type (
 
 CREATE TABLE status_type (
     id SERIAL PRIMARY KEY,
-    status VARCHAR UNIQUE
+    status VARCHAR UNIQUE NOT NULL
 );
 
 CREATE TABLE ticket (

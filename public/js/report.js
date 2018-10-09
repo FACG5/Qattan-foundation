@@ -1,4 +1,6 @@
-/* global document fetch */
+/* global document fetch   */
+/* eslint-disable file no-param-reassign */
+
 
 const periodBtn = document.querySelector('#period-button');
 const statusBtn = document.querySelector('#status-button');
@@ -29,21 +31,6 @@ periodSection.style.display = 'none';
 switchType.style.display = 'none';
 switchStatus.style.display = 'none';
 reportSection.style.display = 'none';
-// loans.forEach((element) => {
-//   element.style.display = 'none';
-// });
-// supports.forEach((element) => {
-//   element.style.display = 'none';
-// });
-// solved.forEach((element) => {
-//   element.style.display = 'none';
-// });
-// notSolved.forEach((element) => {
-//   element.style.display = 'none';
-// });
-// inProgress.forEach((element) => {
-//   element.style.display = 'none';
-// });
 
 periodBtn.addEventListener('click', () => {
   periodSection.style.display = 'block';
@@ -56,10 +43,12 @@ statusBtn.addEventListener('click', () => {
   periodSection.style.display = 'none';
   switchStatus.style.display = 'block';
   switchType.style.display = 'none';
+  switchStatus.style.display = 'block';
 });
 
 typeBtn.addEventListener('click', () => {
   periodSection.style.display = 'none';
+  reportSection.style.display = 'none';
   switchStatus.style.display = 'none';
   switchType.style.display = 'block';
 });
@@ -199,8 +188,6 @@ filterBtn.addEventListener('click', () => {
           });
         }
       })
-      .catch((err) => {
-        error.textContent = 'THERE IS AN ERROR';
-      });
+      .catch(error.textContent = 'THERE IS AN ERROR');
   }
 });
