@@ -56,16 +56,16 @@ const getNotSolved = () => {
 
 const getSupports = () => {
   const sql = {
-    text: 'SELECT * FROM ticket Where type like $1',
-    values: ['support'],
+    text: 'SELECT * FROM ticket WHERE type like $1 and status_type NOT LIKE $2;',
+    values: ['support', 'solved'],
   };
   return dbConnection.query(sql);
 };
 
 const getLoans = () => {
   const sql = {
-    text: 'SELECT * FROM ticket Where type like $1',
-    values: ['loan'],
+    text: 'SELECT * FROM ticket WHERE type like $1 and status_type NOT LIKE $2;',
+    values: ['loan', 'solved'],
   };
   return dbConnection.query(sql);
 };
@@ -96,10 +96,14 @@ const addTicket = (newTicket) => {
   return dbConnection.query(sql);
 };
 
-const updateTicket = (itEmployee, status, ticketNo) => {
+const updateTicket = (data) => {
+  const {
+    statusType, itEmployeeName, description, ticketNo,
+  } = data;
+
   const sql = {
-    text: 'UPDATE ticket SET status_type = $1, it_employee = $2 WHERE ticket_no = $3;',
-    values: [itEmployee, status, ticketNo],
+    text: 'UPDATE ticket SET status_type = $1, it_employee = $2, technical_desc = $3 WHERE ticket_no = $4;',
+    values: [statusType, itEmployeeName, description, ticketNo],
   };
   return dbConnection.query(sql);
 };
