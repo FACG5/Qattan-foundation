@@ -1,0 +1,65 @@
+ <section class="employee-section">
+<div class="title">
+    <h2 class="greet">اهلا في مركز القطان للدعم الفني </h2>
+    <a href="/add-ticket"> <h4 class="fas fa-plus-circle" >  اضافة طلب</h4></a>
+</div>
+        <div class="tabs">
+            <button class="tab-btn"  onclick="openTab(event, 'done')">تم التنفيذ</button>
+            <button class="tab-btn" onclick="openTab(event, 'undone')">قيد التنفيذ</button>
+        </div>
+        <div id="done" class="content">
+            <section>
+                {{#each resultSolved}}
+                <div class={{status_type}}>
+                    
+                        <h1>{{ticket_no}}</h1>
+                        <p>{{problem_type}}</p>
+                        <p>{{subject}}</p>
+                        <p>{{ticket_date}}</p>
+                        </div>
+                    {{/each}}
+                
+            </section>
+        </div>
+        <div id="undone" class="content">
+            <section>
+                <div>
+                  {{#each resultWaiting}}
+                <div class={{status_type}}>
+                        <h1>{{ticket_no}}</h1>
+                        <p>{{problem_type}}</p>
+                        <p>{{subject}}</p>
+                        <p>{{ticket_date}}</p>
+                        </div>
+                    {{/each}}
+                </div>
+            </section>
+        </div>
+    </section>
+    <script>
+        function move(x) {
+  x.classList.toggle('change');
+}
+
+// for the tab section
+function openTab(evt, status) {
+  const tabcontent = document.getElementsByClassName('content');
+  for (var i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = 'none';
+  }
+
+  const tabBtn = document.getElementsByClassName('tab-btn');
+  for (i = 0; i < tabBtn.length; i++) {
+    tabBtn[i].className = tabBtn[i].className.replace(' active', '');
+  }
+
+  document.getElementById(status).style.display = 'block';
+  evt.currentTarget.className += ' active';
+}
+
+// for the add ticket page
+const menu = document.getElementsByClassName('overlay')[0];
+const show = () => {
+  menu.classList.toggle('change');
+};
+    </script>
