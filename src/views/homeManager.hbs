@@ -1,20 +1,82 @@
 <section>
-    <h2 class="page-title" >الرئيسية</h2>
-    <div class="ticket-view">
-        <h3> بطاقات مفتوحة: {{#each tNotSolved}}<span>{{count}}</span>{{/each}}</h3>
-         <h3>بطاقات مغلقة :{{#each tSolved}}<span>{{count}}</span>{{/each}}</h3>
-        <h3>المجموع:{{#each tCount}}<span>{{count}}</span>{{/each}}</h3>
-
-         <h3>طلبات تنتظر استجابة:</h3>
-        <h3>اليك  آخر الطلبات</h3>
-        {{#each result}}
-            <a>
-                <div class={{type}} id={{ticket_no}}>
-                    <h3>{{ticket_no}}</h3>
-                    <h5>{{employee}}</h5>
-                    <p>{{problem_type}}</p>
-                </div>
+<h2 class="page-title" >الرئيسية</h2>
+<!-- START  STATIC INFO  -->
+    <div class="top">
+        <div class="boxes">
+            <a href="/closed/not">
+                <div class="box">
+                    <span class="icon fas fa-star"></span>
+                    <div class="info">
+                        <h5 class="boxtitle">بطاقات جديدة</h5>
+                        <p class="boxcount">{{#each tNotSolved}}<span>{{count}}</span>{{/each}}</p>
+                        <p class="boxdesc">طلبات تحتاج مراجعة  ولم يتم اتخاذ أي اجراء فيها.</p>					
+                    </div><!--info-->
+			    </div>
             </a>
+            <a href="/solved/solved">
+                <div class="box">
+                    <span class="icon fas fa-check-double"></span>
+                    <div class="info">
+                        <h5 class="boxtitle">بطاقات مغلقة</h5>
+                        <p class="boxcount">{{#each tSolved}}<span>{{count}}</span>{{/each}}</p>					
+                        <p class="boxdesc">طلبات تمت مراجعتها واتخاذ الاجراء اللازم فيها.</p>					
+                    </div><!--info-->
+		    	</div>
+            </a>
+            <a href="/tickets">
+                <div class="box">
+                    <span class="icon fas fa-box"></span>
+                    <div class="info">
+                        <h5 class="boxtitle">المجموع</h5>
+                        <p class="boxcount">{{#each tCount}}<span>{{count}}</span>{{/each}}</p>					
+                        <p class="boxdesc">طلبات الموظفين من كافة الاقسام وكافة الحالات </p>					
+                    </div><!--info-->
+			    </div>
+            </a>
+        </div>
+    </div>
+    <!-- END  STATIC INFO  -->
+
+    <!-- START  TICKET VIEW  -->
+    <div class="ticket-view">
+        <h3 class="view-title"> اليك  احدث الطلبات //</h3>
+        {{#each result}}
+        <table class="viewTable">
+            <thead>
+                <tr>
+                <th colspan="4">
+                    <p>بطاقة رقم :      <span>{{ticket_no}}</span></p>
+                </th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td>
+                        <p> الحالة : <span>{{type}}</span></p>
+                        <p>الأولوية :</p>
+                    </td>
+                     <td colspan="3"  class="view-link">
+                         <a  href="/{{type}}/{{ticket_no}}"> عرض التفاصيل <i class="far fa-eye"></i></a>
+                    </td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td>الموظف (صاحب البطاقة) :</td>
+                    <td>{{employee}}</td>
+                </tr>
+                <tr>
+                    <td>الموضوع :</td>
+                    <td>{{subject}}</td>
+                </tr>
+                  <tr>
+                    <td>النوع :</td>
+                    <td>{{problem_type}}</td>
+                </tr>
+            </tbody>
+        </table>
         {{/each }}
     </div>
+    <!-- END  TICKET VIEW  -->
+
 </section>
