@@ -1,4 +1,4 @@
-
+/* global document fetch */
 // for the animated menue bar icon
 
 function move(x) {
@@ -28,79 +28,122 @@ const show = () => {
 };
 
 // add ticket tabs
+const employeeName = 'MohAmmed';
+const employeeDep = 'information technology';
 const probType = document.querySelector('#ptype');
-const subject = document.querySelector('#subject');
-const type = document.querySelector('#type');
-const priority = document.querySelector('#priority');
-const duration = document.querySelector('#duration');
+const tSubject = document.querySelector('#subject');
+const tType = document.querySelector('#type');
+const tPriority = document.querySelector('#priority');
+const tDuration = document.querySelector('#duration');
 const pdesc = document.querySelector('#pdesc');
-const btnAadd = document.querySelector('#btn-add');
+const btnAdd = document.querySelector('#btn-add');
+const succMsg = document.querySelector('.msg');
+const error = document.querySelector('.error');
 
-doneBtn.addEventListener('click', (e) => {
+
+btnAdd.addEventListener('click', (e) => {
   e.preventDefault();
-  if (employee && department && problemType && problemDesc && subject&& duration &&technicalDesc &&type && priority){
-    const employeeName = 'mohammed';
-    const department = 'information technology';
-    const problemType = probType.value;
-    const textSubject = subject.value;
-    const ticketType = type.value;
-    const ticketP
+  if (employeeName && employeeDep && probType && tSubject && tType && tPriority && tDuration && pdesc) {
+    const employeeC = employeeName;
+    const departmentC = employeeDep;
+    const problemTypeC = probType.value;
+    const problemDescC = pdesc.value;
+    const subjectC = tSubject.value;
+    const duration = tDuration.value;
+    const typeC = tType.value;
+    const priorityC = tPriority.value;
+    
+    const employee = employeeC.toLowerCase();
+    const department = departmentC.toLowerCase();
+    const problemType = problemTypeC.toLowerCase();
+    const problemDesc = problemDescC.toLowerCase();
+    const subject = subjectC.toLowerCase();
+    const type = typeC.toLowerCase();
+    const priority = priorityC.toLowerCase();
 
-  }
-    const url = window.location.href;
-    const splitUrl = url.split('/');
-    const ticketNo = splitUrl[splitUrl.length - 1];
-    const statusType = status.value;
-    const description = desc.value;
-    const itEmployeeName = itEmployee.value;
-    const data = {
-      statusType, description, itEmployeeName, ticketNo,
+    const newTicket = {
+      employee,
+      department,
+      problemType,
+      problemDesc,
+      subject,
+      duration,
+      type,
+      priority,
     };
-    fetch(`/loan/${ticketNo}`, {
-      method: 'PUT',
+    fetch('/add-ticket', {
+      method: 'POST',
       credentials: 'same-origin',
       headers: { 'Content-Type': 'application/json; charset=utf-8' },
-      body: JSON.stringify(data),
+      body: JSON.stringify(newTicket),
     })
       .then(response => response.json())
-      .then((response) => {
-        error.textContent = 'DONE !';
-        window.location = '/loans';
+      .then(() => {
+        succMsg.textContent = 'NEW TICKET ADDED SUCCESSFULLY !';
       })
-      .catch((err) => {
+      .catch(() => {
         error.textContent = 'THERE IS ERROR';
       });
   }
 });
 
 
+//// Support
 
+const empName = 'MohAmmed';
+const empDep = 'information technology';
+const pType = document.querySelector('#ptype-support');
+const tSub = document.querySelector('#subject-support');
+const ticketType = document.querySelector('#type-support');
+const ticketPriority = document.querySelector('#priority-support');
+const ticketDuration = document.querySelector('#duration-support');
+const problemdesc = document.querySelector('#pdesc-support');
+const btnAddSupport = document.querySelector('#btn-add-support');
+const Msg = document.querySelector('.msg-support');
+const errMsg = document.querySelector('.error-support');
 
+btnAddSupport.addEventListener('click', (e) => {
+  e.preventDefault();
+  if (empName && empDep && pType && tSub && ticketType && ticketPriority && ticketDuration && problemdesc) {
+    const empC = empName;
+    const depC = empDep;
+    const pTypeC = pType.value;
+    const pDescC = problemdesc.value;
+    const subC = tSub.value;
+    const duration = ticketDuration.value;
+    const tTypeC = ticketType.value;
+    const priorC = ticketPriority.value;
+    
+    const employee = empC.toLowerCase();
+    const department = depC.toLowerCase();
+    const problemType = pTypeC.toLowerCase();
+    const problemDesc = pDescC.toLowerCase();
+    const subject = subC.toLowerCase();
+    const type = tTypeC.toLowerCase();
+    const priority = priorC.toLowerCase();
 
-// const probType = document.getElementsByClassName('type')[0];
-// const probPriority = document.getElementsByClassName('priority')[0];
-// const problemStat = document.getElementsByClassName('problemStat')[0];
-// const problemTitle = document.getElementsByClassName('title')[0];
-// const supportBtn = document.getElementById('submitSupport');
-
-// supportBtn.addEventListener('click', (e) => {
-//   const obj = {
-//     employee: 'salwa',
-//     department: 'qss',
-//     problemType: probType.value,
-//     subject: problemTitle.value,
-//     duration: 1,
-//     technicalDesc: problemStat.value,
-//     type: 'support',
-//     priority: probPriority.value,
-//   };
-//   fetch('/addTicket', ({
-//     method: 'POST',
-//     credentials: 'same-origin',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify(obj),
-//   })).then(res)
-// });
-
+    const newTicket = {
+      employee,
+      department,
+      problemType,
+      problemDesc,
+      subject,
+      duration,
+      type,
+      priority,
+    };
+    fetch('/add-ticket', {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      body: JSON.stringify(newTicket),
+    })
+      .then(response => response.json())
+      .then(() => {
+        Msg.textContent = 'NEW TICKET ADDED SUCCESSFULLY !';
+      })
+      .catch(() => {
+        errMsg.textContent = 'THERE IS ERROR';
+      });
+  }
+});
