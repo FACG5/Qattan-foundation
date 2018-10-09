@@ -1,1 +1,138 @@
-<h1>hhhhhhhhhhhhhhhhhhhhhhi</h1>
+<section>
+<h1>عدل البيانات</h1>
+  <div class="">
+    <label for="id">ID</label>
+    <input type="number" name="id" value="{{inventory.inventory_id}}" placeholder="ID" class="inventoryId" disabled>
+  </div>
+
+  <div class="">
+    <label for="device">Device</label>
+    <select class="device">
+      <option selected disabled hidden>{{inventory.device}}</option>
+      {{#each devices}}
+      <option disabled value ="{{this.device}}">{{this.device}}</option>
+      {{/each}}
+  </select>
+  </div>
+
+
+  <div class="">
+    <label for="name">Name</label>
+    <input type="text" name="name" value="{{inventory.name}}" placeholder="Name" class="name" disabled>
+  </div>
+
+  <div class="">
+    <label for="brand">Brand</label>
+    <select class="brand">
+      <option selected disabled hidden>{{inventory.brand}}</option>
+      {{#each brands}}
+      <option disabled value="{{this.brand}}">{{this.brand}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+  <div class="">
+    <label for="description">description</label>
+    <input type="text" name="description" value="{{inventory.description}}" placeholder="description" class="description">
+  </div>
+
+
+  <div class="">
+    <label for="cdkey">CD Key</label>
+    <input type="text" name="cdkey" value="{{inventory.cdkey}}" placeholder="CDKey" class="cdkey" disabled>
+  </div>
+
+  <div class="">
+    <label for="employee">employee</label>
+    <select class="employee">
+      <option selected disabled hidden>{{inventory.employee}}</option>
+      {{#each employees}}
+      <option value="{{this.name}}">{{this.name}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+  <div class="">
+    <label for="place">place</label>
+    <select class="place">
+      <option selected disabled hidden>{{inventory.place}}</option>
+      {{#each places}}
+      <option value="{{this.place}}">{{this.place}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+  <div class="">
+    <label for="vendor">vendor</label>
+    <select class="vendor">
+      <option selected disabled hidden>{{inventory.vendor}}</option>
+      {{#each vendors}}
+      <option  disabled value="{{this.vendor}}">{{this.vendor}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+  <div class="">
+    <label for="priceUsd">priceUsd</label>
+    <input type="number" name="priceUsd" value="{{inventory.price_usd}}" placeholder="priceUsd" class="priceUsd" disabled>
+  </div>
+
+  <div class="">
+    <label for="priceNis">priceNis</label>
+    <input type="number" name="priceNis" value="{{inventory.price_nis}}" placeholder="priceNis" class="priceNis" disabled>
+  </div>
+
+  <div class="">
+    <label for="purchaseDate">purchaseDate</label>
+    <input type="date" name="" value="{{PurchDateObj}}" class="purchaseDate" disabled>
+  </div>
+
+  <div class="">
+    <label for="warranty">warranty</label>
+    <input type="number" name="" value="{{inventory.warranty}}" placeholder="warranty" class="warranty" >
+  </div>
+
+  <div class="">
+    <label for="SerialNo">Serial No</label>
+    <input type="text" name="" value="{{inventory.serial_no}}" placeholder="Serial No" class="serialNo" disabled>
+  </div>
+
+  <div class="">
+    <label for="processor">processor</label>
+    <input type="text" name="" value="{{inventory.processor}}" placeholder="processor" class="processor">
+  </div>
+
+  <div class="">
+    <label for="ram">ram</label>
+    <input type="text" name="" value="{{inventory.ram}}" placeholder="ram" class="ram">
+  </div>
+
+  <div class="">
+    <label for="hd1">hd1</label>
+    <input type="number" name="" value="{{inventory.hd1}}" placeholder="hd1" class="hd1">
+  </div>
+
+  <div class="">
+    <label for="hd2">hd2</label>
+    <input type="number" name="" value="{{inventory.hd2}}" placeholder="hd2" class="hd2">
+  </div>
+
+  <div class="">
+    <label for="notes">notes</label>
+    <input type="text" name="" value="{{inventory.notes}}" placeholder="Note" class="notes">
+  </div>
+
+  <div class="">
+    <label for="netport">netport</label>
+    <input type="text" name="" value="{{inventory.netport}}" placeholder="netport" class="netport">
+  </div>
+
+  <div class="">
+    <label for="status">status</label>
+    <input type="number" name="" value="{{inventory.status}}" placeholder="status" class="status">
+  </div>
+
+
+  <button type="submit" name="button" class="updateInventButton"> حفظ</button>
+
+</section>

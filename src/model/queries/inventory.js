@@ -7,6 +7,13 @@ exports.getInventory = () => {
   return dbConnection.query(sql);
 };
 
+exports.getInventoryById = (InventoryId) => {
+  const sql = {
+    text: 'SELECT * FROM inventory WHERE id = $1 ;',
+  };
+  return dbConnection.query(sql, [InventoryId]);
+};
+
 exports.addInventory = (newInventory) => {
   const {
     inventoryId,
@@ -59,16 +66,17 @@ exports.addInventory = (newInventory) => {
   return dbConnection.query(sql);
 };
 
-exports.updateInventory = (description,
-  employee, place, warranty, serialNo, processor, ram, hd1, hd2, notes, netport, status, id) => {
+exports.updateInventory = (inventory) => {
+  const {
+    description, employee, place, warranty, processor, ram, hd1, hd2, notes, netport, status, id,
+  } = inventory;
   const sql = {
-    text: 'UPDATE inventory SET description = $1, employee = $2, place = $3, warranty = $4, serial_no = $5, processor = $6, ram =$7, hd1 =$8, hd2 =$9, notes= $10, netport = $11, status =$12 where id=$13;',
+    text: 'UPDATE inventory SET description = $1, employee = $2, place = $3, warranty = $4, processor = $5, ram =$6, hd1 =$7, hd2 =$8, notes= $9, netport = $10, status =$11 where id=$12;',
     values: [
       description,
       employee,
       place,
       warranty,
-      serialNo,
       processor,
       ram,
       hd1,

@@ -1,7 +1,7 @@
 /* global document fetch window */
 const inventoryId = document.querySelector('.inventoryId');
 const device = document.querySelector('.device');
-const name = document.querySelector('.name');
+const name = document.querySelectorAll('.name')[1];
 const brand = document.querySelector('.brand');
 const description = document.querySelector('.description');
 const cdkey = document.querySelector('.cdkey');
@@ -21,6 +21,8 @@ const notes = document.querySelector('.notes');
 const netport = document.querySelector('.netport');
 const status = document.querySelector('.status');
 const addInventButton = document.querySelector('.addInventButton');
+
+console.log(name);
 
 const collectData = () => ({
   inventoryId: inventoryId.value,

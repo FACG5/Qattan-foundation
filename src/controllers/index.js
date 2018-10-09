@@ -8,7 +8,9 @@ const supports = require('./support');
 const loans = require('./loans');
 const loanDetails = require('./loanDetails');
 const supportDetails = require('./supportDetails');
-const { viewInventory, postInventory } = require('./inventory');
+const {
+  viewInventory, postInventory, updateInventoryPage, updateInventoryFun,
+} = require('./inventory');
 
 router.route('/')
   .get(homeManager.get);
@@ -33,9 +35,9 @@ router.route('/inventory')
   .post(postInventory);
 
 // clicking on edit button will move to new page and route
-// router.route('/updateInventoryPage/:id')
-//   .get(viewInventory)
-
+router.route('/updateInventoryPage/:id')
+  .get(updateInventoryPage)
+  .put(updateInventoryFun);
 
 
 module.exports = router;
