@@ -1,31 +1,7 @@
 /* global document fetch */
-// for the animated menue bar icon
 
-function move(x) {
-  x.classList.toggle('change');
-}
 
-// for the tab section
-function openTab(evt, status) {
-  const tabcontent = document.getElementsByClassName('content');
-  for (var i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = 'none';
-  }
-
-  const tabBtn = document.getElementsByClassName('tab-btn');
-  for (i = 0; i < tabBtn.length; i++) {
-    tabBtn[i].className = tabBtn[i].className.replace(' active', '');
-  }
-
-  document.getElementById(status).style.display = 'block';
-  evt.currentTarget.className += ' active';
-}
-
-// for the add ticket page
-const menu = document.getElementsByClassName('overlay')[0];
-const show = () => {
-  menu.classList.toggle('change');
-};
+// sfor the animated menue bar icon
 
 // add ticket tabs
 const employeeName = 'MohAmmed';
@@ -40,10 +16,12 @@ const btnAdd = document.querySelector('#btn-add');
 const succMsg = document.querySelector('.msg');
 const error = document.querySelector('.error');
 
+// ADD SUPPORT TICKET
 
 btnAdd.addEventListener('click', (e) => {
   e.preventDefault();
-  if (employeeName && employeeDep && probType && tSubject && tType && tPriority && tDuration && pdesc) {
+  if (employeeName && employeeDep && probType && tSubject && tType && tPriority
+    && tDuration && pdesc) {
     const employeeC = employeeName;
     const departmentC = employeeDep;
     const problemTypeC = probType.value;
@@ -52,7 +30,7 @@ btnAdd.addEventListener('click', (e) => {
     const duration = tDuration.value;
     const typeC = tType.value;
     const priorityC = tPriority.value;
-    
+
     const employee = employeeC.toLowerCase();
     const department = departmentC.toLowerCase();
     const problemType = problemTypeC.toLowerCase();
@@ -87,8 +65,7 @@ btnAdd.addEventListener('click', (e) => {
   }
 });
 
-
-//// Support
+// ADD SUPPORT TICKET
 
 const empName = 'MohAmmed';
 const empDep = 'information technology';
@@ -104,7 +81,8 @@ const errMsg = document.querySelector('.error-support');
 
 btnAddSupport.addEventListener('click', (e) => {
   e.preventDefault();
-  if (empName && empDep && pType && tSub && ticketType && ticketPriority && ticketDuration && problemdesc) {
+  if (empName && empDep && pType && tSub && ticketType && ticketPriority
+    && ticketDuration && problemdesc) {
     const empC = empName;
     const depC = empDep;
     const pTypeC = pType.value;
@@ -113,7 +91,7 @@ btnAddSupport.addEventListener('click', (e) => {
     const duration = ticketDuration.value;
     const tTypeC = ticketType.value;
     const priorC = ticketPriority.value;
-    
+
     const employee = empC.toLowerCase();
     const department = depC.toLowerCase();
     const problemType = pTypeC.toLowerCase();

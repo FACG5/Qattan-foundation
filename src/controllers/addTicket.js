@@ -1,6 +1,6 @@
 const { addTicket } = require('../model/queries/ticket');
 
-exports.get = (req, res, next) => {
+exports.get = (req, res) => {
   res.render('addTicket', {
     title: 'اضافة تذكرة',
     style: 'empHome',
@@ -10,7 +10,7 @@ exports.get = (req, res, next) => {
 };
 
 exports.post = (req, res, next) => {
-  const newTicket  = req.body;
+  const newTicket = req.body;
   addTicket(newTicket)
     .then((response) => {
       res.send(response);
