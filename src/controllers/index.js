@@ -1,7 +1,5 @@
-const express = require('express');
-
-const router = express.Router();
-
+const router = require('express').Router();
+const { getUser, postUser } = require('./login.js');
 const homeManager = require('./homeManager');
 const supports = require('./support');
 const loans = require('./loans');
@@ -24,5 +22,11 @@ router.route('/loan/:id')
 router.route('/support/:id')
   .get(supportDetails.get)
   .put(supportDetails.put);
+
+// Login Routes
+router.route('/login')
+  .get(getUser)
+  .post(postUser);
+
 
 module.exports = router;
