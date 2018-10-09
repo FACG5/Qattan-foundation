@@ -1,0 +1,73 @@
+<section>
+    <div class="tabs">
+        <button class="tab-btn"  onclick="openTab(event, 'done')"> 
+        طلب استعارة</button>
+        <button class="tab-btn" onclick="openTab(event, 'undone')">الدعم الفني</button>
+    </div>
+    <!-- borrow -->
+    <div  id="done" class="content"> 
+        <h2 class="title"> استعارة</h2>
+                <div class="form">
+                <label for="ptype"> Problem Type</label>
+                    <select id="ptype" name="ptype" class="type">
+                        <option value="Hardware">Hardware</option>
+                    </select>
+                </div>
+                <div class="form">
+                    <label for="text">Subject</label>
+                    <input id="subject" type="text" placeholder="Subject">
+                </div>
+                <div class="form">
+                    <label for="type">Type</label>
+                        <select id="type" name="type" class="type">
+                                <option value="loan">loan</option>
+                            </select>
+                </div>
+                <div class="form">
+                    <label for="priority">priority</label>
+                        <select id="priority" name="priority" class="type">
+                                <option value="medium">medium</option>
+                                <option  value="high">high</option> 
+                                <option  value="low">low</option>
+                            </select>
+                </div>
+                <div class="form">
+                    <label for="duration">duration</label>
+                    <input  id="duration" type="number"  value ="1" id="duration" placeholder="duration">
+                </div>
+                <div class="form">
+                    <label for="pdesc">problem Description</label>
+                    <textarea id="pdesc" name="pdesc" placeholder="problem desc"></textarea>
+                </div>
+                    <button id="btn-add" class="tab-btn">تقديم</button>
+                    </div>
+
+
+
+
+
+    <!-- tech.support -->
+
+
+
+
+
+
+    {{!-- <div id="undone" class="content">
+            <h2 class="title">ادخل البيانات</h2>
+            <form>
+            <select name="type" class="type">
+                    <option>Hardware</option>
+                    <option>Software</option>
+                    </select>
+                <input type="text" placeholder="الموضوع" class="title">
+                <textarea placeholder=" ماهي مشكلتك؟" class="problemStat"></textarea>
+                <select name="priority" class="priority">
+                <option value="عالية">عالية</option>
+                    <option value="متوسطة">متوسطة</option>
+                    <option value="منخفضة">منخفضة</option>
+                </select>
+                <button class="tab-btn" id="submitSupport">تقديم</button>
+        </form>
+    </div> --}}
+</section>
