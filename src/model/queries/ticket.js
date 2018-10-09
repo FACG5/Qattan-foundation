@@ -7,6 +7,14 @@ const getLatestTicket = () => {
   return dbConnection.query(sql);
 };
 
+const getAllTicket = () => {
+  const sql = {
+    text: 'SELECT * FROM ticket ORDER BY ticket_no DESC',
+  };
+  return dbConnection.query(sql);
+};
+
+
 const getTicketByName = (name) => {
   const sql = {
     text: 'SELECT * FROM ticket Where employee = $1;',
@@ -110,6 +118,7 @@ const updateTicket = (data) => {
 
 module.exports = {
   getLatestTicket,
+  getAllTicket,
   getTicketByName,
   getTicketDetails,
   getTicketCount,
