@@ -7,6 +7,7 @@ const supports = require('./support');
 const loans = require('./loans');
 const loanDetails = require('./loanDetails');
 const supportDetails = require('./supportDetails');
+const employee = require('./employee');
 
 router.route('/')
   .get(homeManager.get);
@@ -24,5 +25,8 @@ router.route('/loan/:id')
 router.route('/support/:id')
   .get(supportDetails.get)
   .put(supportDetails.put);
+
+router.route('/employee-home')
+  .get(employee.get);
 
 module.exports = router;
