@@ -1,6 +1,6 @@
 /* global document */
-function move(x) {
-  x.classList.toggle('change');
+function move(icon) {
+  icon.classList.toggle('change');
 }
 
 // for the add ticket page
