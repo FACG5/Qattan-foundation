@@ -1,20 +1,21 @@
  <section class="employee-section">
     <div class="title">
-        <h2 class="greet">اهلا في مركز القطان للدعم الفني </h2>
+        <h2 class="greet">أهلا في مركز القطان للدعم الفني </h2>
         <h3 class="employee"> <i class="fas fa-user-circle"></i>    أصالة مطرية </h3>
         <h6 class="department">Adminstration </h6>
         <a href="/add-ticket"> <h4 class="fas fa-plus-circle" >  اضافة طلب</h4></a>
     </div>
-    <div class="view">
+   
+    <div class="view-section">
+         <div class="view">
         <div class="switch">
-            <button id="done-button" >تم التنفيذ </button>
-            <button  id="undone-button" >قيد التنفيذ</button>
+            <button id="done-button"  class="tap"> طلبات تم تنفيذها </button>
+            <button  id="undone-button" class="tap"> طلبات قيد التنفيذ</button>
         </div>
     </div>
-    <div class="view-section">
         <div id="done">
             <div class="ticket-view">
-        <h3 class="view-title"> اليك  احدث الطلبات //</h3>
+        <h3 class="view-title"> طلباتك : </h3>
         {{#each resultSolved}}
         <table class="viewTable">
             <thead>
