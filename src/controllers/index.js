@@ -6,6 +6,7 @@ const loans = require('./loans');
 const loanDetails = require('./loanDetails');
 const supportDetails = require('./supportDetails');
 const { clientError, serverError } = require('./error');
+const { getLogOut } = require('./logout');
 
 router.route('/')
   .get(homeManager.get);
@@ -24,13 +25,17 @@ router.route('/support/:id')
   .get(supportDetails.get)
   .put(supportDetails.put);
 
-
-router.use(clientError);
-router.use(serverError);
-
 // Login Routes
 router.route('/login')
   .get(getUser)
   .post(postUser);
+
+// logout
+router.route('/logout')
+  .get(getLogOut);
+
+router.use(clientError);
+router.use(serverError);
+
 
 module.exports = router;
