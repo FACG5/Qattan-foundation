@@ -4,6 +4,7 @@ const {
 
 exports.get = async (req, res, next) => {
   try {
+    console.log(res.locals.unlockCookie,"ssssss");
     const latestTicket = await getLatestTicket();
     const ticketCount = await getTicketCount();
     const solvedCount = await getSolvedCount();
