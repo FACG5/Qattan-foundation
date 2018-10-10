@@ -8,6 +8,7 @@ const loans = require('./loans');
 const loanDetails = require('./loanDetails');
 const supportDetails = require('./supportDetails');
 const employee = require('./employee');
+const { clientError, serverError } = require('./error');
 
 router.route('/')
   .get(homeManager.get);
@@ -28,5 +29,9 @@ router.route('/support/:id')
 
 router.route('/employee-home')
   .get(employee.get);
+
+router.use(clientError);
+router.use(serverError);
+
 
 module.exports = router;

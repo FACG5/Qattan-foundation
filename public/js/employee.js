@@ -19,13 +19,11 @@ const unDoneSection = document.querySelector('#undone');
 // unDoneSection.style.display = 'none';
 
 unDoneBtn.addEventListener('click', () => {
-  console.log(unDoneSection);
   doneSection.style.display = 'none';
   unDoneSection.style.display = 'block';
 });
 
 doneBtn.addEventListener('click', () => {
-  console.log('asala kamal');
   unDoneSection.style.display = 'none';
   doneSection.style.display = 'block';
 });
