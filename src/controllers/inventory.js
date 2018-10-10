@@ -5,24 +5,28 @@ const {
 
 exports.viewInventory = async (req, res, next) => {
   try {
-    const inventoriesdb = await getInventory();
-    const employeesdb = await getEmployee();
-    const brandsdb = await getBrand();
-    const devicesdb = await getDevice();
-    const placesdb = await getPlace();
-    const vendorsdb = await getVendor();
-    res.render('inventory', {
-      style: 'master',
-      title: 'الأجهزة',
-      manager: true,
-      dom: 'inventory',
-      inventories: inventoriesdb.rows,
-      employees: employeesdb.rows,
-      brands: brandsdb.rows,
-      devices: devicesdb.rows,
-      places: placesdb.rows,
-      vendors: vendorsdb.rows,
-    });
+    if (res.locals.unlockCookie) {
+      const inventoriesdb = await getInventory();
+      const employeesdb = await getEmployee();
+      const brandsdb = await getBrand();
+      const devicesdb = await getDevice();
+      const placesdb = await getPlace();
+      const vendorsdb = await getVendor();
+      res.render('inventory', {
+        style: 'master',
+        title: 'الأجهزة',
+        manager: true,
+        dom: 'inventory',
+        inventories: inventoriesdb.rows,
+        employees: employeesdb.rows,
+        brands: brandsdb.rows,
+        devices: devicesdb.rows,
+        places: placesdb.rows,
+        vendors: vendorsdb.rows,
+      });
+    } else {
+      res.redirect(401, '/login');
+    }
   } catch (error) {
     next(error);
   }
