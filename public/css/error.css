@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Monda');
 
+body{
+  overflow: hidden;
+}
+
 .cogs {
     margin: 0 auto;
     width: 300px;
