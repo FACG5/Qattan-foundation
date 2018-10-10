@@ -135,4 +135,54 @@
 
   <button type="submit" name="button" class="updateInventButton"> حفظ</button>
 
+
+<!-- ************************ MENDING SECTION ******************************* -->
+<h1>أدخل بيانات الإصلاح</h1>
+
+<div class="">
+  <label for="id">الرقم التسلسلي</label>
+  <input type="text" name="" value="" placeholder="رقم الجهاز" class="id" >
+</div>
+
+<div class="">
+  <label for="MendDate">موعد الإصلاح</label>
+  <input type="date" name="" value="" class="MendDate" >
+</div>
+
+<div class="">
+  <label for="type">نوع العطل الفني</label>
+  <select class="type">
+    <option selected disabled hidden>اختر النوع</option>
+    <!-- {{#each type}} -->
+    <option value="0">software</option>
+    <!-- {{/each}} -->
+  </select>
+</div>
+
+
+<div class="">
+  <label for="action">الإجراء المتبع</label>
+  <select class="action">
+    <option selected disabled hidden>اختر الإجراء</option>
+    <!-- {{#each action}} -->
+    <option value="1">software</option>
+    <!-- {{/each}} -->
+  </select>
+</div>
+
+<div class="">
+  <label for="part">مكان العطل</label>
+  <select class="part">
+    <option selected disabled hidden>المكان</option>
+    <!-- {{#each part}} -->
+    <option value="2">software</option>
+    <!-- {{/each}} -->
+  </select>
+</div>
+
+<div class="">
+  <label for="description">الوصف</label>
+  <input type="text" name="description" value="" placeholder="الوصف" class="description">
+</div>
+
 </section>

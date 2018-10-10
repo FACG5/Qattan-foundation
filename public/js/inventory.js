@@ -22,6 +22,10 @@ const netport = document.querySelector('.netport');
 const status = document.querySelector('.status');
 const addInventButton = document.querySelector('.addInventButton');
 
+// search classes
+const searchBrand = document.querySelector('.searchBrand');
+const searchDevice = document.querySelector('.searchDevice');
+
 const date = new Date();
   const datestring = ('0000' + date.getFullYear()).slice(-4) + '-' + ('00' + (date.getMonth() + 1)).slice(-2) + '-' + ('00' + date.getDate()).slice(-2);
     purchaseDate.value = datestring;
@@ -49,9 +53,16 @@ const collectData = () => ({
   netport: netport.value,
   status: status.value,
 });
+// SEARCH
+searchBrand.addEventListener('click', (e) => {
+console.log(searchBrand.value);
+});
+searchDevice.addEventListener('click', (e) => {
+console.log(e.target.value);
+});
 
+// Add Inventory Button Event Listener
 addInventButton.addEventListener('click', () => {
-
   fetch('/inventory', ({
     method: 'POST',
     credentials: 'same-origin',

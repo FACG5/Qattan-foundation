@@ -14,6 +14,20 @@ exports.getInventoryById = (InventoryId) => {
   return dbConnection.query(sql, [InventoryId]);
 };
 
+exports.getInventoryByDevice = (InventoryDevice) => {
+  const sql = {
+    text: 'SELECT * FROM inventory WHERE device = $1 ;',
+  };
+  return dbConnection.query(sql, [InventoryDevice]);
+};
+
+exports.getInventoryByBrand = (InventoryBrand) => {
+  const sql = {
+    text: 'SELECT * FROM inventory WHERE brand = $1 ;',
+  };
+  return dbConnection.query(sql, [InventoryBrand]);
+};
+
 exports.addInventory = (newInventory) => {
   const {
     inventoryId,
