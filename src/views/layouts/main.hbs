@@ -14,11 +14,15 @@
             </body>
         {{else}}
          <body>
-            {{>header}}
+            {{#if headerFound}}
+                {{>header}}
+            {{/if}}
             <main>
                 {{{body}}}
             </main>
-            {{footer}}
+            {{#if footerFound}}
+                {{footer}}
+            {{/if}}
         </body>
         {{/if}}
 
