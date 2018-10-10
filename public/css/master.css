@@ -1,5 +1,5 @@
-/*  
-                ----    General Style    ---- 
+/*
+                ----    General Style    ----
 */
 
 /*   #98012e   #c00036   #5a6e7b   #8e8378   #e5e5e5  #fff  */
@@ -21,10 +21,8 @@ ul{
 }
 
 
-/* 
-
-    ----    S M A L L        S C R E E N    ---- 
-
+/*
+    ----    S M A L L        S C R E E N    ----
 */
 
 @media only screen and (max-width:600px){
@@ -64,7 +62,7 @@ ul{
       }
       #sidebar.active {
         transform:perspective(1200px) rotateY(0deg);
-      } 
+      }
       #toggle-btn {
         position:absolute;
         left:30px;
@@ -96,7 +94,7 @@ ul{
       #toggle-btn.active span:nth-child(3) {
         top:-10px;
         transform:rotate(-45deg);
-      }   
+      }
       .sidebar .top-info{
         margin-bottom:5px;
         color: #CCC;
@@ -107,7 +105,7 @@ ul{
     }
     .sidebar .top-info P{
         font-size: 18px;
-    }   
+    }
       .mainli{
         color:#E5E5E5 !important;
         text-transform: capitalize;
@@ -150,7 +148,7 @@ ul{
         min-height: 100vh;
         font-family: sans-serif;
     }
-    
+
     h2.page-title {
         display: table;
         white-space: nowrap;
@@ -174,10 +172,8 @@ ul{
     }
 }
 
-/* 
-
-    ----    L A R G E      S C R E E N    ---- 
-
+/*
+    ----    L A R G E      S C R E E N    ----
 */
 
 @media(min-width:601px){
@@ -265,11 +261,12 @@ ul{
         min-height: 100vh;
         font-family: sans-serif;
     }
-    
+
     h2.page-title {
         display: table;
         white-space: nowrap;
         font-size: 33px;
+        height: 100%;S
         text-align: center;
         text-transform: uppercase;
         width: 100%;

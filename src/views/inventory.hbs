@@ -1,222 +1,240 @@
 <section>
-    <h2 class="page-title" >الأدوات/الأجهزة</h2>
-    <div class="inventory-view">
-{{#each inventories}}
-<h6>Inventory id {{this.id}}</h6>
-{{#if this.ass_no}}
-<h6>assign number {{this.ass_no}}</h6>
-{{/if}}
-{{#if this.inventory_id}}
-<h6>ID{{this.inventory_id}}</h6>
-{{/if}}
-{{#if this.device}}
-<h6>Device Type {{this.device}}</h6>
-{{/if}}
-{{#if this.name}}
-<h6>Name{{this.name}}</h6>
-{{/if}}
-{{#if this.brand}}
-<h6>Device Brand{{this.brand}}</h6>
-{{/if}}
-{{#if this.description}}
-<h6>Discription{{this.description}}</h6>
-{{/if}}
-{{#if this.cdkey}}
-<h6>CD Key{{this.cdkey}}</h6>
-{{/if}}
-{{#if this.employee}}
-<h6>employee (owner){{this.employee}}</h6>
-{{/if}}
-{{#if this.place}}
-<h6>Place{{this.place}}</h6>
-{{/if}}
-{{#if this.vendor}}
-<h6>vendor{{this.vendor}}</h6>
-{{/if}}
-{{#if this.price_usd}}
-<h6>Price{{this.price_usd}}</h6>
-{{/if}}
-{{#if this.price_nis}}
-<h6>Price/NIS{{this.price_nis}}</h6>
-{{/if}}
-{{#if this.purchase_date}}
-<h6>purchase date{{this.purchase_date}}</h6>
-{{/if}}
-{{#if this.warranty}}
-<h6>warranty{{this.warranty}}</h6>
-{{/if}}
-{{#if this.serial_no}}
-<h6>Serial Number{{this.serial_no}}</h6>
-{{/if}}
-{{#if this.processor}}
-<h6>processor{{this.processor}}</h6>
-{{/if}}
-{{#if this.ram}}
-<h6>Ram{{this.ram}}</h6>
-{{/if}}
-{{#if this.hd1}}
-<h6>hd1{{this.hd1}}</h6>
-{{/if}}
-{{#if this.hd2}}
-<h6>hd2{{this.hd2}}</h6>
-{{/if}}
-{{#if this.notes}}
-<h6>notes{{this.notes}}</h6>
-{{/if}}
-{{#if this.netport}}
-<h6>netport{{this.netport}}</h6>
-{{/if}}
-{{#if this.status}}
-<h6>status{{this.status}}</h6>
-{{/if }}
-<button type="button" name="button"> <a href="/updateInventoryPage/{{this.id}}">edit</a> </button>
-<hr>
-{{/each}}
-    </div>
-    <div class="addInventory">
-      <div class="search">
-        <select>
-          {{#each brands}}
-          <option value="{{this.brand}}">{{this.brand}}</option>
-          {{/each}}
-        </select>
+  <h2 class="page-title">الأدوات/الأجهزة</h2>
+  <div class="">
+     بلااااااه
+  </div>
+  <div class="">
+    <button type="button" name="button">عرض</button>
+    <button type="button" name="button">إضافة جديد</button>
+  </div>
 
-        <select>
-          {{#each devices}}
-          <option value="{{this.device}}">{{this.device}}</option>
-          {{/each}}
-        </select>
-      </div>
-<!-- ****************************************ADDING SECTION *********************************** -->
-<h1>أدخل البيانات </h1>
 <div class="">
-  <label for="id">ID</label>
-  <input type="number" name="id" value="1" placeholder="ID" class="inventoryId">
+    <div class="search">
+  <select>
+      {{#each brands}}
+      <option value="{{this.brand}}">{{this.brand}}</option>
+      {{/each}}
+    </select>
+
+  <select>
+      {{#each devices}}
+      <option value="{{this.device}}">{{this.device}}</option>
+      {{/each}}
+    </select>
+</div>
+{{#each inventories}}
+  <h6>Inventory id {{this.id}}</h6>
+  {{#if this.ass_no}}
+    <h6>assign number {{this.ass_no}}</h6>
+  {{/if}}
+  {{#if this.inventory_id}}
+    <h6>ID{{this.inventory_id}}</h6>
+  {{/if}}
+  {{#if this.device}}
+    <h6>Device Type {{this.device}}</h6>
+  {{/if}}
+  {{#if this.name}}
+    <h6>Name{{this.name}}</h6>
+  {{/if}}
+  {{#if this.brand}}
+    <h6>Device Brand{{this.brand}}</h6>
+  {{/if}}
+  {{#if this.description}}
+    <h6>Discription{{this.description}}</h6>
+  {{/if}}
+  {{#if this.cdkey}}
+    <h6>CD Key{{this.cdkey}}</h6>
+  {{/if}}
+  {{#if this.employee}}
+    <h6>employee (owner){{this.employee}}</h6>
+  {{/if}}
+  {{#if this.place}}
+    <h6>Place{{this.place}}</h6>
+  {{/if}}
+  {{#if this.vendor}}
+    <h6>vendor{{this.vendor}}</h6>
+  {{/if}}
+  {{#if this.price_usd}}
+    <h6>Price{{this.price_usd}}</h6>
+  {{/if}}
+  {{#if this.price_nis}}
+    <h6>Price/NIS{{this.price_nis}}</h6>
+  {{/if}}
+  {{#if this.purchase_date}}
+    <h6>purchase date{{this.purchase_date}}</h6>
+  {{/if}}
+  {{#if this.warranty}}
+    <h6>warranty{{this.warranty}}</h6>
+  {{/if}}
+  {{#if this.serial_no}}
+    <h6>Serial Number{{this.serial_no}}</h6>
+  {{/if}}
+  {{#if this.processor}}
+    <h6>processor{{this.processor}}</h6>
+  {{/if}}
+  {{#if this.ram}}
+    <h6>Ram{{this.ram}}</h6>
+  {{/if}}
+  {{#if this.hd1}}
+    <h6>hd1{{this.hd1}}</h6>
+  {{/if}}
+  {{#if this.hd2}}
+    <h6>hd2{{this.hd2}}</h6>
+  {{/if}}
+  {{#if this.notes}}
+    <h6>notes{{this.notes}}</h6>
+  {{/if}}
+  {{#if this.netport}}
+    <h6>netport{{this.netport}}</h6>
+  {{/if}}
+  {{#if this.status}}
+    <h6>status{{this.status}}</h6>
+  {{/if }}
+  <button type="button" name="button"> <a href="/updateInventoryPage/{{this.id}}">edit</a> </button>
+  <hr>
+{{/each}}
 </div>
 
+
+
+
+  <!-- ****************************************ADDING SECTION *********************************** -->
+
 <div class="">
-  <label for="device">Device</label>
-  <select class="device">
+  <h1>أدخل البيانات </h1>
+
+  <div class="">
+    <label for="id">ID</label>
+    <input type="number" name="id" value="1" placeholder="ID" class="inventoryId">
+  </div>
+
+  <div class="">
+    <label for="device">Device</label>
+    <select class="device">
     {{#each devices}}
     <option value="{{this.device}}">{{this.device}}</option>
     {{/each}}
   </select>
-</div>
+  </div>
 
-<div class="">
-  <label for="name">Name</label>
-  <input type="text" name="name" value=""placeholder="Name" class="name">
-</div>
+  <div class="">
+    <label for="name">Name</label>
+    <input type="text" name="name" value="" placeholder="Name" class="name">
+  </div>
 
-<div class="">
-  <label for="brand">Brand</label>
-  <select class="brand">
+  <div class="">
+    <label for="brand">Brand</label>
+    <select class="brand">
     {{#each brands}}
     <option value="{{this.brand}}">{{this.brand}}</option>
     {{/each}}
   </select>
-</div>
+  </div>
 
-<div class="">
-  <label for="description">description</label>
-  <input type="text" name="description" value=""placeholder="description" class="description">
-</div>
+  <div class="">
+    <label for="description">description</label>
+    <input type="text" name="description" value="" placeholder="description" class="description">
+  </div>
 
 
-<div class="">
-  <label for="cdkey">CD Key</label>
-  <input type="text" name="cdkey" value="" placeholder="CDKey" class="cdkey">
-</div>
+  <div class="">
+    <label for="cdkey">CD Key</label>
+    <input type="text" name="cdkey" value="" placeholder="CDKey" class="cdkey">
+  </div>
 
-<div class="">
-  <label for="employee">employee</label>
-  <select class="employee">
+  <div class="">
+    <label for="employee">employee</label>
+    <select class="employee">
     {{#each employees}}
     <option value="{{this.name}}">{{this.name}}</option>
     {{/each}}
   </select>
-</div>
+  </div>
 
-<div class="">
-  <label for="place">place</label>
-  <select class="place">
+  <div class="">
+    <label for="place">place</label>
+    <select class="place">
     {{#each places}}
     <option value="{{this.place}}">{{this.place}}</option>
     {{/each}}
   </select>
-</div>
+  </div>
 
-<div class="">
-  <label for="vendor">vendor</label>
-  <select class="vendor">
+  <div class="">
+    <label for="vendor">vendor</label>
+    <select class="vendor">
     {{#each vendors}}
     <option value="{{this.vendor}}">{{this.vendor}}</option>
     {{/each}}
   </select>
+  </div>
+
+  <div class="">
+    <label for="priceUsd">priceUsd</label>
+    <input type="number" name="priceUsd" value="1" placeholder="priceUsd" class="priceUsd">
+  </div>
+
+  <div class="">
+    <label for="priceNis">priceNis</label>
+    <input type="number" name="priceNis" value="1" placeholder="priceNis" class="priceNis">
+  </div>
+
+  <div class="">
+    <label for="purchaseDate">purchaseDate</label>
+    <input type="date" name="" value="" class="purchaseDate">
+  </div>
+
+  <div class="">
+    <label for="warranty">warranty</label>
+    <input type="number" name="" value="1" placeholder="warranty" class="warranty">
+  </div>
+
+  <div class="">
+    <label for="SerialNo">Serial No</label>
+    <input type="text" name="" value="" placeholder="Serial No" class="serialNo">
+  </div>
+
+  <div class="">
+    <label for="processor">processor</label>
+    <input type="text" name="" value="" placeholder="processor" class="processor">
+  </div>
+
+  <div class="">
+    <label for="ram">ram</label>
+    <input type="text" name="" value="" placeholder="ram" class="ram">
+  </div>
+
+  <div class="">
+    <label for="hd1">hd1</label>
+    <input type="number" name="" value="1" placeholder="hd1" class="hd1">
+  </div>
+
+  <div class="">
+    <label for="hd2">hd2</label>
+    <input type="number" name="" value="1" placeholder="hd2" class="hd2">
+  </div>
+
+  <div class="">
+    <label for="notes">notes</label>
+    <input type="text" name="" value="" placeholder="Note" class="notes">
+  </div>
+
+  <div class="">
+    <label for="netport">netport</label>
+    <input type="text" name="" value="" placeholder="netport" class="netport">
+  </div>
+
+  <div class="">
+    <label for="status">status</label>
+    <input type="number" name="" value="1" placeholder="status" class="status">
+  </div>
+
+
+  <button type="submit" name="button" class="addInventButton"> إضافة</button>
+
 </div>
 
-<div class="">
-  <label for="priceUsd">priceUsd</label>
-  <input type="number" name="priceUsd" value="1" placeholder="priceUsd" class="priceUsd">
-</div>
-
-<div class="">
-  <label for="priceNis">priceNis</label>
-  <input type="number" name="priceNis" value="1" placeholder="priceNis" class="priceNis">
-</div>
-
-<div class="">
-  <label for="purchaseDate">purchaseDate</label>
-  <input type="date" name="" value="" class="purchaseDate">
-</div>
-
-<div class="">
-  <label for="warranty">warranty</label>
-  <input type="number" name="" value="1" placeholder="warranty" class="warranty">
-</div>
-
-<div class="">
-  <label for="SerialNo">Serial No</label>
-  <input type="text" name="" value="" placeholder="Serial No" class="serialNo">
-</div>
-
-<div class="">
-  <label for="processor">processor</label>
-  <input type="text" name="" value="" placeholder="processor" class="processor">
-</div>
-
-<div class="">
-  <label for="ram">ram</label>
-  <input type="text" name="" value="" placeholder="ram" class="ram">
-</div>
-
-<div class="">
-  <label for="hd1">hd1</label>
-  <input type="number" name="" value="1" placeholder="hd1" class="hd1">
-</div>
-
-<div class="">
-  <label for="hd2">hd2</label>
-  <input type="number" name="" value="1" placeholder="hd2" class="hd2">
-</div>
-
-<div class="">
-  <label for="notes">notes</label>
-  <input type="text" name="" value="" placeholder="Note" class="notes">
-</div>
-
-<div class="">
-  <label for="netport">netport</label>
-  <input type="text" name="" value="" placeholder="netport" class="netport">
-</div>
-
-<div class="">
-  <label for="status">status</label>
-  <input type="number" name="" value="1" placeholder="status" class="status">
-</div>
 
 
-<button type="submit" name="button" class="addInventButton"> إضافة</button>
 
-    </div>
 </section>
