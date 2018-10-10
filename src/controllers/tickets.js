@@ -5,7 +5,7 @@ exports.get = (req, res, next) => {
     .then((response) => {
       const result = response.rows;
       res.render('tickets', {
-        title: 'طلبات All',
+        title: 'طلبات ',
         style: 'master',
         result,
         manager: true,

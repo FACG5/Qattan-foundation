@@ -20,7 +20,7 @@ exports.get = (req, res, next) => {
 exports.put = (req, res, next) => {
   const data = req.body;
   updateTicket(data)
-    .then(res.send(data))
+    .then(() => res.send(data))
     .catch((err) => {
       next(err);
     });

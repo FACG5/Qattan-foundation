@@ -48,7 +48,7 @@ const getSolvedCount = () => {
 
 const getNotSolvedCount = () => {
   const sql = {
-    text: 'SELECT COUNT(ticket_no) from ticket Where status_type NOT like $1',
+    text: 'SELECT COUNT(ticket_no) from ticket WHERE status_type NOT LIKE $1',
     values: ['solved'],
   };
   return dbConnection.query(sql);
@@ -56,7 +56,7 @@ const getNotSolvedCount = () => {
 
 const getNotSolved = () => {
   const sql = {
-    text: 'SELECT * from ticket Where status_type NOT LIKE $1',
+    text: 'SELECT * from ticket WHERE status_type NOT LIKE $1',
     values: ['solved'],
   };
   return dbConnection.query(sql);

@@ -19,10 +19,10 @@ router.route('/')
 router.route('/tickets')
   .get(tickets.get);
 
-router.route('/solved/:solved')
+router.route('/solved')
   .get(solved.get);
 
-router.route('/closed/:not')
+router.route('/not-solved')
   .get(notSolved.get);
 router.route('/')
   .get(homeManager.get);

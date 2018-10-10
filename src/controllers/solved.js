@@ -1,8 +1,7 @@
 const { getTicketByStatus } = require('../model/queries/ticket');
 
 exports.get = (req, res, next) => {
-  const data = req.params;
-  const { solved } = data;
+  const solved = 'solved';
   getTicketByStatus(solved)
     .then((response) => {
       const result = response.rows;
