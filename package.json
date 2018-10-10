@@ -38,6 +38,5 @@
     "pg": "^7.4.3",
     "sweetalert": "^2.1.0",
     "jsonwebtoken": "^8.3.0"
-
   }
 }
