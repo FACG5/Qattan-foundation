@@ -1,4 +1,4 @@
-/* global document fetch window */
+/* global document fetch */
 const inventoryId = document.querySelector('.inventoryId');
 const device = document.querySelector('.device');
 const name = document.querySelectorAll('.name')[1];
@@ -47,6 +47,8 @@ const collectData = () => ({
   netport: netport.value,
   status: status.value,
 });
+
+swal("Good job!", "You clicked the button!", "warning");
 
 addInventButton.addEventListener('click', () => {
 
