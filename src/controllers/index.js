@@ -10,6 +10,7 @@ const supportDetails = require('./supportDetails');
 const solved = require('./solved');
 const notSolved = require('./notSolved');
 const tickets = require('./tickets');
+const { clientError, serverError } = require('./error');
 
 router.get('/', homeManager.get);
 
@@ -41,4 +42,6 @@ router.route('/support/:id')
   .get(supportDetails.get)
   .put(supportDetails.put);
 
+router.use(clientError);
+router.use(serverError);
 module.exports = router;
