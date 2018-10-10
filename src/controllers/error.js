@@ -3,16 +3,21 @@ exports.clientError = (req, res) => {
     layout: 'error',
     title: 'Error 404',
     style_error: 'error',
-    statusCode: '404',
+    sCode: '404',
     errorMsg: 'Page not found',
   });
 };
 
-exports.serverError = (error, req, res) => {
+
+exports.serverError = (err, req, res, next) => {
+  if (req.method === 'POST') {
+    return res.status(err.status || 500).send({ Error: err.message || 'Internal Server Error' });
+  }
   res.status(500).render('error', {
     layout: 'error',
     title: 'Error 500',
-    statusCode: '500',
+    style_error: 'error',
+    sCode: '500',
     errorMsg: 'Internal Server Error',
   });
 };

@@ -1,5 +1,6 @@
 const {
-  getInventory, getInventoryById, addInventory, updateInventory, getEmployee, getBrand, getDevice, getPlace, getVendor
+  getInventory, getInventoryById, addInventory, updateInventory,
+  getEmployee, getBrand, getDevice, getPlace, getVendor,
 } = require('../model/queries/inventory');
 
 exports.viewInventory = async (req, res, next) => {
@@ -28,9 +29,11 @@ exports.viewInventory = async (req, res, next) => {
 };
 exports.postInventory = async (req, res, next) => {
   try {
-    console.log(req.body);
     const addInventorydb = await (addInventory(req.body));
-    console.log(addInventorydb.rowCount);
+    if (addInventorydb.rowCount === 1) {
+      return res.send({ result: 'تم الإضافة بنجاح' });
+    }
+    res.send({ Erorr: 'أعد المحاولة مرة أخرى' });
   } catch (error) {
     next(error);
   }
@@ -44,7 +47,7 @@ exports.updateInventoryPage = async (req, res, next) => {
     const devicesdb = await getDevice();
     const placesdb = await getPlace();
     const vendorsdb = await getVendor();
-    const PurchDate = JSON.stringify(inventorydb.rows[0].purchase_date).split('T')[0]+'"';
+    const PurchDate = `${JSON.stringify(inventorydb.rows[0].purchase_date).split('T')[0]}"`;
     console.log(JSON.parse(PurchDate));
     res.render('updateInventoryPage', {
       style: 'master',
@@ -63,7 +66,7 @@ exports.updateInventoryPage = async (req, res, next) => {
     next(error);
   }
 };
-exports.updateInventoryFun = async( req, res, next ) => {
+exports.updateInventoryFun = async (req, res, next) => {
   // const obj = {
   //   description: "coooo",
   //   employee: 'salwa',

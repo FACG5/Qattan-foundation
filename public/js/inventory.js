@@ -1,4 +1,4 @@
-/* global document fetch */
+/* global document fetch swal window */
 const inventoryId = document.querySelector('.inventoryId');
 const device = document.querySelector('.device');
 const name = document.querySelectorAll('.name')[1];
@@ -22,7 +22,9 @@ const netport = document.querySelector('.netport');
 const status = document.querySelector('.status');
 const addInventButton = document.querySelector('.addInventButton');
 
-console.log(name);
+const date = new Date();
+  const datestring = ('0000' + date.getFullYear()).slice(-4) + '-' + ('00' + (date.getMonth() + 1)).slice(-2) + '-' + ('00' + date.getDate()).slice(-2);
+    purchaseDate.value = datestring;
 
 const collectData = () => ({
   inventoryId: inventoryId.value,
@@ -48,8 +50,6 @@ const collectData = () => ({
   status: status.value,
 });
 
-swal("Good job!", "You clicked the button!", "warning");
-
 addInventButton.addEventListener('click', () => {
 
   fetch('/inventory', ({
@@ -62,15 +62,15 @@ addInventButton.addEventListener('click', () => {
   })).then(res => res.json())
     .then((res) => {
       if (res.Error) {
-        console.log(res.Error);
-        // errMsg.textContent = res.Error;
+        swal('خطأ ما', res.Error, 'error');
       } else {
-        console.log(res);
-        // window.location = res.result;
+        setTimeout(() => {
+          window.location = '/inventory';
+        }, 3000);
+        swal('تم الإضافة', res.result, 'success');
       }
     })
     .catch((error) => {
-      console.log(error);
-      // errMsg.textContent = 'هنالك خطأ ما ! ';
+      swal('خطأ ما', error.message, 'error');
     });
 });
