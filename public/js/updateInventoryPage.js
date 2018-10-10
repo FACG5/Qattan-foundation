@@ -1,4 +1,4 @@
-/* global document fetch window */
+/* global document fetch swal window */
 const description = document.querySelector('.description');
 const employee = document.querySelector('.employee');
 const place = document.querySelector('.place');
@@ -33,20 +33,24 @@ const collectData = () => ({
 
 
 updateInventButton.addEventListener('click', () => {
-console.log(collectData());
-fetch(`/updateInventoryPage/${id}`, {
+  fetch(`/updateInventoryPage/${id}`, {
     method: 'PUT',
     credentials: 'same-origin',
     headers: { 'Content-Type': 'application/json; charset=utf-8' },
     body: JSON.stringify(collectData()),
   })
-    .then(response => response.json())
-    .then((response) => {
-      // window.location = '/support';
-      // console.log("sucess",response);
+    .then(res => res.json())
+    .then((res) => {
+      if (res.Error) {
+        swal('خطأ ما', res.Error, 'error');
+      } else {
+        setTimeout(() => {
+          window.location = '/inventory';
+        }, 3000);
+        swal('تم الإضافة', res.result, 'success');
+      }
     })
-    .catch((err) => {
-      // error.textContent = 'THERE IS ERROR';
-      // console.log("errrrror",err);
+    .catch((error) => {
+      swal('خطأ ما', error.message, 'error');
     });
 });

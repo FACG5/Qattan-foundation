@@ -52,7 +52,6 @@ exports.updateInventoryPage = async (req, res, next) => {
     const placesdb = await getPlace();
     const vendorsdb = await getVendor();
     const PurchDate = `${JSON.stringify(inventorydb.rows[0].purchase_date).split('T')[0]}"`;
-    console.log(JSON.parse(PurchDate));
     res.render('updateInventoryPage', {
       style: 'master',
       title: 'الأجهزة',
@@ -71,23 +70,12 @@ exports.updateInventoryPage = async (req, res, next) => {
   }
 };
 exports.updateInventoryFun = async (req, res, next) => {
-  // const obj = {
-  //   description: "coooo",
-  //   employee: 'salwa',
-  //   place: 'place3',
-  //   warranty: 3,
-  //   processor: '3',
-  //   ram: 14,
-  //   hd1: 13,
-  //   hd2: 12,
-  //   notes: 'hh',
-  //   netport: 'b',
-  //   status: 0,
-  //   id:8,
-  // };
   try {
     const updateInventorydb = await (updateInventory(req.body));
-    console.log(updateInventorydb.rowCount);
+    if (updateInventorydb.rowCount === 1) {
+      return res.send({ result: 'تم التحديث بنجاح' });
+    }
+    res.send({ Erorr: 'أعد المحاولة مرة أخرى' });
   } catch (error) {
     next(error);
   }
