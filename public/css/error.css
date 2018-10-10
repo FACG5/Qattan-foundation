@@ -28,9 +28,9 @@
     color:  #5a6e7b;
     position: relative;
     top: 20px;
-    right: 20px; 
+    right: 20px;
     animation: rotate 5s reverse  linear infinite;
-  
+
 }
 .three{
     color: #8e8378;
@@ -56,7 +56,7 @@ background: linear-gradient(to right,#5a6e7b,#8e8378 );
 .Description {
     position: relative;
     top: -80px;
-    font-family: Monda; 
+    font-family: Monda;
     text-align: center;
     font-size: 50px;
     font-weight: 600;
@@ -64,5 +64,5 @@ background: linear-gradient(to right,#5a6e7b, #8e8378 );
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    letter-spacing: 5px; 
+    letter-spacing: 5px;
 }
