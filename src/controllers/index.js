@@ -11,6 +11,7 @@ const supportDetails = require('./supportDetails');
 const {
   viewInventory, postInventory, updateInventoryPage, updateInventoryFun,
 } = require('./inventory');
+const { clientError, serverError } = require('./error');
 
 router.route('/')
   .get(homeManager.get);
@@ -29,6 +30,7 @@ router.route('/support/:id')
   .get(supportDetails.get)
   .put(supportDetails.put);
 
+
 // view and add inventory route
 router.route('/inventory')
   .get(viewInventory)
@@ -39,5 +41,7 @@ router.route('/updateInventoryPage/:id')
   .get(updateInventoryPage)
   .put(updateInventoryFun);
 
+router.use(clientError);
+router.use(serverError);
 
 module.exports = router;
