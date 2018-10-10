@@ -36,6 +36,8 @@
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "pg": "^7.4.3",
-    "sweetalert": "^2.1.0"
+    "sweetalert": "^2.1.0",
+    "jsonwebtoken": "^8.3.0"
+
   }
 }

@@ -1,0 +1,45 @@
+<section>
+<h2 class="page-title" >الطلبات الاخيرة وطلبات قيد التنفيذ</h2>
+
+<!-- START  TICKET VIEW  -->
+    <div class="ticket-view">
+        <h3 class="view-title"> اليك  احدث الطلبات //</h3>
+        {{#each result}}
+        <table class="viewTable">
+            <thead>
+                <tr>
+                <th colspan="4">
+                    <p>بطاقة رقم :      <span>{{ticket_no}}</span></p>
+                </th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td>
+                        <p> الحالة : <span>{{type}}</span></p>
+                        <p>الأولوية :</p>
+                    </td>
+                     <td colspan="3"  class="view-link">
+                         <a  href="/{{type}}/{{ticket_no}}"> عرض التفاصيل <i class="far fa-eye"></i></a>
+                    </td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td>الموظف (صاحب البطاقة) :</td>
+                    <td>{{employee}}</td>
+                </tr>
+                <tr>
+                    <td>الموضوع :</td>
+                    <td>{{subject}}</td>
+                </tr>
+                  <tr>
+                    <td>النوع :</td>
+                    <td>{{problem_type}}</td>
+                </tr>
+            </tbody>
+        </table>
+        {{/each }}
+    </div>
+    <!-- END  TICKET VIEW  -->
+</section>

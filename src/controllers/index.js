@@ -1,8 +1,5 @@
-
-const express = require('express');
-
-const router = express.Router();
-
+const router = require('express').Router();
+const { getUser, postUser } = require('./login.js');
 const homeManager = require('./homeManager');
 const supports = require('./support');
 const loans = require('./loans');
@@ -11,10 +8,24 @@ const supportDetails = require('./supportDetails');
 const {
   viewInventory, postInventory, updateInventoryPage, updateInventoryFun,
 } = require('./inventory');
+const solved = require('./solved');
+const notSolved = require('./notSolved');
+const tickets = require('./tickets');
 const { clientError, serverError } = require('./error');
+const { getLogOut } = require('./logout');
+
 
 router.route('/')
   .get(homeManager.get);
+
+router.route('/tickets')
+  .get(tickets.get);
+
+router.route('/solved')
+  .get(solved.get);
+
+router.route('/not-solved')
+  .get(notSolved.get);
 
 router.route('/support')
   .get(supports.get);
@@ -30,7 +41,6 @@ router.route('/support/:id')
   .get(supportDetails.get)
   .put(supportDetails.put);
 
-
 // view and add inventory route
 router.route('/inventory')
   .get(viewInventory)
@@ -41,7 +51,18 @@ router.route('/updateInventoryPage/:id')
   .get(updateInventoryPage)
   .put(updateInventoryFun);
 
+// Login Routes
+router.route('/login')
+  .get(getUser)
+  .post(postUser);
+
+// logout
+router.route('/logout')
+  .get(getLogOut);
+
+
 router.use(clientError);
 router.use(serverError);
+
 
 module.exports = router;
