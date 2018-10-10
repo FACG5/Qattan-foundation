@@ -16,7 +16,7 @@ const getAllTicket = () => {
 
 const getTicketByName = (name) => {
   const sql = {
-    text: 'SELECT * FROM ticket Where employee = $1;',
+    text: 'SELECT * FROM ticket WHERE employee = $1;',
     values: [name],
   };
   return dbConnection.query(sql);
@@ -24,7 +24,7 @@ const getTicketByName = (name) => {
 
 const getTicketDetails = (id) => {
   const sql = {
-    text: 'SELECT * FROM ticket Where ticket_no = $1;',
+    text: 'SELECT * FROM ticket WHERE ticket_no = $1;',
     values: [id],
   };
   return dbConnection.query(sql);
@@ -32,14 +32,14 @@ const getTicketDetails = (id) => {
 
 const getTicketCount = () => {
   const sql = {
-    text: 'SELECT COUNT(ticket_no) from ticket',
+    text: 'SELECT COUNT(ticket_no) FROM ticket',
   };
   return dbConnection.query(sql);
 };
 
 const getSolvedCount = () => {
   const sql = {
-    text: 'SELECT COUNT(ticket_no) from ticket Where status_type like $1',
+    text: 'SELECT COUNT(ticket_no) FROM ticket WHERE status_type LIKE $1',
     values: ['solved'],
   };
   return dbConnection.query(sql);
@@ -47,7 +47,7 @@ const getSolvedCount = () => {
 
 const getNotSolvedCount = () => {
   const sql = {
-    text: 'SELECT COUNT(ticket_no) from ticket Where status_type like $1',
+    text: 'SELECT COUNT(ticket_no) FROM ticket WHERE status_type LIKE $1',
     values: ['not_solved'],
   };
   return dbConnection.query(sql);
@@ -55,7 +55,7 @@ const getNotSolvedCount = () => {
 
 const getSupports = () => {
   const sql = {
-    text: 'SELECT * FROM ticket WHERE type like $1 and status_type NOT LIKE $2;',
+    text: 'SELECT * FROM ticket WHERE type LIKE $1 AND status_type NOT LIKE $2;',
     values: ['support', 'solved'],
   };
   return dbConnection.query(sql);
@@ -63,7 +63,7 @@ const getSupports = () => {
 
 const getLoans = () => {
   const sql = {
-    text: 'SELECT * FROM ticket WHERE type like $1 and status_type NOT LIKE $2;',
+    text: 'SELECT * FROM ticket WHERE type LIKE $1 AND status_type NOT LIKE $2;',
     values: ['loan', 'solved'],
   };
   return dbConnection.query(sql);
@@ -71,7 +71,7 @@ const getLoans = () => {
 
 const getTicketByStatus = (status) => {
   const sql = {
-    text: 'SELECT * FROM ticket Where status_type like $1',
+    text: 'SELECT * FROM ticket WHERE status_type LIKE $1',
     values: [status],
   };
   return dbConnection.query(sql);
@@ -79,7 +79,7 @@ const getTicketByStatus = (status) => {
 const getTicketByPeriod = (data) => {
   const { minPeriod, maxPeriod } = data;
   const sql = {
-    text: 'SELECT * FROM ticket Where ticket_date between $1 and $2 order by ticket_date desc',
+    text: 'SELECT * FROM ticket WHERE ticket_date BETWEEN $1 and $2 ORDER BY ticket_date ASC',
     values: [minPeriod, maxPeriod],
   };
   return dbConnection.query(sql);

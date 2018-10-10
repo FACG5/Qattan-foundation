@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Monda');
+
+body{
+  overflow: hidden;
+}
+
+.cogs {
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    display: block;
+    position: relative;
+    top: 50px;
+}
+
+.one{
+    color:#98012e;
+    position: relative;
+    animation: rotate 5s reverse linear infinite;
+
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+.two{
+    color:  #5a6e7b;
+    position: relative;
+    top: 20px;
+    right: 20px;
+    animation: rotate 5s reverse  linear infinite;
+
+}
+.three{
+    color: #8e8378;
+    position: relative;
+    top: -15px;
+    left: -15px;
+    animation: rotate 5s reverse linear infinite;
+
+}
+.MainTitle{
+    font-family: Monda;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 700;
+background: linear-gradient(to right,#5a6e7b,#8e8378 );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 5px;
+    position: relative;
+    top: -45px;
+}
+.Description {
+    position: relative;
+    top: -80px;
+    font-family: Monda;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+background: linear-gradient(to right,#5a6e7b, #8e8378 );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 5px;
+}

@@ -2,8 +2,10 @@ const express = require('express');
 const path = require('path');
 const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const compression = require('compression');
 const controllers = require('./controllers');
+const unlockCookie = require('./middlewares');
 
 const app = express();
 
@@ -28,6 +30,9 @@ app.engine(
 
 app.set('port', process.env.PORT || 5000);
 app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use(cookieParser());
+app.use(unlockCookie);
 app.use(controllers);
+
 
 module.exports = app;
