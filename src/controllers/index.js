@@ -7,6 +7,7 @@ const loanDetails = require('./loanDetails');
 const supportDetails = require('./supportDetails');
 const { clientError, serverError } = require('./error');
 const { getLogOut } = require('./logout');
+const addTicket = require('./addTicket');
 
 router.route('/')
   .get(homeManager.get);
@@ -33,6 +34,10 @@ router.route('/login')
 // logout
 router.route('/logout')
   .get(getLogOut);
+
+router.route('/add-ticket')
+  .get(addTicket.get)
+  .post(addTicket.post);
 
 router.use(clientError);
 router.use(serverError);
