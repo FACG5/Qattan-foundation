@@ -7,6 +7,14 @@ const getLatestTicket = () => {
   return dbConnection.query(sql);
 };
 
+const getAllTicket = () => {
+  const sql = {
+    text: 'SELECT * FROM ticket ORDER BY ticket_no DESC',
+  };
+  return dbConnection.query(sql);
+};
+
+
 const getTicketByName = (name) => {
   const sql = {
     text: 'SELECT * FROM ticket WHERE employee = $1;',
@@ -40,8 +48,16 @@ const getSolvedCount = () => {
 
 const getNotSolvedCount = () => {
   const sql = {
-    text: 'SELECT COUNT(ticket_no) FROM ticket WHERE status_type LIKE $1',
-    values: ['not_solved'],
+    text: 'SELECT COUNT(ticket_no) from ticket WHERE status_type NOT LIKE $1',
+    values: ['solved'],
+  };
+  return dbConnection.query(sql);
+};
+
+const getNotSolved = () => {
+  const sql = {
+    text: 'SELECT * from ticket WHERE status_type NOT LIKE $1',
+    values: ['solved'],
   };
   return dbConnection.query(sql);
 };
@@ -65,7 +81,7 @@ const getLoans = () => {
 const getTicketByStatus = (status) => {
   const sql = {
     text: 'SELECT * FROM ticket WHERE status_type LIKE $1',
-    values: [status],
+    values: [`${status}%`],
   };
   return dbConnection.query(sql);
 };
@@ -102,11 +118,13 @@ const updateTicket = (data) => {
 
 module.exports = {
   getLatestTicket,
+  getAllTicket,
   getTicketByName,
   getTicketDetails,
   getTicketCount,
   getSolvedCount,
   getNotSolvedCount,
+  getNotSolved,
   getSupports,
   getLoans,
   getTicketByStatus,

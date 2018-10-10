@@ -17,10 +17,92 @@ a:hover{
     text-decoration: none;
 }
 ul{
-    list-style: none;
+    list-style: block;
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: #98012e; 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #c00036; 
 }
 
 
+.ticket-view{
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 20px;
+    overflow: hidden;
+}
+.ticket-view .view-title{
+    margin-bottom: 5%;
+    font-size: 25px;
+}
+table.viewTable {
+    background-color: #fff;
+    width: 80%;
+    border-collapse: collapse;
+    padding: 15px;
+    margin-bottom: 50px;
+    box-shadow: 1px 1px 3px 2px #5a6e7b47;
+  }
+  table.viewTable td, table.viewTable th {
+    border-bottom: 1px dashed #AAAAAA;
+    padding: 3px 15px;
+  }
+  table.viewTable tbody td {
+    font-size: 14px;
+    text-transform: capitalize;
+  }
+  table.viewTable tr:nth-child(even) {
+    background: #fff;
+  }
+  table.viewTable thead {
+    border-bottom: 1px dashed #444444;
+  }
+  table.viewTable thead th {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: right;
+    border-bottom: 1px dashed #444444;
+  }
+  
+  table.viewTable tfoot {
+    font-size: 14px;
+    font-weight: bold;
+    border-top: 1px solid #444444;
+  }
+  table.viewTable tfoot td {
+    font-size: 14px;
+  }
+  
+  
+  
+  .view-link  {
+    text-align: center;
+  }
+  
+  .view-link a, .more-link{
+    display: inline-block;
+    color: #c00036 !important;
+    padding: 2px 8px;
+    border-radius: 5px;
+  }
+  ul.list{
+      width:70%;
+  }
+ ul.list li.list-item{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    font-size: 18px;
+    border-bottom: 1px solid #5a6e7b;
+  }
 /* 
 
     ----    S M A L L        S C R E E N    ---- 
@@ -37,6 +119,7 @@ ul{
         padding: 10px;
         position: fixed;
         width: 100%;
+        z-index: 1000;
         box-shadow: 1px 1px 1px 2px rgba(0,0,0,0.2)
     }
     header .title{
@@ -48,6 +131,12 @@ ul{
     }
     header .logo img{
         width: 100%;
+    }
+    .sidebar{
+        position: fixed;
+        top:0;
+        left:0;
+        z-index: 1000;
     }
     #sidebar {
         position:absolute;
@@ -172,6 +261,24 @@ ul{
     h2.page-title::before{
         left: 1.5%;
     }
+    .ticket-view{
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 20px;
+        overflow: hidden;
+    }
+    .ticket-view .view-title{
+        margin-bottom: 5%;
+        font-size:18px;
+    }
+    table.viewTable {
+        background-color: #fff;
+        width: 90%;
+        margin: 0 auto 15px auto;
+        border-collapse: collapse;
+        padding:12px;
+        box-shadow: 1px 1px 3px 2px #5a6e7b47;
+      }
 }
 
 /* 
@@ -191,7 +298,7 @@ ul{
         position: fixed;
         width: 100%;
         z-index: 1000;
-        box-shadow: 1px 1px 1px 2px rgba(0,0,0,0.2)
+        box-shadow: 1px 1px 1px 2px #5a6e7b47;
     }
     header .title{
         font-family: 'Mada', sans-serif;
@@ -264,6 +371,7 @@ ul{
         overflow: hidden;
         min-height: 100vh;
         font-family: sans-serif;
+        overflow-x: scroll;
     }
     
     h2.page-title {
