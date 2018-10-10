@@ -21,6 +21,8 @@ exports.get = (req, res, next) => {
         title: 'الرئيسية',
         style: 'employee',
         dom: 'employee',
+        headerFound: true,
+        footerFound: true,
         manager: false,
         resultSolved,
         resultWaiting,
