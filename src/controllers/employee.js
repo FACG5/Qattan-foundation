@@ -9,11 +9,11 @@ exports.get = (req, res, next) => {
       const result = (response.rows);
       const resultSolved = [];
       const resultWaiting = [];
-      result.forEach((element) => {
-        if (element.status_type === 'solved') {
-          resultSolved.push(element);
+      result.forEach((ticket) => {
+        if (ticket.status_type === 'solved') {
+          resultSolved.push(ticket);
         } else {
-          resultWaiting.push(element);
+          resultWaiting.push(ticket);
         }
       });
 
