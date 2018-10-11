@@ -1,0 +1,29 @@
+/*
+----   F O R M S       S T Y L E    ---- 
+*/
+
+.form{
+    padding: 5px 15px;
+    display: grid;
+    grid-template-columns: 25% 75%;
+} 
+
+.form input,select,option{
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+}
+.form textarea{
+    height: 160px;
+    resize: vertical;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.tab-btn{
+    text-align: center;
+    display: block;
+    width:30%;
+    margin: 20px auto 0 auto;
+}

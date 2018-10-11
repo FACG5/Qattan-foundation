@@ -1,5 +1,26 @@
 /* global document fetch */
 
+function move(icon) {
+  icon.classList.toggle('change');
+}
+
+// for the add ticket page
+const menu = document.getElementsByClassName('overlay')[0];
+const show = () => {
+  menu.classList.toggle('change');
+};
+
+const addCard = document.querySelector('.card');
+const rotateSupport = document.querySelector('#rotate-support');
+const rotateLoan = document.querySelector('#rotate-loan');
+
+rotateSupport.addEventListener('click', () => {
+  addCard.classList.toggle('is-flipped');
+});
+
+rotateLoan.addEventListener('click', () => {
+  addCard.classList.toggle('is-flipped');
+});
 
 // sfor the animated menue bar icon
 

@@ -3,10 +3,11 @@ const { addTicket } = require('../model/queries/ticket');
 exports.get = (req, res) => {
   res.render('addTicket', {
     title: 'اضافة تذكرة',
-    // style: 'employee',
+    style: 'employee',
+    style_special: 'form',
     dom: 'addTicket',
-    // headerFound: true,
-    // footerFound: true,
+    headerFound: true,
+    footerFound: true,
     manager: false,
   });
 };
