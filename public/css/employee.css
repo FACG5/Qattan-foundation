@@ -1,0 +1,344 @@
+
+/*  
+                ----    General Style    ---- 
+*/
+
+/*   #98012e   #c00036   #5a6e7b   #8e8378   #e5e5e5  #fff  */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Mada', sans-serif;
+ }
+ a,
+ a:active,
+ a:visited,
+ a:hover{
+     color: #ffffff;
+     text-decoration: none;
+ }
+ ul{
+     list-style: none;
+ }
+ 
+body {
+    background-color: #E5E5E5;
+    min-height: 800px;
+    color: #5C6F7C;
+}
+.employee-section{
+    margin-top: 100px;
+    min-height: 100vh;
+}
+.ticket-view{
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 20px;
+    overflow: hidden;
+}
+.ticket-view .view-title{
+    margin-bottom: 5%;
+    font-size: 25px;
+}
+table.viewTable {
+    background-color: #fff;
+    width: 80%;
+    border-collapse: collapse;
+    padding: 15px;
+    margin-bottom: 50px;
+    box-shadow: 1px 1px 3px 2px #5a6e7b47;
+  }
+  table.viewTable td, table.viewTable th {
+    border-bottom: 1px dashed #AAAAAA;
+    padding: 3px 15px;
+  }
+  table.viewTable tbody td {
+    font-size: 14px;
+    text-transform: capitalize;
+  }
+  table.viewTable tr:nth-child(even) {
+    background: #fff;
+  }
+  table.viewTable thead {
+    border-bottom: 1px dashed #444444;
+  }
+  table.viewTable thead th {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: right;
+    border-bottom: 1px dashed #444444;
+  }
+  
+  table.viewTable tfoot {
+    font-size: 14px;
+    font-weight: bold;
+    border-top: 1px solid #444444;
+  }
+  table.viewTable tfoot td {
+    font-size: 14px;
+  }
+  
+  
+  
+  .view-link  {
+    text-align: center;
+  }
+  
+  .view-link a, .more-link{
+    display: inline-block;
+    color: #c00036 !important;
+    padding: 2px 8px;
+    border-radius: 5px;
+  }
+nav {
+    position: fixed;
+    width: 100%;
+    height: 90px;
+    margin-bottom: 100px;
+    z-index: 10000;
+    top: 0;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+}
+/*logo*/
+.logo-img {
+    width: 150px;
+    height: 75px;
+    margin-left: 50px;
+    margin-top: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+/*logo*/
+/*Hamburger bar icon*/
+.icon {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 8px;
+    right: 0;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.hamburger {
+    width: 30px;
+    height: 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(179, 8, 56, 0.932);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    transition: .5s;
+}
+
+.hamburger:before,
+.hamburger:after {
+    content: '';
+    width: 30px;
+    height: 3px;
+    position: absolute;
+    background-color: rgba(179, 8, 56, 0.932);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    transition: .5s;
+}
+
+.hamburger:before {
+    top: 10px;
+}
+
+.hamburger:after {
+    top: -10px;
+}
+
+.icon.change .hamburger {
+    background: rgba(0, 0, 0, 0);
+    box-shadow: none;
+}
+
+.icon.change .hamburger:before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.icon.change .hamburger:after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+.overlay {
+    position: fixed;
+    top:0;
+    left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,.8);
+  z-index: 5;
+  overflow: hidden;
+  display: none;
+  transition: 0.5s;
+}
+.change {
+    display: block;
+}
+.overlay-content {
+
+    margin-top: 100px;
+    z-index: 6;     
+    text-align: center;
+    
+}
+.overlay-content a{
+    margin: 20px 0 20px 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #777;
+    font-size: 30px;
+    color: white;
+    font-weight: 700;
+    display: block;
+    text-decoration: none;
+}
+.overlay-content a:hover {
+    color: rgba(179, 8, 56, 0.932);
+    transition: 0.3s;
+}
+/*  ------- ADD     SECTION      ------ */
+.form{
+    margin-bottom: 5px;
+}
+.tabs{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.tab-btn{
+    width: 150px;
+    height: 30px;   
+    border: none;
+    background-color: rgba(179, 8, 56, 0.932);
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-right: 15px;
+    outline: none;
+}
+.tab-btn:hover{
+    background-color: #5C6F7C;
+    box-shadow: 4px 6px 5px 1px rgba(0,0,0,.2);
+    cursor: pointer;
+   }
+.tab-btn:active{
+    box-shadow: 2px 4px 5px 1px rgba(0,0,0,.2);
+
+}
+
+.content{
+    /* background-color: #fff; */
+    width: 50%;
+    height: 480px;
+    text-align: center;
+    margin: 0 auto;
+    box-shadow: 0 0 10px 1px rgba(0,0,0,.2);
+    margin-top: 20px;
+    display: none;
+}
+
+.title{
+    color: #5C6F7C;
+    padding: 20px;
+    width:80%;
+    min-height: 100px;
+    margin: 5px auto 5px auto;
+    font-size: 18px;
+    font-weight: 600;   
+    position: relative; 
+}
+.title a {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #c00036 !important;
+    transition: all 0.6s  ease-in-out;
+}
+.title a:hover{
+    transform: scale(1.1,1.1);
+    color: #98012e;
+}
+form {
+    
+    margin-top: 20px;
+}
+input {
+    display: block;
+    margin-bottom: 20px;
+    position: relative;
+    padding: 5px;
+    right: -70px;
+   direction: rtl; 
+    border: none;
+    height: 30px;
+    width: 250px;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px 1px rgba(0,0,0,.3);
+    outline: none;
+}
+textarea {
+    display: block;
+    direction: rtl;
+    box-shadow: 0 3px 10px 1px rgba(0,0,0,.3);
+    height: 65px;
+    width: 250px;
+    position: relative;
+    padding: 5px;
+    right: -70px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 25px;
+    outline: none;
+}
+
+.switch {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 80%;
+    margin: 20px auto 20px auto;
+}
+
+.switch button {
+    border-radius:12px;
+    cursor: pointer;
+    width: 50%;
+    margin: 0 auto;
+    padding: 12px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border: solid 2px #c00036;
+    outline: none;
+    background: #c00036;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 0 9px rgba(0,0,0,0.5);
+}
+.switch .tap {
+    border-radius:12px;
+    cursor: pointer;
+    width: 50%;
+    margin: 0 auto;
+    padding: 12px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border: solid 2px #c00036;
+    outline: none;
+    background: none;
+    color: #c00036;
+    font-weight: bold;
+    box-shadow: 0 0 9px rgba(0,0,0,0.5);
+}
+.view-section{
+    background: #fff;
+    width:80%;
+    margin: 20px auto;
+    padding-top: 15px;
+}

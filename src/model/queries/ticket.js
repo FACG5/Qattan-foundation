@@ -2,18 +2,17 @@ const dbConnection = require('../database/dbConnection');
 
 const getLatestTicket = () => {
   const sql = {
-    text: 'SELECT * FROM ticket ORDER BY ticket_no DESC',
+    text: 'SELECT * FROM ticket ORDER BY ticket_no DESC LIMIT 5;',
   };
   return dbConnection.query(sql);
 };
 
 const getAllTicket = () => {
   const sql = {
-    text: 'SELECT * FROM ticket ORDER BY ticket_no DESC',
+    text: 'SELECT * FROM ticket ORDER BY ticket_no DESC;',
   };
   return dbConnection.query(sql);
 };
-
 
 const getTicketByName = (name) => {
   const sql = {
@@ -62,6 +61,14 @@ const getNotSolved = () => {
   return dbConnection.query(sql);
 };
 
+const getSolved = () => {
+  const sql = {
+    text: 'SELECT * from ticket WHERE status_type LIKE $1',
+    values: ['solved'],
+  };
+  return dbConnection.query(sql);
+};
+
 const getSupports = () => {
   const sql = {
     text: 'SELECT * FROM ticket WHERE type LIKE $1 AND status_type NOT LIKE $2;',
@@ -85,7 +92,8 @@ const getTicketByStatus = (status) => {
   };
   return dbConnection.query(sql);
 };
-const getTicketByPeriod = (minPeriod, maxPeriod) => {
+const getTicketByPeriod = (data) => {
+  const { minPeriod, maxPeriod } = data;
   const sql = {
     text: 'SELECT * FROM ticket WHERE ticket_date BETWEEN $1 and $2 ORDER BY ticket_date ASC',
     values: [minPeriod, maxPeriod],
@@ -131,4 +139,5 @@ module.exports = {
   getTicketByPeriod,
   addTicket,
   updateTicket,
+  getSolved,
 };

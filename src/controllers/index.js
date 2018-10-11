@@ -5,13 +5,17 @@ const supports = require('./support');
 const loans = require('./loans');
 const loanDetails = require('./loanDetails');
 const supportDetails = require('./supportDetails');
+const {
+  viewInventory, postInventory, updateInventoryPage, updateInventoryFun,
+} = require('./inventory');
+const employee = require('./employee');
+const reports = require('./reports');
 const solved = require('./solved');
 const notSolved = require('./notSolved');
 const tickets = require('./tickets');
 const { clientError, serverError } = require('./error');
 const { getLogOut } = require('./logout');
 
-router.get('/', homeManager.get);
 
 router.route('/')
   .get(homeManager.get);
@@ -24,14 +28,16 @@ router.route('/solved')
 
 router.route('/not-solved')
   .get(notSolved.get);
-router.route('/')
-  .get(homeManager.get);
 
 router.route('/support')
   .get(supports.get);
 
 router.route('/loans')
   .get(loans.get);
+
+router.route('/report')
+  .get(reports.get)
+  .post(reports.post);
 
 router.route('/loan/:id')
   .get(loanDetails.get)
@@ -41,6 +47,18 @@ router.route('/support/:id')
   .get(supportDetails.get)
   .put(supportDetails.put);
 
+// view and add inventory route
+router.route('/inventory')
+  .get(viewInventory)
+  .post(postInventory);
+
+// clicking on edit button will move to new page and route
+router.route('/updateInventoryPage/:id')
+  .get(updateInventoryPage)
+  .put(updateInventoryFun);
+
+router.route('/home-employee')
+  .get(employee.get);
 // Login Routes
 router.route('/login')
   .get(getUser)
@@ -49,6 +67,7 @@ router.route('/login')
 // logout
 router.route('/logout')
   .get(getLogOut);
+
 
 router.use(clientError);
 router.use(serverError);

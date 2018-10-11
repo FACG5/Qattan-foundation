@@ -7,10 +7,10 @@
             <body>
                 {{>headerManager}}
                 <main>
-                    {{>sidebarManager}}
+                    {{>sidebarManager parameter=nameU}}
                     {{{body}}}
                 </main>
-                {{{footer}}}
+                {{>footer}}
             </body>
         {{else}}
          <body>
@@ -21,15 +21,15 @@
                 {{{body}}}
             </main>
             {{#if footerFound}}
-                {{footer}}
+                 {{>footer}}
             {{/if}}
         </body>
         {{/if}}
 
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     {{#if dom}}
         <script src="/js/{{dom}}.js"></script>
     {{/if}}
-
    {{#if script}}
     <script src="/js/{{script}}.js"></script>
     {{/if}}

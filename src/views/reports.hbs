@@ -1,0 +1,68 @@
+<section>
+    {{!--
+    <h2 class="page-title">التقارير</h2> --}}
+
+
+    <div class="switch">
+        <button type="submit" class="btn-switch" ID="period-button">period</button>
+        <button type="submit" class="btn-switch tap" ID="status-button">status</button>
+        <button type="submit" class="btn-switch" ID="type-button">type</button>
+    </div>
+
+    <div class="period-section">
+        <div class="ticket-view">
+            <h3>اليك التقارير</h3>
+            <label for="min-date">Choose Min. date:</label>
+            <input type="date" name="min-date" id="min-date">
+            <br>
+            <label for="max-date">Choose Max. date:</label>
+            <input type="date" name="max-date" id="max-date">
+            <br>
+            <button type="submit" id="btn-period">Print The Result</button>
+            <p class="error"></p>
+
+            <div class="ticket-list"></div>
+
+        </div>
+    </div>
+
+
+
+
+    <div class="report">
+        <div class="switch switch-status">
+            <button type="submit" class="btn-switch" ID="solved-button">Done</button>
+            <button type="submit" class="btn-switch tap" ID="not-solved-button">Not Solved</button>
+            <button type="submit" class="btn-switch tap" ID="in-progress-button">in progress</button>
+        </div>
+
+        <div class="switch switch-type">
+            <button type="submit" class="btn-switch" ID="loan-button">Loans</button>
+            <button type="submit" class="btn-switch tap" ID="support-button">support</button>
+        </div>
+
+        <div class="filter">
+            {{#each result}}
+            <div class="{{status_type}}">
+                <div class="{{type}}">
+                    <a href="{{type}}/{{ticket_no}}">
+                        <ul class="ticket-list">
+                            <li>{{employee}}</li>
+                            <li>{{ticket_date}}</li>
+                            <li>{{subject}}</li>
+                            <li>{{problem_type}}</li>
+                            <li>{{status_type}}</li>
+                            <li>{{type}}</li>
+                            <li>{{employee}}</li>
+                            <li>{{it_employee}}</li>
+                            <li>{{technical_desc}}</li>
+                        </ul>
+                    </a>
+                    <hr> 
+                </div>
+            </div>
+        {{/each }}
+        </div>
+    </div>
+
+</section>

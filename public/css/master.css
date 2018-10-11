@@ -1,5 +1,5 @@
-/*  
-                ----    General Style    ---- 
+/*
+                ----    General Style    ----
 */
 
 /*   #98012e   #c00036   #5a6e7b   #8e8378   #e5e5e5  #fff  */
@@ -9,6 +9,18 @@
    box-sizing: border-box;
    font-family: 'Mada', sans-serif;
 }
+
+/*
+             ------     SWEET ALERT STYLE       ------
+*/
+/* .swal-modal {
+  background-color: rgba(63,255,106,0.69);
+  border: 3px solid white;
+} */
+
+/*
+             ------     END OF SWEET ALERT STYLE       ------
+*/
 a,
 a:active,
 a:visited,
@@ -23,14 +35,14 @@ ul{
     width: 8px;
 }
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey; 
+    box-shadow: inset 0 0 5px grey;
 }
- 
+
 ::-webkit-scrollbar-thumb {
-    background: #98012e; 
+    background: #98012e;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #c00036; 
+    background: #c00036;
 }
 
 
@@ -72,7 +84,7 @@ table.viewTable {
     text-align: right;
     border-bottom: 1px dashed #444444;
   }
-  
+
   table.viewTable tfoot {
     font-size: 14px;
     font-weight: bold;
@@ -81,13 +93,13 @@ table.viewTable {
   table.viewTable tfoot td {
     font-size: 14px;
   }
-  
-  
-  
+
+
+
   .view-link  {
     text-align: center;
   }
-  
+
   .view-link a, .more-link{
     display: inline-block;
     color: #c00036 !important;
@@ -103,9 +115,9 @@ table.viewTable {
     font-size: 18px;
     border-bottom: 1px solid #5a6e7b;
   }
-/* 
+/*
 
-    ----    S M A L L        S C R E E N    ---- 
+    ----    S M A L L        S C R E E N    ----
 
 */
 
@@ -153,7 +165,7 @@ table.viewTable {
       }
       #sidebar.active {
         transform:perspective(1200px) rotateY(0deg);
-      } 
+      }
       #toggle-btn {
         position:absolute;
         left:30px;
@@ -185,7 +197,7 @@ table.viewTable {
       #toggle-btn.active span:nth-child(3) {
         top:-10px;
         transform:rotate(-45deg);
-      }   
+      }
       .sidebar .top-info{
         margin-bottom:5px;
         color: #CCC;
@@ -196,7 +208,7 @@ table.viewTable {
     }
     .sidebar .top-info P{
         font-size: 18px;
-    }   
+    }
       .mainli{
         color:#E5E5E5 !important;
         text-transform: capitalize;
@@ -239,7 +251,7 @@ table.viewTable {
         min-height: 100vh;
         font-family: sans-serif;
     }
-    
+
     h2.page-title {
         display: table;
         white-space: nowrap;
@@ -281,10 +293,8 @@ table.viewTable {
       }
 }
 
-/* 
-
-    ----    L A R G E      S C R E E N    ---- 
-
+/*
+    ----    L A R G E      S C R E E N    ----
 */
 
 @media(min-width:601px){
@@ -373,7 +383,7 @@ table.viewTable {
         font-family: sans-serif;
         overflow-x: scroll;
     }
-    
+
     h2.page-title {
         display: table;
         white-space: nowrap;
@@ -397,3 +407,44 @@ table.viewTable {
         left: 1.5%;
     }
 }
+
+/* SWEET ALLERTS STYLE */
+
+.swal-overlay {
+
+  }
+.swal-modal {
+  border: 1px solid #c00036;
+  border-radius: 15px;
+  text-align: center;
+}
+.swal-title {
+    margin: 0px;
+    font-size: 20px;
+    margin-bottom: 28px;
+  }
+  .swal-text {
+    padding: 17px;
+    display: block;
+    margin: 12px;
+    text-align: center;
+    color: #c00036;
+  }
+  .swal-footer {
+    margin-top:12px;
+    overflow: hidden;
+    text-align: center;
+     border-top: 1px solid rgb(194, 194, 192);
+  }
+  .swal-button {
+    padding: 7px 19px;
+    border-radius: 2px;
+    background-color: #c00036;
+    font-size: 15px;
+    color:#fff;
+    border: 1px solid #444444;
+    font-weight: 700px;
+  }
+  .swal-icon{
+      width:120px;
+  }

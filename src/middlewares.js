@@ -1,9 +1,9 @@
-const jwt = require('jsonwebtoken');
+const { verify } = require('jsonwebtoken');
 
-const unlockCookie = (req, res, next) => {
+exports.Auth = (req, res, next) => {
   if (req.cookies.token) {
     try {
-      const decoded = jwt.verify(req.cookies.token, process.env.SECRET);
+      const decoded = verify(req.cookies.token, process.env.SECRET);
       res.locals.unlockCookie = decoded;
     } catch (err) {
       res.locals.unlockCookie = null;
@@ -13,5 +13,3 @@ const unlockCookie = (req, res, next) => {
   }
   next();
 };
-
-module.exports = unlockCookie;

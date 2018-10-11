@@ -21,7 +21,11 @@ exports.put = (req, res, next) => {
   const data = req.body;
   updateTicket(data)
     .then((response) => {
-      res.send(response);
+      if (response.rowCount === 1) {
+        res.send({ result: 'اتخاذ اجراء للطلب ' });
+      } else {
+        res.send({ error: 'خطأ في المحاولة ' });
+      }
     })
     .catch((err) => {
       next(err);
