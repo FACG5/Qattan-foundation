@@ -9,6 +9,7 @@ const {
   viewInventory, postInventory, updateInventoryPage, updateInventoryFun,
 } = require('./inventory');
 const employee = require('./employee');
+const reports = require('./reports');
 const solved = require('./solved');
 const notSolved = require('./notSolved');
 const tickets = require('./tickets');
@@ -33,6 +34,10 @@ router.route('/support')
 
 router.route('/loans')
   .get(loans.get);
+
+router.route('/report')
+  .get(reports.get)
+  .post(reports.post);
 
 router.route('/loan/:id')
   .get(loanDetails.get)
