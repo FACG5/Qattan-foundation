@@ -61,6 +61,14 @@ const getNotSolved = () => {
   return dbConnection.query(sql);
 };
 
+const getSolved = () => {
+  const sql = {
+    text: 'SELECT * from ticket WHERE status_type LIKE $1',
+    values: ['solved'],
+  };
+  return dbConnection.query(sql);
+};
+
 const getSupports = () => {
   const sql = {
     text: 'SELECT * FROM ticket WHERE type LIKE $1 AND status_type NOT LIKE $2;',
@@ -131,4 +139,5 @@ module.exports = {
   getTicketByPeriod,
   addTicket,
   updateTicket,
+  getSolved,
 };
