@@ -52,7 +52,7 @@ router.route('/updateInventoryPage/:id')
   .get(updateInventoryPage)
   .put(updateInventoryFun);
 
-router.route('/employee-home')
+router.route('/home-employee')
   .get(employee.get);
 // Login Routes
 router.route('/login')
