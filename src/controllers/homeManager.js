@@ -10,6 +10,7 @@ exports.get = async (req, res, next) => {
     const notSolvedCount = await getNotSolvedCount();
     res.render('homeManager', {
       style: 'master',
+      style_special: 'homeManager',
       title: 'Manager',
       dom: 'homeManager',
       manager: true,
