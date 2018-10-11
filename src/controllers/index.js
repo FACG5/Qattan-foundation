@@ -6,7 +6,8 @@ const loans = require('./loans');
 const loanDetails = require('./loanDetails');
 const supportDetails = require('./supportDetails');
 const {
-  viewInventory, postInventory, updateInventoryPage, updateInventoryFun,
+  viewInventory, postInventory, updateInventoryPage, updateInventoryFun, addRepairInventory,
+  deleteInventories,
 } = require('./inventory');
 const solved = require('./solved');
 const notSolved = require('./notSolved');
@@ -44,12 +45,14 @@ router.route('/support/:id')
 // view and add inventory route
 router.route('/inventory')
   .get(viewInventory)
-  .post(postInventory);
+  .post(postInventory)
+  .delete(deleteInventories);
 
 // clicking on edit button will move to new page and route
 router.route('/updateInventoryPage/:id')
   .get(updateInventoryPage)
-  .put(updateInventoryFun);
+  .put(updateInventoryFun)
+  .post(addRepairInventory);
 
 // Login Routes
 router.route('/login')

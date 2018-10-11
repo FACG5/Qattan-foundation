@@ -4,8 +4,9 @@
     بلااااااه
   </div>
   <div class="">
-    <button type="button" name="button">عرض</button>
-    <button type="button" name="button">إضافة جديد</button>
+    <button type="button" name="button">عرض الأجهزة</button>
+    <button type="button" name="button"> إضافة جهاز</button>
+    <button type="button" name="button"> عرض ما تم إصلاحه</button>
   </div>
 
   <!-- **************************************** SEARCH SECTION *********************************** -->
@@ -106,6 +107,7 @@
         <h6>status{{this.status}}</h6>
       {{/if }}
       <button type="button" name="button"> <a href="/updateInventoryPage/{{this.id}}">edit</a> </button>
+        <button type="button" name="button" class="deleteInventoryButton" id="{{this.id}}">delete </button>
       <hr>
     {{/each}}
   </div>

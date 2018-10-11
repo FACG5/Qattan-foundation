@@ -80,6 +80,31 @@ exports.addInventory = (newInventory) => {
   return dbConnection.query(sql);
 };
 
+exports.addRepairInventories = (repairedInventory) => {
+  const {
+    id,
+    MendDate,
+    type,
+    action,
+    part,
+    descriptionRepair,
+  } = repairedInventory;
+
+  const sql = {
+    text: 'INSERT INTO repair (no,date,type,action,part,description) VALUES ($1,$2,$3,$4,$5,$6);',
+    values: [
+      id,
+      MendDate,
+      type,
+      action,
+      part,
+      descriptionRepair,
+    ],
+
+  };
+  return dbConnection.query(sql);
+};
+
 exports.updateInventory = (inventory) => {
   const {
     description, employee, place, warranty, processor, ram, hd1, hd2, notes, netport, status, id,
@@ -136,4 +161,41 @@ exports.getVendor = () => {
     text: 'SELECT * FROM vendor;',
   };
   return dbConnection.query(sql);
+};
+
+exports.getType = () => {
+  const sql = {
+    text: 'SELECT * FROM type;',
+  };
+  return dbConnection.query(sql);
+};
+
+exports.getAction = () => {
+  const sql = {
+    text: 'SELECT * FROM action;',
+  };
+  return dbConnection.query(sql);
+};
+
+exports.getParts = () => {
+  const sql = {
+    text: 'SELECT * FROM parts;',
+  };
+  return dbConnection.query(sql);
+};
+
+exports.checkInfoExist = (deletedInventory) => {
+  const sql = {
+    text: 'SELECT * FROM repair WHERE no=$1;',
+
+  };
+  return dbConnection.query(sql, [deletedInventory]);
+};
+
+exports.deleteInventory = (deletedInventory) => {
+  const sql = {
+    text: 'DELETE FROM inventory WHERE id=$1;',
+
+  };
+  return dbConnection.query(sql, [deletedInventory]);
 };
