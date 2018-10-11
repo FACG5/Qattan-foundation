@@ -1,5 +1,5 @@
 /* global document fetch window */
-
+const img = 'http://qattanfoundation.org/sites/all/themes/qf/logo.svg';
 const updateBtn = document.getElementById('update-btn');
 const updateSection = document.querySelector('.update-section');
 const closeBtn = document.querySelector('#close-btn');
@@ -49,10 +49,34 @@ doneBtn.addEventListener('click', (e) => {
     })
       .then(response => response.json())
       .then((response) => {
-        window.location = '/support';
+        if (response.error) {
+          swal({
+            dangerMode: true,
+            title: 'فشلت العملية',
+            text: response.error,
+            icon: img,
+            button: 'أعد المحاولة',
+          });
+        } else {
+          setTimeout(() => {
+            window.location = '/support';
+          }, 3000);
+          swal({
+            title: 'تمت العملية:',
+            text: response.result,
+            icon: img,
+            button: 'حسناً',
+          });
+        }
       })
-      .catch((err) => {
-        error.textContent = 'THERE IS ERROR';
+      .catch(() => {
+        swal({
+          dangerMode: true,
+          title: 'فشلت العملية',
+          text: 'خطأ في اﻹدخال',
+          icon: img,
+          button: 'أعد المحاولة',
+        });
       });
   }
 });

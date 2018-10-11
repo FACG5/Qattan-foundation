@@ -20,7 +20,13 @@ exports.get = (req, res, next) => {
 exports.put = (req, res, next) => {
   const data = req.body;
   updateTicket(data)
-    .then(() => res.send(data))
+    .then((response) => {
+      if (response.rowCount === 1) {
+        res.send({ result: 'تم اتخاذ اجراء' });
+      } else {
+        res.send({ error: 'اعد المحاولة ' });
+      }
+    })
     .catch((err) => {
       next(err);
     });
