@@ -6,14 +6,14 @@ exports.get = (req, res, next) => {
   const name = 'salwa';
   getTicketByName(name)
     .then((response) => {
-      const result = (response.rows);     
+      const result = (response.rows);
       const resultSolved = [];
       const resultWaiting = [];
-      result.forEach((x) => {
-        if (x.status_type === 'solved') {
-          resultSolved.push(x);
+      result.forEach((element) => {
+        if (element.status_type === 'solved') {
+          resultSolved.push(element);
         } else {
-          resultWaiting.push(x);
+          resultWaiting.push(element);
         }
       });
 
