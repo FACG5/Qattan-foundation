@@ -38,7 +38,7 @@ router.route('/support/:id')
   .get(supportDetails.get)
   .put(supportDetails.put);
 
-router.route('/employee-home')
+router.route('/home-employee')
   .get(employee.get);
 // Login Routes
 router.route('/login')
