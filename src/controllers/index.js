@@ -8,6 +8,7 @@ const supportDetails = require('./supportDetails');
 const {
   viewInventory, postInventory, updateInventoryPage, updateInventoryFun,
 } = require('./inventory');
+const employee = require('./employee');
 const solved = require('./solved');
 const notSolved = require('./notSolved');
 const tickets = require('./tickets');
@@ -51,6 +52,8 @@ router.route('/updateInventoryPage/:id')
   .get(updateInventoryPage)
   .put(updateInventoryFun);
 
+router.route('/employee-home')
+  .get(employee.get);
 // Login Routes
 router.route('/login')
   .get(getUser)
