@@ -5,7 +5,6 @@ const updateSection = document.querySelector('.update-section');
 const closeBtn = document.querySelector('#close-btn');
 const doneBtn = document.querySelector('#done-btn');
 const error = document.querySelector('.error');
-const editSection = document.querySelector('.update-section');
 const status = document.querySelector('#status');
 const itEmployee = document.querySelector('#it-employee');
 const desc = document.querySelector('#desc');
@@ -41,11 +40,11 @@ doneBtn.addEventListener('click', () => {
       body: JSON.stringify(data),
     })
       .then(response => response.json())
-      .then((response) => {
+      .then(() => {
         error.textContent = 'DONE !';
         window.location = '/loans';
       })
-      .catch((err) => {
+      .catch(() => {
         error.textContent = 'THERE IS ERROR';
       });
   }

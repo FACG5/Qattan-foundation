@@ -6,11 +6,23 @@ const loans = require('./loans');
 const loanDetails = require('./loanDetails');
 const supportDetails = require('./supportDetails');
 const employee = require('./employee');
+const solved = require('./solved');
+const notSolved = require('./notSolved');
+const tickets = require('./tickets');
 const { clientError, serverError } = require('./error');
 const { getLogOut } = require('./logout');
 
 router.route('/')
   .get(homeManager.get);
+
+router.route('/tickets')
+  .get(tickets.get);
+
+router.route('/solved')
+  .get(solved.get);
+
+router.route('/not-solved')
+  .get(notSolved.get);
 
 router.route('/support')
   .get(supports.get);
