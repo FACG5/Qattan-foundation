@@ -14,14 +14,6 @@ const getAllTicket = () => {
   return dbConnection.query(sql);
 };
 
-const getAllTicket = () => {
-  const sql = {
-    text: 'SELECT * FROM ticket ORDER BY ticket_no DESC',
-  };
-  return dbConnection.query(sql);
-};
-
-
 const getTicketByName = (name) => {
   const sql = {
     text: 'SELECT * FROM ticket WHERE employee = $1;',
