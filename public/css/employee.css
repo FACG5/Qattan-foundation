@@ -296,7 +296,8 @@ footer{
 .scene {
     width: 60%;
     margin: 0 auto;
-    height: 600px;
+    font-size: 16px;
+    height: 700px;
     perspective: 600px;
   }
   .card {
@@ -320,6 +321,7 @@ footer{
 
   .card__face--front {
     background: #fff;
+    box-shadow: 1px 1px 1px 1px #777777, -1px -1px 1px 1px #777777;
   }
   
   .card__face--back {
@@ -336,11 +338,11 @@ footer{
 }
 .card-foot{
     position: absolute;
-    bottom: 0;
+    top: 0;
     height: 50px;
-    width: 100%;
+    left:0;
     text-align: center;
-    border-top: solid #5C6F7C 1px;
+    margin-left: 15px;
     padding: 12px 0;
 }
 .card-foot .rotate-btn {

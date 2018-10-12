@@ -1,5 +1,6 @@
 /*
 ----   F O R M S       S T Y L E    ---- 
+  #98012e   #c00036   #5a6e7b   #8e8378   #e5e5e5  #fff 
 */
 
 .form{
@@ -9,9 +10,13 @@
 } 
 
 .form input,select,option{
-    padding: 5px;
+    padding: 12px;
     border-radius: 5px;
     outline: none;
+    font-weight: bold;
+}
+.form select{
+    background: #ffffff;
 }
 .form textarea{
     height: 160px;
@@ -23,7 +28,34 @@
 
 .tab-btn{
     text-align: center;
+    cursor: pointer;
     display: block;
     width:30%;
     margin: 20px auto 0 auto;
+    color: #fff;
+    outline: none;
+    font-weight: bold;
+    background: #c00036;
+    border: #c00036 2px solid;
+    border-radius: 15px;
+    font-size: 16px;
+    padding: 12px;
+}
+.tab-btn:hover{
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    width:30%;
+    margin: 20px auto 0 auto;
+    color: #c00036;
+    outline: none;
+    font-weight: bold;
+    background: #fff;
+    border: #c00036 2px solid;
+    border-radius: 15px;
+    font-size: 16px;
+    padding: 12px;
+}
+.tab-btn:active{
+    transform: translateY(4px);
 }
