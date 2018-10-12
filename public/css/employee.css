@@ -360,3 +360,13 @@ footer{
 .card-foot .rotate-btn span{
     margin-right: 15px;
 }
+@media only screen and (max-width:600px){
+
+.scene {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 13px;
+    height: 700px;
+    perspective: 600px;
+  }
+}
