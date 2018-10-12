@@ -10,7 +10,7 @@
                     {{>sidebarManager}}
                     {{{body}}}
                 </main>
-                {{{footer}}}
+                {{>footer}}
             </body>
         {{else}}
          <body>
@@ -21,7 +21,7 @@
                 {{{body}}}
             </main>
             {{#if footerFound}}
-                {{footer}}
+                 {{>footer}}
             {{/if}}
         </body>
         {{/if}}

@@ -6,13 +6,12 @@ const loans = require('./loans');
 const loanDetails = require('./loanDetails');
 const supportDetails = require('./supportDetails');
 const reports = require('./reports');
+const employee = require('./employee');
 const solved = require('./solved');
 const notSolved = require('./notSolved');
 const tickets = require('./tickets');
 const { clientError, serverError } = require('./error');
 const { getLogOut } = require('./logout');
-
-router.get('/', homeManager.get);
 
 router.route('/')
   .get(homeManager.get);
@@ -25,8 +24,6 @@ router.route('/solved')
 
 router.route('/not-solved')
   .get(notSolved.get);
-router.route('/')
-  .get(homeManager.get);
 
 router.route('/support')
   .get(supports.get);
@@ -46,6 +43,8 @@ router.route('/support/:id')
   .get(supportDetails.get)
   .put(supportDetails.put);
 
+router.route('/home-employee')
+  .get(employee.get);
 // Login Routes
 router.route('/login')
   .get(getUser)
