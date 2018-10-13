@@ -1,3 +1,7 @@
+/*   #98012e   #c00036   #5a6e7b   #8e8378   #e5e5e5  #fff  */
+h2{
+    margin-bottom: 5%;
+}
 .ticket-view{
     background: #fff;
     margin-top: 5%;
@@ -11,13 +15,54 @@
     grid-template-columns: 25% 75%;
     padding: 5px;
     border-bottom: 1px solid #ccc;
+    font-weight: bold;
 }
-.btns{
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
+.last{
+    border:none !important;
+}
+input, select, option ,textarea{
+    padding: 5px 15px 5px 0px;
+    font-size:15px;
+    border-radius: 5px;
+    color: #5a6e7b;
+    font-weight: bold;
+}
+.btn, .cencle:hover{
+    background: #c00036;
+    display: block;
+    color: #fff;
+    padding: 5px;
+    width: 20%; 
+    margin: 0 auto 0 0;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    border: 2px #c00036 solid;
+}
+.btn:hover, .cencle{
+    background: none;
+    color: #c00036;
+    padding: 5px;
+    width: 20%; 
+    display: block;
+    margin: 0 auto 0 0;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    border: 2px #c00036 solid;
+}
+.btn:active ,.cencle:active{
+    transform: translateY(4px);
 }
 h3{
-    /* font-weight: normal; */
     font-size: 16px;
+}
+.update-section h4, .ticket-head{
+    color: #c00036;
+    text-align: center;
+    margin: 10px 0px 10px 0px;
 }

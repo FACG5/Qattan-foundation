@@ -4,6 +4,7 @@
     <div class="ticket-view">
         {{#each result}}
                <div class="details">
+                    <h4 class="ticket-head"> اليك التفاصيل اﻵتية </h4>
                     <div class={{type}} id={{ticket_no}}>
                         <div class="info">
                             <h3>بطـاقة رقـم : </h3>
@@ -41,22 +42,27 @@
                      </div>
                </div>
                 <div class="update-section">
-                    <label for="status">الحالة : </label>
-                    <select id="status" name="status" placeholder="Status">
-                        <option value="{{this.status_type}}">{{this.status_type}}</option>
-                        <option value="solved">solved</option>
-                        <option value="in progress">in progress</option>
-                    </select>
-
-                      <label for="it-emp">موظف قسم (IT) او المدير :  </label>
-                      <input type="text" id="it-employee" name="it-emp" placeholder="IT Employee" value="{{this.it_employee}}">
-
-                        <label for="desc">الوصف التـــقني  :  </label>
-                        <textarea id="desc" name="desc" placeholder="Description" cols="30" rows="10">{{this.technical_desc}}</textarea>
-
-                    <button id="done-btn" class="btn"type="submit">تم </button>
-                    <button id="close-btn" class="btn" type="submit">إلغاء</button>
-                </div>
+                    <h4>اتخذ إجراء وأدخل البيانات اﻵتية </h4>
+                     <div class="form">
+                         <label for="status"> - الحالة : </label>
+                        <select id="status" required name="status" placeholder="Status">
+                            <option value="{{this.status_type}}">{{this.status_type}}</option>
+                            <option value="solved">solved</option>
+                            <option value="in progress">in progress</option>
+                        </select>
+                    </div>
+                    <div class="form">
+                        <label for="it-emp"> - موظف قسم (IT) او المدير :  </label>
+                        <input type="text" id="it-employee" required name="it-emp" placeholder="IT Employee" value="{{this.it_employee}}">
+                    </div>
+                    <div class="form last">
+                        <label for="desc"> - الوصف التـــقني  :  </label>
+                        <textarea id="desc" required name="desc" placeholder="Description" cols="30" rows="10">{{this.technical_desc}}</textarea>
+                    </div>
+                     <div class="btns">
+                       <button id="done-btn" class="btn" type="submit"> تحديث وإرسال اﻹجراء</button>
+                       <button id="close-btn" class="cencle" type="submit">إلغاء</button>
+                    </div> 
         {{/each }}
         <p class="error"></p>
     </div>
