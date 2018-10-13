@@ -78,24 +78,31 @@ updateInventButton.addEventListener('click', () => {
 // Mending Inventory Section
 
 mendInventButton.addEventListener('click', () => {
-  fetch(`/updateInventoryPage/${id}`, {
-    method: 'POST',
-    credentials: 'same-origin',
-    headers: { 'Content-Type': 'application/json; charset=utf-8' },
-    body: JSON.stringify(collectRepairData()),
-  })
-    .then(res => res.json())
-    .then((res) => {
-      if (res.Error) {
-        swal('خطأ ما', res.Error, 'error');
-      } else {
-        setTimeout(() => {
-          window.location = '/inventory';
-        }, 3000);
-        swal('تم الإضافة', res.result, 'success');
-      }
+  console.log(collectRepairData());
+  if (MendDate.value == "")
+  swal('خطأ','أرجوك أدخل التاريخ ','error');
+  else{
+    console.log("warning inside fetch");
+    fetch(`/updateInventoryPage/${id}`, {
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      body: JSON.stringify(collectRepairData()),
     })
-    .catch((error) => {
-      swal('خطأ ما', error.message, 'error');
-    });
+      .then(res => res.json())
+      .then((res) => {
+        if (res.Error) {
+          swal('خطأ ما', res.Error, 'error');
+        } else {
+          setTimeout(() => {
+            window.location = '/inventory';
+          }, 3000);
+          swal('تم الإضافة', res.result, 'success');
+        }
+      })
+      .catch((error) => {
+        swal('خطأ ما', error.message, 'error');
+      });
+  }
+
 });

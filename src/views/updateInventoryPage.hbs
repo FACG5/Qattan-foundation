@@ -141,7 +141,7 @@
 
 <div class="">
   <label for="id">الرقم التسلسلي</label>
-  <input type="number" name="" value="{{inventory.id}}" placeholder="رقم الجهاز" class="id" >
+  <input type="number" name="" value="{{inventory.id}}" placeholder="رقم الجهاز" class="id" disabled >
 </div>
 
 <div class="">
@@ -152,7 +152,6 @@
 <div class="">
   <label for="type">نوع العطل الفني</label>
   <select class="type">
-    <option selected disabled hidden>اختر النوع</option>
     {{#each type}}
     <option value="{{this.type}}">{{this.type}}</option>
     {{/each}}
@@ -163,7 +162,6 @@
 <div class="">
   <label for="action">الإجراء المتبع</label>
   <select class="action">
-    <option selected disabled hidden>اختر الإجراء</option>
     {{#each action}}
     <option value="{{this.action}}">{{this.action}}</option>
     {{/each}}
@@ -173,7 +171,6 @@
 <div class="">
   <label for="part">مكان العطل</label>
   <select class="part">
-    <option selected disabled hidden>المكان</option>
     {{#each parts}}
     <option value="{{this.part}}">{{this.part}}</option>
     {{/each}}
