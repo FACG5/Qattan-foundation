@@ -204,34 +204,6 @@ nav {
     transition: 0.3s;
 }
 /*  ------- ADD     SECTION      ------ */
-.form{
-    margin-bottom: 5px;
-}
-.tabs{
-    text-align: center;
-    margin-bottom: 20px;
-}
-.tab-btn{
-    width: 150px;
-    height: 30px;   
-    border: none;
-    background-color: rgba(179, 8, 56, 0.932);
-    color: white;
-    font-weight: 700;
-    font-size: 18px;
-    border-radius: 5px;
-    margin-right: 15px;
-    outline: none;
-}
-.tab-btn:hover{
-    background-color: #5C6F7C;
-    box-shadow: 4px 6px 5px 1px rgba(0,0,0,.2);
-    cursor: pointer;
-   }
-.tab-btn:active{
-    box-shadow: 2px 4px 5px 1px rgba(0,0,0,.2);
-
-}
 
 .content{
     /* background-color: #fff; */
@@ -265,39 +237,6 @@ nav {
     transform: scale(1.1,1.1);
     color: #98012e;
 }
-form {
-    
-    margin-top: 20px;
-}
-input {
-    display: block;
-    margin-bottom: 20px;
-    position: relative;
-    padding: 5px;
-    right: -70px;
-   direction: rtl; 
-    border: none;
-    height: 30px;
-    width: 250px;
-    border-radius: 5px;
-    box-shadow: 0 3px 10px 1px rgba(0,0,0,.3);
-    outline: none;
-}
-textarea {
-    display: block;
-    direction: rtl;
-    box-shadow: 0 3px 10px 1px rgba(0,0,0,.3);
-    height: 65px;
-    width: 250px;
-    position: relative;
-    padding: 5px;
-    right: -70px;
-    border-radius: 5px;
-    border: none;
-    margin-bottom: 25px;
-    outline: none;
-}
-
 .switch {
     text-align: center;
     display: grid;
@@ -341,4 +280,93 @@ textarea {
     width:80%;
     margin: 20px auto;
     padding-top: 15px;
+}
+footer{
+    text-align: center;
+    margin-top: 5%;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/*---          ROTETE CARD           ------*/
+.add-section{
+    margin-top: 120px;
+}
+.scene {
+    width: 60%;
+    margin: 0 auto;
+    font-size: 16px;
+    height: 700px;
+    perspective: 600px;
+  }
+  .card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+  }
+  .card .title{
+      text-align: center;
+      color: #c00036;
+      font-size: 22px;
+  }
+  .card__face {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+  }
+
+  .card__face--front {
+    background: #fff;
+    box-shadow: 1px 1px 1px 1px #777777, -1px -1px 1px 1px #777777;
+  }
+  
+  .card__face--back {
+    background:#fff;
+    transform: rotateY( 180deg );
+  }  
+  .card.is-flipped {
+    transform: rotateY(180deg);
+  }
+  .card { transform-origin: center right; }
+
+.card.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+.card-foot{
+    position: absolute;
+    top: 0;
+    height: 50px;
+    left:0;
+    text-align: center;
+    margin-left: 15px;
+    padding: 12px 0;
+}
+.card-foot .rotate-btn {
+    border:none;
+    background: none;
+    font-weight: bold;
+    font-size: 16px;
+    outline: none;
+    color:#444444; 
+    cursor: pointer;
+}
+.card-foot .rotate-btn:hover {
+    color:#98012e; 
+}
+.card-foot .rotate-btn span{
+    margin-right: 15px;
+}
+@media only screen and (max-width:600px){
+
+.scene {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 13px;
+    height: 700px;
+    perspective: 600px;
+  }
 }
