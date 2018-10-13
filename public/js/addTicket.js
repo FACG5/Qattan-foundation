@@ -115,8 +115,6 @@ btnAddSupport.addEventListener('click', (e) => {
       type,
       priority,
     };
-    console.log(newTicket);
-    
     fetch('/add-ticket', {
       method: 'POST',
       credentials: 'same-origin',

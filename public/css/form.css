@@ -41,6 +41,7 @@
     font-size: 16px;
     padding: 12px;
 }
+
 .tab-btn:hover{
     text-align: center;
     cursor: pointer;
@@ -56,6 +57,7 @@
     font-size: 16px;
     padding: 12px;
 }
+
 .tab-btn:active{
     transform: translateY(4px);
 }
