@@ -26,7 +26,6 @@ const deleteInventoryButtons = document.querySelectorAll('.deleteInventoryButton
 
 deleteInventoryButtons.forEach((button) => {
   button.addEventListener('click', (e) => {
-    console.log('HHHHHHHHHHHHHHHHHHHHHHHHHHHHi');
     const obj = {
       inventoryId: button.id,
     };

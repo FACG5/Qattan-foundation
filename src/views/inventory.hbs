@@ -253,7 +253,33 @@
 
   </div>
   <!-- **************************************** END *********************************** -->
+  <!--
+*
+*
+*
+-->
+  <!-- ******************************* VIEW Repaired Inventries******************************* -->
+  <div class="viewRepair">
 
 
+    {{#each repaired}}
+      <h6> {{this.id}}</h6>
+        <h6>{{this.no}}</h6>
+        <h6>ID{{this.date}}</h6>
+      {{#if this.type}}
+        <h6>Device Type {{this.type}}</h6>
+      {{/if}}
+      {{#if this.action}}
+        <h6>Name{{this.action}}</h6>
+      {{/if}}
+      {{#if this.part}}
+        <h6>Name{{this.part}}</h6>
+      {{/if}}
+      {{#if this.description}}
+        <h6>Name{{this.description}}</h6>
+      {{/if}}
+{{/each}}
+
+  </div>
 
 </section>

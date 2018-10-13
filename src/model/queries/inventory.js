@@ -184,6 +184,14 @@ exports.getParts = () => {
   return dbConnection.query(sql);
 };
 
+exports.viewRepair = () => {
+  const sql = {
+    text: 'SELECT * FROM repair;',
+
+  };
+  return dbConnection.query(sql);
+};
+
 exports.checkInfoExist = (deletedInventory) => {
   const sql = {
     text: 'SELECT * FROM repair WHERE no=$1;',
@@ -191,6 +199,7 @@ exports.checkInfoExist = (deletedInventory) => {
   };
   return dbConnection.query(sql, [deletedInventory]);
 };
+
 
 exports.deleteInventory = (deletedInventory) => {
   const sql = {

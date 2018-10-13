@@ -1,7 +1,7 @@
 const {
   getInventory, getInventoryById, addInventory, updateInventory,
   getEmployee, getBrand, getDevice, getPlace, getVendor, getType, getAction, getParts, addRepairInventories,
-  checkInfoExist, deleteInventory,
+  checkInfoExist, deleteInventory, viewRepair
 } = require('../model/queries/inventory');
 
 exports.viewInventory = async (req, res, next) => {
@@ -13,7 +13,7 @@ exports.viewInventory = async (req, res, next) => {
       const devicesdb = await getDevice();
       const placesdb = await getPlace();
       const vendorsdb = await getVendor();
-
+      const viewRepairdb = await viewRepair();
 
       res.render('inventory', {
         style: 'master',
@@ -26,6 +26,7 @@ exports.viewInventory = async (req, res, next) => {
         devices: devicesdb.rows,
         places: placesdb.rows,
         vendors: vendorsdb.rows,
+        repaired: viewRepairdb.rows
       });
     } else {
       res.redirect(401, '/login');

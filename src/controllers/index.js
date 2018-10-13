@@ -9,6 +9,7 @@ const {
   viewInventory, postInventory, updateInventoryPage, updateInventoryFun, addRepairInventory,
   deleteInventories,
 } = require('./inventory');
+const employee = require('./employee');
 const solved = require('./solved');
 const notSolved = require('./notSolved');
 const tickets = require('./tickets');
@@ -53,6 +54,9 @@ router.route('/updateInventoryPage/:id')
   .get(updateInventoryPage)
   .put(updateInventoryFun)
   .post(addRepairInventory);
+
+router.route('/home-employee')
+  .get(employee.get);
 
 // Login Routes
 router.route('/login')
