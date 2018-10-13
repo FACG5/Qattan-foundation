@@ -21,8 +21,8 @@ const descriptionRepair = document.querySelector('.descriptionRepair');
 const mendInventButton = document.querySelector('.mendInventButton');
 
 const date = new Date();
-  const datestring = ('0000' + date.getFullYear()).slice(-4) + '-' + ('00' + (date.getMonth() + 1)).slice(-2) + '-' + ('00' + date.getDate()).slice(-2);
-    MendDate.value = datestring;
+const datestring = `${(`0000${date.getFullYear()}`).slice(-4)}-${(`00${date.getMonth() + 1}`).slice(-2)}-${(`00${date.getDate()}`).slice(-2)}`;
+MendDate.value = datestring;
 
 const url = window.location.href;
 const splitUrl = url.split('/');
@@ -53,36 +53,40 @@ const collectRepairData = () => ({
 });
 
 updateInventButton.addEventListener('click', () => {
-  fetch(`/updateInventoryPage/${id}`, {
-    method: 'PUT',
-    credentials: 'same-origin',
-    headers: { 'Content-Type': 'application/json; charset=utf-8' },
-    body: JSON.stringify(collectData()),
-  })
-    .then(res => res.json())
-    .then((res) => {
-      if (res.Error) {
-        swal('خطأ ما', res.Error, 'error');
-      } else {
-        setTimeout(() => {
-          window.location = '/inventory';
-        }, 3000);
-        swal('تم الإضافة', res.result, 'success');
-      }
+  if (hd1.type == 'number' && hd2.type == 'number' && warranty.type == 'number' && status.type == 'number') {
+    fetch(`/updateInventoryPage/${id}`, {
+      method: 'PUT',
+      credentials: 'same-origin',
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      body: JSON.stringify(collectData()),
     })
-    .catch((error) => {
-      swal('خطأ ما', error.message, 'error');
-    });
+      .then(res => res.json())
+      .then((res) => {
+        if (res.Error) {
+          swal('خطأ ما', res.Error, 'error');
+        } else {
+          setTimeout(() => {
+            window.location = '/inventory';
+          }, 3000);
+          swal('تم الإضافة', res.result, 'success');
+        }
+      })
+      .catch((error) => {
+        swal('خطأ ما', error.message, 'error');
+      });
+  }
+  else {
+  swal('خطأ','أرجو إدخال البيانات رقمية','error')
+  }
 });
 
 // Mending Inventory Section
 
 mendInventButton.addEventListener('click', () => {
   console.log(collectRepairData());
-  if (MendDate.value == "")
-  swal('خطأ','أرجوك أدخل التاريخ ','error');
-  else{
-    console.log("warning inside fetch");
+  if (MendDate.value == '') swal('خطأ', 'أرجوك أدخل التاريخ ', 'error');
+  else {
+    console.log('warning inside fetch');
     fetch(`/updateInventoryPage/${id}`, {
       method: 'POST',
       credentials: 'same-origin',
@@ -104,5 +108,4 @@ mendInventButton.addEventListener('click', () => {
         swal('خطأ ما', error.message, 'error');
       });
   }
-
 });
