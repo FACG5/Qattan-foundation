@@ -4,6 +4,95 @@
 */
 
 /*   #98012e   #c00036   #5a6e7b   #8e8378   #e5e5e5  #fff  */
+
+/*
+ CSS for the main interaction
+*/
+.tabset > input[type="radio"] {
+    position: absolute;
+    right: -200vw;
+  }
+  
+  .tabset{
+      margin: 0 auto;
+  }
+  .tabset .tab-panel {
+    display: none;
+  }
+  
+  .tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+  .tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+  .tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+  .tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+  .tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+  .tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+    display: block;
+  }
+  
+  /*
+   Styling
+  */  
+  .tabset > label {
+    position: relative;
+    display: inline-block;
+    padding: 15px 15px 25px;
+    border: 2px solid #AAAAAA;
+    border-bottom: 0;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .tabset > label::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
+    width: 22px;
+    height: 4px;
+    background: #8d8d8d;
+  }
+  
+  .tabset > label:hover,
+  .tabset > input:focus + label {
+    color:#c00036;
+  }
+  
+  .tabset > label:hover::after,
+  .tabset > input:focus + label::after,
+  .tabset > input:checked + label::after {
+    background:#c00036;
+  }
+  
+  .tabset > input:checked + label {
+    border-color: #AAAAAA;
+    color: #c00036;
+    border-bottom: 1px solid #AAAAAA;
+    margin-bottom: -1px;
+    background: #AAAAAA;
+  }
+  
+  .tab-panel {
+    padding: 30px 20px 10px 0px;
+    background:#AAAAAA;
+    width: 100%;
+  }
+  .tab-panel h2{
+    color: #c00036;
+    margin-bottom: 20px;
+  }
+  
+  /*
+   Demo purposes only
+  */
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  } 
+  .tabset {
+    max-width: 65em;
+  }
+/*********************************/
 *{
     padding: 0;
     margin: 0;
@@ -24,6 +113,7 @@
 body {
     background-color: #E5E5E5;
     min-height: 800px;
+    width: 100%;
     color: #5C6F7C;
 }
 .employee-section{
@@ -281,6 +371,40 @@ nav {
     margin: 20px auto;
     padding-top: 15px;
 }
+table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+table.employee-table {
+    background-color: #fff;
+    width: 95%;
+    border-collapse: collapse;
+    padding: 15px;
+    margin: 0px auto 50px auto;
+    box-shadow: 1px 1px 3px 2px #5a6e7b47;
+}
+    table.employee-table td, table.employee-table th {
+    border-bottom: 1px dashed #AAAAAA;
+    padding: 3px 15px;
+    min-width: 100px;
+}
+table.employee-table tbody td {
+    font-size: 14px;
+    text-transform: capitalize;
+    min-width: 100px;
+}
+table.employee-table tr:nth-child(even) {
+    background: #fff;
+}
+table.employee-table thead {
+    border-bottom: 1px dashed #444444;
+}
+    table.employee-table thead th {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: right;
+    border-bottom: 1px dashed #444444;
 footer{
     text-align: center;
     margin-top: 5%;
