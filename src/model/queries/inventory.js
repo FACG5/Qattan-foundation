@@ -7,6 +7,14 @@ const getInventory = () => {
   return dbConnection.query(sql);
 };
 
+const getInventoryByName = (name) => {
+  const sql = {
+    text: 'SELECT * FROM inventory WHERE employee = $1;',
+    values: [name],
+  };
+  return dbConnection.query(sql);
+};
+
 const addInventory = (newInventory) => {
   const {
     assNo,
@@ -84,6 +92,7 @@ const updateInventory = (description,
 
 module.exports = {
   getInventory,
+  getInventoryByName,
   addInventory,
   updateInventory,
 };
