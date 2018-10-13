@@ -7,11 +7,11 @@ exports.get = async (req, res, next) => {
     const solved = 'solved';
     const progress = 'in';
     const ticket = await getAllTicket();
-    const tLoans = await getLoans();
-    const tSupports = await getSupports();
-    const tSolve = await getTicketByStatus(solved);
-    const tNotSolved = await getNotSolved();
-    const tInProgress = await getTicketByStatus(progress);
+    const ticketLoans = await getLoans();
+    const ticketSupports = await getSupports();
+    const ticketSolve = await getTicketByStatus(solved);
+    const ticketNotSolved = await getNotSolved();
+    const ticketInProgress = await getTicketByStatus(progress);
     res.render('reports', {
       style: 'master',
       style_special: 'report',
@@ -19,11 +19,11 @@ exports.get = async (req, res, next) => {
       dom: 'report',
       manager: true,
       result: ticket.rows,
-      loans: tLoans.rows,
-      supports: tSupports.rows,
-      solve: tSolve.rows,
-      notSolved: tNotSolved.rows,
-      inProgress: tInProgress.rows,
+      loans: ticketLoans.rows,
+      supports: ticketSupports.rows,
+      solve: ticketSolve.rows,
+      notSolved: ticketNotSolved.rows,
+      inProgress: ticketInProgress.rows,
     });
   } catch (err) {
     next(err);
