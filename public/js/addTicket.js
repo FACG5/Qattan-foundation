@@ -25,8 +25,8 @@ rotateLoan.addEventListener('click', () => {
 // sfor the animated menue bar icon
 
 // add ticket tabs
-const employeeName = 'MohAmmed';
-const employeeDep = 'information technology';
+const employeeName = document.querySelector('#employee-name');
+const employeeDep = document.querySelector('#employee-department');
 const probType = document.querySelector('#ptype');
 const tSubject = document.querySelector('#subject');
 const tType = document.querySelector('#type');
@@ -43,22 +43,14 @@ btnAdd.addEventListener('click', (e) => {
   e.preventDefault();
   if (employeeName && employeeDep && probType && tSubject && tType && tPriority
     && tDuration && pdesc) {
-    const employeeC = employeeName;
-    const departmentC = employeeDep;
-    const problemTypeC = probType.value;
-    const problemDescC = pdesc.value;
-    const subjectC = tSubject.value;
-    const duration = tDuration.value;
-    const typeC = tType.value;
-    const priorityC = tPriority.value;
-
-    const employee = employeeC.toLowerCase();
-    const department = departmentC.toLowerCase();
-    const problemType = problemTypeC.toLowerCase();
-    const problemDesc = problemDescC.toLowerCase();
-    const subject = subjectC.toLowerCase();
-    const type = typeC.toLowerCase();
-    const priority = priorityC.toLowerCase();
+    const employee = employeeName.toLowerCase();
+    const department = employeeDep.toLowerCase();
+    const problemType = probType.value.toLowerCase();
+    const problemDesc = pdesc.value.toLowerCase();
+    const subject = tSubject.value.toLowerCase();
+    const duration = tDuration.value.toLowerCase();
+    const type = tType.value.toLowerCase();
+    const priority = tPriority.value.toLowerCase();
 
     const newTicket = {
       employee,
@@ -88,8 +80,8 @@ btnAdd.addEventListener('click', (e) => {
 
 // ADD SUPPORT TICKET
 
-const empName = 'MohAmmed';
-const empDep = 'information technology';
+const empName = document.querySelector('#employee-name');
+const empDep = document.querySelector('#employee-department');
 const pType = document.querySelector('#ptype-support');
 const tSub = document.querySelector('#subject-support');
 const ticketType = document.querySelector('#type-support');
@@ -104,22 +96,14 @@ btnAddSupport.addEventListener('click', (e) => {
   e.preventDefault();
   if (empName && empDep && pType && tSub && ticketType && ticketPriority
     && ticketDuration && problemdesc) {
-    const empC = empName;
-    const depC = empDep;
-    const pTypeC = pType.value;
-    const pDescC = problemdesc.value;
-    const subC = tSub.value;
-    const duration = ticketDuration.value;
-    const tTypeC = ticketType.value;
-    const priorC = ticketPriority.value;
-
-    const employee = empC.toLowerCase();
-    const department = depC.toLowerCase();
-    const problemType = pTypeC.toLowerCase();
-    const problemDesc = pDescC.toLowerCase();
-    const subject = subC.toLowerCase();
-    const type = tTypeC.toLowerCase();
-    const priority = priorC.toLowerCase();
+    const employee = empName.textContent.toLowerCase();
+    const department = empDep.textContent.toLowerCase();
+    const problemType = pType.value.toLowerCase();
+    const problemDesc = problemdesc.value.toLowerCase();
+    const subject = tSub.value.toLowerCase();
+    const duration = ticketDuration.value.toLowerCase();
+    const type = ticketType.value.toLowerCase();
+    const priority = ticketPriority.value.toLowerCase();
 
     const newTicket = {
       employee,
@@ -131,6 +115,8 @@ btnAddSupport.addEventListener('click', (e) => {
       type,
       priority,
     };
+    console.log(newTicket);
+    
     fetch('/add-ticket', {
       method: 'POST',
       credentials: 'same-origin',

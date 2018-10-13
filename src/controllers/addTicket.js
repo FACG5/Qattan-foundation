@@ -1,6 +1,8 @@
 const { addTicket } = require('../model/queries/ticket');
 
 exports.get = (req, res) => {
+  const department = res.locals.unlockCookie.department;
+  const employee = res.locals.unlockCookie.name;
   res.render('addTicket', {
     title: 'اضافة تذكرة',
     style: 'employee',
@@ -9,6 +11,8 @@ exports.get = (req, res) => {
     headerFound: true,
     footerFound: true,
     manager: false,
+    department,
+    employee,
   });
 };
 
