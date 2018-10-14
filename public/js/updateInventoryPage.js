@@ -83,10 +83,8 @@ updateInventButton.addEventListener('click', () => {
 // Mending Inventory Section
 
 mendInventButton.addEventListener('click', () => {
-  console.log(collectRepairData());
   if (MendDate.value == '') swal('خطأ', 'أرجوك أدخل التاريخ ', 'error');
   else {
-    console.log('warning inside fetch');
     fetch(`/updateInventoryPage/${id}`, {
       method: 'POST',
       credentials: 'same-origin',

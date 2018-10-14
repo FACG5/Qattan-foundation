@@ -15,6 +15,7 @@ const notSolved = require('./notSolved');
 const tickets = require('./tickets');
 const { clientError, serverError } = require('./error');
 const { getLogOut } = require('./logout');
+const { checkString } = require('./validate.js');
 
 
 router.route('/')
@@ -46,7 +47,7 @@ router.route('/support/:id')
 // view and add inventory route
 router.route('/inventory')
   .get(viewInventory)
-  .post(postInventory)
+  .post(checkString, postInventory)
   .delete(deleteInventories);
 
 // clicking on edit button will move to new page and route

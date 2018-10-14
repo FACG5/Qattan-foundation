@@ -93,25 +93,29 @@ searchDevice.addEventListener('click', (e) => {
 
 // Add Inventory Button Event Listener
 addInventButton.addEventListener('click', () => {
-  fetch('/inventory', ({
-    method: 'POST',
-    credentials: 'same-origin',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(collectData()),
-  })).then(res => res.json())
-    .then((res) => {
-      if (res.Error) {
-        swal('خطأ ما', res.Error, 'error');
-      } else {
-        setTimeout(() => {
-          window.location = '/inventory';
-        }, 3000);
-        swal('تم الإضافة', res.result, 'success');
-      }
-    })
-    .catch((error) => {
-      swal('خطأ ما', error.message, 'error');
-    });
+  if (purchaseDate.value == '') swal('أرجوك أدخل القيم الفارغة ','خطأ','error')
+  //  || inventoryId.value==''
+  else {
+    fetch('/inventory', ({
+      method: 'POST',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(collectData()),
+    })).then(res => res.json())
+      .then((res) => {
+        if (res.Error) {
+          swal('خطأ ما', res.Error, 'error');
+        } else {
+          setTimeout(() => {
+            window.location = '/inventory';
+          }, 3000);
+          swal('تم الإضافة', res.result, 'success');
+        }
+      })
+      .catch((error) => {
+        swal('خطأ ما', error.message, 'error');
+      });
+  }
 });
