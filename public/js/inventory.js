@@ -44,7 +44,7 @@ deleteInventoryButtons.forEach((button) => {
           setTimeout(() => {
             window.location = '/inventory';
           }, 3000);
-          swal('النتيجة', res.result, 'success');
+          swal('النتيجة', res.result, res.opType);
         }
       })
       .catch((error) => {
@@ -93,8 +93,8 @@ searchDevice.addEventListener('click', (e) => {
 
 // Add Inventory Button Event Listener
 addInventButton.addEventListener('click', () => {
-  if (purchaseDate.value == '') swal('أرجوك أدخل القيم الفارغة ','خطأ','error')
-  //  || inventoryId.value==''
+  if (purchaseDate.value == '' || inventoryId.value == '') swal('أرجوك أدخل القيم الفارغة ','خطأ','error')
+
   else {
     fetch('/inventory', ({
       method: 'POST',

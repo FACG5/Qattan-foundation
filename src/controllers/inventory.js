@@ -110,12 +110,12 @@ exports.deleteInventories = async (req, res, next) => {
     const checkInfoExistdb = await (checkInfoExist(req.body.inventoryId));
     if(checkInfoExistdb.rowCount===1)
     {
-      return res.send({ result: ' لا يمكن حذف هذا الجهاز لوجوده في قاعدة البيانات' });
+      return res.send({ result: ' لا يمكن حذف هذا الجهاز لوجوده في قاعدة البيانات', opType: 'error' });
     }
     const deleteInventorydb = await (deleteInventory(req.body.inventoryId));
     if(deleteInventorydb.rowCount===1)
     {
-      return res.send({ result: 'تم حذف الجهاز بنجاح' });
+      return res.send({ result: 'تم حذف الجهاز بنجاح', opType: 'success' });
     }
       res.send({ Erorr: 'أعد المحاولة مرة أخرى' });
   } catch (error) {
