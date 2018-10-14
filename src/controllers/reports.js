@@ -36,12 +36,16 @@ exports.post = (req, res, next) => {
   if (minPeriod !== '' && maxPeriod !== '') {
     getTicketByPeriod(data)
       .then((response) => {
-        res.json(response.rows);
+        if (response.rowCount === 0) {
+          res.send({ Error: 'لا يوجد نتيجة مطابقة مع التاريخ' });
+        } else {
+          res.json(response.rows);
+        }
       })
       .catch((err) => {
         next(err);
       });
   } else {
-    res.status(400).json({ msg: 'Plaese Enter The Period' });
+    res.send({ Error: 'أدخل الحقول الفارغة' });
   }
 };

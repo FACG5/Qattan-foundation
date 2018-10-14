@@ -240,15 +240,10 @@ filterBtn.addEventListener('click', () => {
     })
       .then(response => response.json())
       .then((response) => {
-        if (response.msg) {
-          error.textContent = response.msg;
+        if (response.Error) {
+          swal('خطأ', response.Error, 'error');
           periodResult.style.display = 'none';
         } else {
-          if (response.length === 0) {
-            error.textContent = 'There Is No Date';
-            periodResult.style.display = 'none';
-            return false;
-          }
           return response.map((element) => {
             error.textContent = '';
             periodResult.style.display = 'block';
@@ -280,6 +275,8 @@ filterBtn.addEventListener('click', () => {
           });
         }
       })
-      .catch(error.textContent = 'THERE IS AN ERROR');
+      .catch((error) => {
+        swal('Sorry', error.message, 'error');
+      });
   }
 });
