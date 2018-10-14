@@ -8,6 +8,7 @@ const error = document.querySelector('.error');
 const status = document.querySelector('#status');
 const itEmployee = document.querySelector('#it-employee');
 const desc = document.querySelector('#desc');
+const img = 'http://qattanfoundation.org/sites/all/themes/qf/logo.svg';
 
 
 updateSection.style.visibility = 'hidden';
@@ -40,12 +41,29 @@ doneBtn.addEventListener('click', () => {
       body: JSON.stringify(data),
     })
       .then(response => response.json())
-      .then(() => {
-        error.textContent = 'DONE !';
-        window.location = '/loans';
+      .then((response) => {
+        if (response.error) {
+          swal('خطأ', response.error, 'error');
+        } else {
+          setTimeout(() => {
+            window.location = '/loans';
+          }, 3000);
+          swal({
+            title: 'تمت العملية:',
+            text: response.result,
+            icon: img,
+            button: 'حسناً',
+          });
+        }
       })
       .catch(() => {
-        error.textContent = 'THERE IS ERROR';
+        swal({
+          dangerMode: true,
+          title: 'فشلت العملية',
+          text: 'خطأ في اﻹدخال',
+          icon: img,
+          button: 'أعد المحاولة',
+        });
       });
   }
 });
