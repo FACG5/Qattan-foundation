@@ -1,0 +1,106 @@
+<section class="add-section" >
+    <div class="title">
+        <h2 class="greet">أهلا في قسم الدعم الفني لدى مركز القطان   </h2>
+        <h3 id="employee-name">{{employee}}</h3>
+        <h6 id="employee-department">{{department}}</h6>
+    </div>
+    <div class="scene">
+        <div class="card">
+            <div class="support card__face card__face--front">
+                <h2 class="title"> طـلب دعـم فنـي </h2>
+                <div class="form">
+                    <label for="ptype-support">حدد المشكلة :  </label>
+                    <select id="ptype-support" name="ptype" class="type">
+                        <option value="Hardware">Hardware</option>
+                        <option value="Software">Software</option>
+                        <option value="M2L">M2L</option>
+                        <option value="Internet">Internet</option>
+                        <option value="Lan">Lan</option>
+                        <option value="Customer DB">Customer DB</option>
+                    </select>
+                </div>
+                <div class="form">
+                    <label for="subject-support">الموضوع :  </label>
+                    <input id="subject-support" type="text" placeholder="الموضوع ">
+                </div>
+                <div class="form">
+                    <label for="type-support">نوع الطلب : </label>
+                    <select id="type-support" name="type" class="type">
+                        <option selected value="Support">Tichnical Support</option>
+                        <option disabled value="Loan">Loan</option>
+                    </select>
+                </div>
+                <div class="form">
+                    <label for="priority-support">اﻷولوية  :</label>
+                    <select id="priority-support" name="priority" class="type">
+                        <option value="medium">Medium</option>
+                        <option  value="high">High</option> 
+                        <option  value="low">Low</option>
+                    </select>
+                </div>
+                <div class="form">
+                    <label for="duration-support">المدة المحددة (باﻷيام)</label>
+                    <input  id="duration-support" type="number"  value ="1" placeholder="المدة المحددة (باﻷيام)">
+                </div>
+                <div class="form">
+                    <label for="pdesc-support">وصف المشكلة :  </label>
+                    <textarea id="pdesc-support" name="pdesc" placeholder="وصف المشكلة"></textarea>
+                </div>
+                <p class="msg-support"></p>
+                <p class="error-support"></p>
+                <button id="btn-add-support" class="tab-btn">تقديم الطلب </button>
+                 <div class="card-foot">
+                    <button class="rotate-btn" id="rotate-loan">طلب استعارة  <span class="fas fa-reply"></span>  </button>
+                </div>
+            </div>
+
+            <div class="loan card__face card__face--back">
+                <h2 class="title">طـلب  استــعارة</h2>
+                <div class="form">
+                    <label for="ptype"> نوع المشكلة : </label>
+                    <select id="ptype" name="ptype" class="type">
+                        <option selected value="Hardware">Hardware</option>
+                        <option disabled value="Software">Software</option>
+                        <option disabled value="M2L">M2L</option>
+                        <option disabled value="Internet">Internet</option>
+                        <option disabled value="Lan">Lan</option>
+                        <option disabled value="Customer DB">Customer DB</option>
+                    </select>
+                </div>
+                <div class="form">
+                    <label for="text">الموضوع :  </label>
+                    <input id="subject" type="text" placeholder="الموضوع :  ">
+                </div>
+                <div class="form">
+                    <label for="type">نوع الطلب : </label>
+                    <select id="type" name="type" class="type">
+                        <option selected value="loan">Loan</option>
+                        <option disabled value="support">Technical Support</option>
+                    </select>
+                </div>
+                <div class="form">
+                    <label for="priority">اﻷولوية : </label>
+                    <select id="priority" name="priority" class="type">
+                        <option value="medium">Medium</option>
+                        <option  value="high">High</option> 
+                        <option  value="low">Low</option>
+                    </select>
+                </div>
+                <div class="form">
+                    <label for="duration"> المدة المحددة للإستعارة باﻷيام:   </label>
+                    <input  id="duration" type="number"  value ="1" id="duration" placeholder=" المدة المحددة للإستعارة باﻷيام: ">
+                </div>
+                <div class="form">
+                    <label for="pdesc">توضيح : </label>
+                    <textarea id="pdesc" name="pdesc" placeholder="توضيح ووصف"></textarea>
+                </div>
+                <p class="msg"></p>
+                <p class="error"></p>
+                <button id="btn-add" class="tab-btn"> تقديم الطلب</button>
+                <div class="card-foot">
+                    <button class="rotate-btn"  id="rotate-support">  طلب دعم فني  <span class="fas fa-reply"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

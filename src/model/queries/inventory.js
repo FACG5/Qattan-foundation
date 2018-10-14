@@ -7,6 +7,14 @@ exports.getInventory = () => {
   return dbConnection.query(sql);
 };
 
+exports.getInventoryByName = (name) => {
+  const sql = {
+    text: 'SELECT * FROM inventory WHERE employee = $1;',
+    values: [name],
+  };
+  return dbConnection.query(sql);
+};
+
 exports.getInventoryById = (InventoryId) => {
   const sql = {
     text: 'SELECT * FROM inventory WHERE id = $1 ;',

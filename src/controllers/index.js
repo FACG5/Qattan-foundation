@@ -16,7 +16,7 @@ const tickets = require('./tickets');
 const { clientError, serverError } = require('./error');
 const { getLogOut } = require('./logout');
 const { checkString } = require('./validate.js');
-
+const addTicket = require('./addTicket');
 
 router.route('/')
   .get(homeManager.get);
@@ -68,6 +68,9 @@ router.route('/login')
 router.route('/logout')
   .get(getLogOut);
 
+router.route('/add-ticket')
+  .get(addTicket.get)
+  .post(addTicket.post);
 
 router.use(clientError);
 router.use(serverError);

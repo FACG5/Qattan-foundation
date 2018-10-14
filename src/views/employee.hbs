@@ -1,99 +1,140 @@
  <section class="employee-section">
     <div class="title">
         <h2 class="greet">أهلا في قسم الدعم الفني لدى مركز القطان   </h2>
-        <h3 class="employee"> <i class="fas fa-user-circle"></i>    أصالة مطرية </h3>
-        <h6 class="department">Adminstration </h6>
+        <h3 id="employee-name">{{name}}</h3>
+        <h6 id="employee-department">{{department}}</h6>
         <a href="/add-ticket"> <h4 class="fas fa-plus-circle" >  اضافة طلب</h4></a>
     </div>
    
-    <div class="view-section">
-         <div class="view">
-        <div class="switch">
-            <button id="done-button"  class="tap"> طلبات تم تنفيذها </button>
-            <button  id="undone-button" class="tap"> طلبات قيد التنفيذ</button>
-        </div>
-    </div>
-        <div id="done">
-            <div class="ticket-view">
-        <h3 class="view-title"> طلباتك : </h3>
-        {{#each resultSolved}}
-        <table class="viewTable">
-            <thead>
-                <tr>
-                <th colspan="4">
-                    <p>بطاقة رقم :      <span>{{ticket_no}}</span></p>
-                </th>
-                </tr>
-            </thead>
-            <tfoot>
-                <tr>
-                    <td>
-                        <p> الحالة : <span>{{type}}</span></p>
-                        <p>الأولوية :</p>
-                    </td>
-                     <td colspan="3"  class="view-link">
-                         <a> {{status_type}}<i class="fas fa-check"></i></a>
-                    </td>
-                </tr>
-            </tfoot>
-            <tbody>
-                <tr>
-                    <td>الموظف (صاحب البطاقة) :</td>
-                    <td>{{employee}}</td>
-                </tr>
-                <tr>
-                    <td>الموضوع :</td>
-                    <td>{{subject}}</td>
-                </tr>
-                  <tr>
-                    <td>النوع :</td>
-                    <td>{{problem_type}}</td>
-                </tr>
-            </tbody>
-        </table>
-        {{/each }}
-    </div>
-        </div>
-        <div id="undone">
-    <div class="ticket-view">
-        <h3 class="view-title"> طلبات تنتظر إستجابة :</h3>
-        {{#each resultWaiting}}
-        <table class="viewTable">
-            <thead>
-                <tr>
-                <th colspan="4">
-                    <p>بطاقة رقم :      <span>{{ticket_no}}</span></p>
-                </th>
-                </tr>
-            </thead>
-            <tfoot>
-                <tr>
-                    <td>
-                        <p> الحالة : <span>{{type}}</span></p>
-                        <p>الأولوية :</p>
-                    </td>
-                     <td colspan="3"  class="view-link">
-                         <a> {{status_type}}<i class="fas fa-check"></i></a>
-                    </td>
-                </tr>
-            </tfoot>
-            <tbody>
-                <tr>
-                    <td>الموظف (صاحب البطاقة) :</td>
-                    <td>{{employee}}</td>
-                </tr>
-                <tr>
-                    <td>الموضوع :</td>
-                    <td>{{subject}}</td>
-                </tr>
-                  <tr>
-                    <td>النوع :</td>
-                    <td>{{problem_type}}</td>
-                </tr>
-            </tbody>
-        </table>
-        {{/each }}
-    </div>
-        </div>
-    </div>
+    {{!--      Taps     --}}
+<div class="tabset">
+  <!-- Tab 1 -->
+  <input type="radio" name="tabset" id="tab1" aria-controls="solved" checked>
+  <label for="tab1">طلباتي المغلقة</label>
+  <!-- Tab 2 -->
+  <input type="radio" name="tabset" id="tab2" aria-controls="not-solved">
+  <label for="tab2">طلباتي المفتوحة</label>
+  <!-- Tab 3 -->
+  <input type="radio" name="tabset" id="tab3" aria-controls="devices">
+  <label for="tab3">  أجهزتي </label>
+  
+  <div class="tab-panels">
+    <section id="solved" class="tab-panel">
+      <h2>بطاقات مغلقة</h2>
+         <table class="employee-table">
+                    <thead>
+                        <th>رقم البطاقة </th>
+                        <th>عنوان الطلب</th>
+                        <th>وصف للطلب</th>
+                        <th>الحالة </th>
+                        <th>النوع</th>
+                        <th> المشكلة </th>
+                        <th>موظف اﻹدارة  / قسم IT</th>
+                        <th>وصف تقني</th>
+                        <th>المدة </th>
+                    </thead>
+                    <tbody>
+                          {{#each resultSolved}}
+                        <tr>
+                            <td>{{ticket_no}}</td>
+                            <td>{{subject}}</td>
+                            <td>{{status_type}}</td>
+                            <td>{{type}}</td>
+                            <td>{{problem_type}}</td>
+                            <td>{{problem_desc}}</td>
+                            <td>{{it_employee}}</td>
+                            <td>{{technical_desc}}</td>
+                            <td>{{duration}}</td>
+                        </tr>
+                         {{/each }}
+                    </tbody>
+                </table>
+
+     </section>
+
+    <section id="not-solved" class="tab-panel">
+      <h2>بطاقات مفتوحة</h2>
+       <table class="employee-table">
+                    <thead>
+                        <th>رقم البطاقة </th>
+                        <th>عنوان الطلب</th>
+                        <th>وصف للطلب</th>
+                        <th>الحالة </th>
+                        <th>النوع</th>
+                        <th> المشكلة </th>
+                        <th>موظف اﻹدارة  / قسم IT</th>
+                        <th>وصف تقني</th>
+                        <th>المدة </th>
+                    </thead>
+                    <tbody>
+                          {{#each resultWaiting}}
+                        <tr>
+                            <td>{{ticket_no}}</td>
+                            <td>{{subject}}</td>
+                            <td>{{status_type}}</td>
+                            <td>{{type}}</td>
+                            <td>{{problem_type}}</td>
+                            <td>{{problem_desc}}</td>
+                            <td>{{it_employee}}</td>
+                            <td>{{technical_desc}}</td>
+                            <td>{{duration}}</td>
+                        </tr>
+                         {{/each }}
+                    </tbody>
+                </table>
+    </section>
+
+     <section id="devices" class="tab-panel">
+      <h2> أجهزتي وأدواتي</h2>
+      <div>
+
+           <table class="employee-table">
+                    <thead>
+                        <th> Ass. Number  </th>
+                        <th> Inventory ID  </th>
+                        <th> Device  </th>
+                        <th> Brand  </th>
+                        <th> Description </th>
+                        <th> CD KEY  </th>
+                        <th> Place  </th>
+                        <th> Vendor  </th>
+                        <th> Warranty  </th>
+                        <th> Serial_no  </th>
+                        <th> Processor  </th>
+                        <th> Ram  </th>
+                        <th> Hd1  </th>
+                        <th> Hd2  </th>
+                        <th> Notes  </th>
+                        <th> Netport  </th>
+                        <th> Status  </th>
+                    </thead>
+                    <tbody>
+                          {{#each inventory}}
+                        <tr>
+                            <td>{{ass_no}}</td>
+                            <td>{{inventory_id}}</td>
+                            <td>{{device}}</td>
+                            <td>{{brand}}</td>
+                            <td>{{description}}</td>
+                            <td>{{cdkey}}</td>
+                            <td>{{place}}</td>
+                            <td>{{vendor}}</td>
+                            <td>{{warranty}}</td>
+                            <td>{{serial_no}}</td>
+                            <td>{{processor}}</td>
+                            <td>{{ram}}</td>
+                            <td>{{hd1}}</td>
+                            <td>{{hd2}}</td>
+                            <td>{{notes}}</td>
+                            <td>{{netport}}</td>
+                            <td>{{status}}</td>
+                        </tr>
+                         {{/each }}
+                    </tbody>
+                </table>
+      </div>
+     </section>
+  </div>
+  
+</div>
  </section>
