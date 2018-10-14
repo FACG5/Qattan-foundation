@@ -1,5 +1,7 @@
 /* global document fetch */
 
+const img = 'http://qattanfoundation.org/sites/all/themes/qf/logo.svg';
+
 function move(icon) {
   icon.classList.toggle('change');
 }
@@ -70,15 +72,42 @@ btnAdd.addEventListener('click', (e) => {
       body: JSON.stringify(newTicket),
     })
       .then(response => response.json())
-      .then(() => {
-        error.textContent = '';
-        succMsg.textContent = 'NEW TICKET ADDED SUCCESSFULLY !';
+      .then((response) => {
+        if (response.Error) {
+          swal({
+            dangerMode: true,
+            title: 'فشلت العملية',
+            text: response.Error,
+            icon: img,
+            button: 'أعد المحاولة',
+          });
+        } else {
+          swal({
+            successMode: true,
+            title: 'تمت العملية',
+            text: response.Result,
+            icon: img,
+            button: 'حسنـاً',
+          });
+        }
       })
-      .catch(() => {
-        error.textContent = 'THERE IS ERROR';
+      .catch((err) => {
+        swal({
+          dangerMode: true,
+          title: 'فشلت العملية',
+          text: err.message,
+          icon: img,
+          button: 'أعد المحاولة',
+        });
       });
   } else {
-    error.textContent = ('رجااءً أدخل  الحقول الفارغة  ');
+    swal({
+      dangerMode: true,
+      title: 'فشلت العملية',
+      text: 'أدخل الحقول الفارغة',
+      icon: img,
+      button: 'أعد المحاولة',
+    });
   }
 });
 
@@ -128,13 +157,40 @@ btnAddSupport.addEventListener('click', (e) => {
     })
       .then(response => response.json())
       .then(() => {
-        errMsg.textContent = '';
-        Msg.textContent = 'NEW TICKET ADDED SUCCESSFULLY !';
+        if (response.Error) {
+          swal({
+            dangerMode: true,
+            title: 'فشلت العملية',
+            text: response.Error,
+            icon: img,
+            button: 'أعد المحاولة',
+          });
+        } else {
+          swal({
+            successMode: true,
+            title: 'تمت العملية',
+            text: response.Result,
+            icon: img,
+            button: 'حسنـاً',
+          });
+        }
       })
-      .catch(() => {
-        errMsg.textContent = 'THERE IS ERROR';
+      .catch((err) => {
+        swal({
+          dangerMode: true,
+          title: 'فشلت العملية',
+          text: err.message,
+          icon: img,
+          button: 'أعد المحاولة',
+        });
       });
   } else {
-    errMsg.textContent = ('رجااءً أدخل  الحقول الفارغة  ');
+    swal({
+      dangerMode: true,
+      title: 'فشلت العملية',
+      text: 'أدخل الحقول الفارغة',
+      icon: img,
+      button: 'أعد المحاولة',
+    });
   }
 });

@@ -8,6 +8,44 @@
 /*
  CSS for the main interaction
 */
+
+.swal-overlay {
+}
+.swal-modal {
+border: 2px solid #c00036;
+border-radius: 15px;
+text-align: center;
+}
+.swal-title {
+ margin: 0px;
+ font-size: 20px;
+ margin-bottom: 28px;
+}
+.swal-text {
+ padding: 17px;
+ display: block;
+ margin: 12px;
+ text-align: center;
+ color: #c00036;
+}
+.swal-footer {
+ margin-top:12px;
+ overflow: hidden;
+ text-align: center;
+  border-top: 1px solid rgb(194, 194, 192);
+}
+.swal-button {
+ padding: 7px 19px;
+ border-radius: 2px;
+ background-color: #c00036;
+ font-size: 15px;
+ color:#fff;
+ border: 1px solid #444444;
+ font-weight: 700px;
+}
+.swal-icon{
+   width:120px;
+} 
 .tabset > input[type="radio"] {
     position: absolute;
     right: -200vw;
