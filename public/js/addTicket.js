@@ -156,7 +156,7 @@ btnAddSupport.addEventListener('click', (e) => {
       body: JSON.stringify(newTicket),
     })
       .then(response => response.json())
-      .then(() => {
+      .then((response) => {
         if (response.Error) {
           swal({
             dangerMode: true,
