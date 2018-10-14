@@ -152,9 +152,13 @@
             <h6>status{{this.status}}</h6>
       </div>
       {{/if }}
-      <button type="button" name="button"> <a href="/updateInventoryPage/{{this.id}}">edit</a> </button>
+      <div class="action-btn">
+  <button type="button" name="button"> <a href="/updateInventoryPage/{{this.id}}">edit</a> </button>
         <button type="button" name="button" class="deleteInventoryButton" id="{{this.id}}">delete </button>
-      <hr>
+    
+      </div>
+           <hr>
+
     {{/each}}
     </div>
     </section>
@@ -162,12 +166,12 @@
          <div class="">
     <h1>أدخل البيانات </h1>
 
-    <div class="">
+    <div class="form">
       <label for="id">ID</label>
       <input type="number" name="id" value="1" placeholder="ID" class="inventoryId">
     </div>
 
-    <div class="">
+    <div class="form">
       <label for="device">Device</label>
       <select class="device">
     {{#each devices}}
@@ -176,12 +180,12 @@
   </select>
     </div>
 
-    <div class="">
+    <div class="form">
       <label for="name">Name</label>
       <input type="text" name="name" value="" placeholder="Name" class="name">
     </div>
 
-    <div class="">
+    <div class="form">
       <label for="brand">Brand</label>
       <select class="brand">
     {{#each brands}}
@@ -190,18 +194,18 @@
   </select>
     </div>
 
-    <div class="">
+    <div class="form">
       <label for="description">description</label>
       <input type="text" name="description" value="" placeholder="description" class="description">
     </div>
 
 
-    <div class="">
+    <div class="form">
       <label for="cdkey">CD Key</label>
       <input type="text" name="cdkey" value="" placeholder="CDKey" class="cdkey">
     </div>
 
-    <div class="">
+    <div class="form">
       <label for="employee">employee</label>
       <select class="employee">
     {{#each employees}}
@@ -210,7 +214,7 @@
   </select>
     </div>
 
-    <div class="">
+    <div class="form">
       <label for="place">place</label>
       <select class="place">
     {{#each places}}
@@ -219,7 +223,7 @@
   </select>
     </div>
 
-    <div class="">
+    <div class="form">
       <label for="vendor">vendor</label>
       <select class="vendor">
     {{#each vendors}}
@@ -228,62 +232,62 @@
   </select>
     </div>
 
-    <div class="">
+    <div class="form">
       <label for="priceUsd">priceUsd</label>
       <input type="number" name="priceUsd" value="1" placeholder="priceUsd" class="priceUsd">
     </div>
 
-    <div class="">
+    <div class="form">
       <label for="priceNis">priceNis</label>
       <input type="number" name="priceNis" value="1" placeholder="priceNis" class="priceNis">
     </div>
 
-    <div class="">
+    <div class="form">
       <label for="purchaseDate">purchaseDate</label>
       <input type="date" name="" value="" class="purchaseDate" default="">
     </div>
 
-    <div class="">
+    <div class="form">
       <label for="warranty">warranty</label>
       <input type="number" name="" value="1" placeholder="warranty" class="warranty">
     </div>
 
-    <div class="">
+    <div class="form">
       <label for="SerialNo">Serial No</label>
       <input type="text" name="" value="" placeholder="Serial No" class="serialNo">
     </div>
 
-    <div class="">
+    <div class="form">
       <label for="processor">processor</label>
       <input type="text" name="" value="" placeholder="processor" class="processor">
     </div>
 
-    <div class="">
+    <div class="form">
       <label for="ram">ram</label>
       <input type="text" name="" value="" placeholder="ram" class="ram">
     </div>
 
-    <div class="">
+    <div class="form">
       <label for="hd1">hd1</label>
       <input type="number" name="" value="1" placeholder="hd1" class="hd1">
     </div>
 
-    <div class="">
+    <div class="form">
       <label for="hd2">hd2</label>
       <input type="number" name="" value="1" placeholder="hd2" class="hd2">
     </div>
 
-    <div class="">
+    <div class="form">
       <label for="notes">notes</label>
       <input type="text" name="" value="" placeholder="Note" class="notes">
     </div>
 
-    <div class="">
+    <div class="form">
       <label for="netport">netport</label>
       <input type="text" name="" value="" placeholder="netport" class="netport">
     </div>
 
-    <div class="">
+    <div class="form">
       <label for="status">status</label>
       <input type="number" name="" value="1" placeholder="status" class="status" min="0" max="1">
     </div>
@@ -297,20 +301,43 @@
       <section id="veiw-repaird" class="tab-panel">
  <div class="viewRepair">
     {{#each repaired}}
-      <h6> رقم التصليح {{this.id}}</h6>
-        <h6>رقم الجهاز {{this.no}}</h6>
-        <h6>التاريخ {{this.date}}</h6>
+     <div class="data">
+        <h5>رقم التصليح : </h5>
+          <h6>{{this.id}}</h6>
+      </div>
+      <div class="data">
+        <h5>رقم الجهاز :  </h5>
+         <h6>{{this.no}}</h6>
+      </div>
+       <div class="data">
+        <h5> التاريخ :  </h5>
+         <h6> {{this.date}}</h6>
+      </div>
       {{#if this.type}}
-        <h6>نوع التصليح {{this.type}}</h6>
+       <div class="data">
+        <h5> نوع التصليح :  </h5>
+        <h6>{{this.type}}</h6>
+      </div>
       {{/if}}
+
       {{#if this.action}}
-        <h6> الإجراءالمتبع{{this.action}}</h6>
+       <div class="data">
+        <h5> الإجراءالمتبع :  </h5>
+        <h6>{{this.action}}</h6>
+      </div>
       {{/if}}
       {{#if this.part}}
-        <h6> الجزء المضاف (إن وجد) {{this.part}}</h6>
+      <div class="data">
+        <h5> الجزء المضاف (إن وجد)  :  </h5>
+        <h6>{{this.part}}</h6>
+      </div>
       {{/if}}
       {{#if this.description}}
-        <h6>الوصف {{this.description}}</h6>
+       <div class="data">
+        <h5>الوصف:  </h5>
+        <h6>{{this.description}}</h6>
+      </div>
+        <h6> </h6>
       {{/if}}
       <hr>
 {{/each}}

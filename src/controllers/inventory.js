@@ -65,6 +65,7 @@ exports.updateInventoryPage = async (req, res, next) => {
       style: 'master',
       title: 'الأجهزة',
       manager: true,
+      style_special: 'form',
       dom: 'updateInventoryPage',
       inventory: inventorydb.rows[0],
       employees: employeesdb.rows,
