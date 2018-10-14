@@ -76,16 +76,6 @@ CREATE TABLE parts (
     part VARCHAR UNIQUE NOT NULL
 );
 
-CREATE TABLE repair (
-    id SERIAL PRIMARY KEY,
-    no INTEGER,
-    date DATE,
-    type VARCHAR REFERENCES type(type) ON UPDATE CASCADE,
-    action VARCHAR REFERENCES action(action) ON UPDATE CASCADE,
-    part VARCHAR REFERENCES parts(part)  ON UPDATE CASCADE,
-    description TEXT
-);
-
 CREATE TABLE inventory (
     id SERIAL PRIMARY KEY,
     ass_no SERIAL,
@@ -110,6 +100,16 @@ CREATE TABLE inventory (
     notes TEXT,
     netport VARCHAR,
     status INTEGER
+);
+
+CREATE TABLE repair (
+    id SERIAL PRIMARY KEY,
+    no INTEGER REFERENCES inventory(id) ON UPDATE CASCADE,
+    date DATE,
+    type VARCHAR REFERENCES type(type) ON UPDATE CASCADE,
+    action VARCHAR REFERENCES action(action) ON UPDATE CASCADE,
+    part VARCHAR REFERENCES parts(part)  ON UPDATE CASCADE,
+    description TEXT
 );
 
 COMMIT;

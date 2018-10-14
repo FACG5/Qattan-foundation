@@ -5,12 +5,17 @@ const supports = require('./support');
 const loans = require('./loans');
 const loanDetails = require('./loanDetails');
 const supportDetails = require('./supportDetails');
+const {
+  viewInventory, postInventory, updateInventoryPage, updateInventoryFun, addRepairInventory,
+  deleteInventories,
+} = require('./inventory');
 const employee = require('./employee');
 const solved = require('./solved');
 const notSolved = require('./notSolved');
 const tickets = require('./tickets');
 const { clientError, serverError } = require('./error');
 const { getLogOut } = require('./logout');
+const { checkString } = require('./validate.js');
 const addTicket = require('./addTicket');
 
 router.route('/')
@@ -39,8 +44,21 @@ router.route('/support/:id')
   .get(supportDetails.get)
   .put(supportDetails.put);
 
+// view and add inventory route
+router.route('/inventory')
+  .get(viewInventory)
+  .post(checkString, postInventory)
+  .delete(deleteInventories);
+
+// clicking on edit button will move to new page and route
+router.route('/updateInventoryPage/:id')
+  .get(updateInventoryPage)
+  .put(updateInventoryFun)
+  .post(addRepairInventory);
+
 router.route('/home-employee')
   .get(employee.get);
+
 // Login Routes
 router.route('/login')
   .get(getUser)
