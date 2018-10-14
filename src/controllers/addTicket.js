@@ -20,7 +20,11 @@ exports.post = (req, res, next) => {
   const newTicket = req.body;
   addTicket(newTicket)
     .then((response) => {
-      res.send(response);
+      if (response.rowCount === 0) {
+        res.send({ Error: 'أدخل الحقول الفارغة' });
+      } else {
+        res.send({ Result: ' تمت اﻹضافة بنجاح ' });
+      }
     })
     .catch((err) => {
       next(err);
