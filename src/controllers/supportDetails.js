@@ -9,6 +9,7 @@ exports.get = (req, res, next) => {
       res.render('supportDetails', {
         title: 'تفاصيل البطاقة',
         style: 'master',
+        style_special: 'details',
         dom: 'updateTicket',
         result,
         manager: true,

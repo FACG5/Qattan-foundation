@@ -9,6 +9,7 @@ exports.get = (req, res, next) => {
       res.render('loanDetails', {
         title: 'تفاصيل البطاقة',
         style: 'master',
+        style_special: 'details',
         dom: 'updateLoan',
         result,
         manager: true,

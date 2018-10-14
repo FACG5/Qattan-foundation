@@ -3,34 +3,66 @@
     <h2 class="page-title" >تفاصيل بطاقة الطلب</h2>
     <div class="ticket-view">
         {{#each result}}
-            <a>
-                <div class={{type}} id={{ticket_no}}>
-                    <h3>{{ticket_no}}</h3>
-                    <h5>{{employee}}</h5>
-                    <p>{{problem_type}}</p>
-                    <h5>{{status_type}}</h5>
-                    <h4>{{type}}</h4>
-                    <button id="update-btn" type="submit">اتخاذ اجراء</button>
-                </div>
-                <hr>
+               <div class="details">
+                    <h4 class="ticket-head"> اليك التفاصيل اﻵتية </h4>
+                    <div class={{type}} id={{ticket_no}}>
+                        <div class="info">
+                            <h3>بطـاقة رقـم : </h3>
+                            <h4>{{ticket_no}}</h4>
+                        </div>
+                         <div class="info">
+                            <h3>اسم الموظـف : </h3>
+                            <h4>{{employee}}</h4>
+                        </div>
+                         <div class="info">
+                            <h3>النــوع :  </h3>
+                            <h4>{{type}}</h4>
+                        </div>
+                         <div class="info">
+                            <h3>نوع المشكـلة : </h3>
+                            <h4>{{problem_type}}</h4>
+                        </div>
+                         <div class="info">
+                            <h3>حالة الطلب : </h3>
+                            <h4>{{status_type}}</h4>
+                        </div>
+                         <div class="info">
+                            <h3>وصف المشكلة : </h3>
+                            <h4>{{problem_desc}}</h4>
+                        </div>
+                        <div class="info">
+                            <h3>المدة المطلوبة للإستعارة باﻷيام : </h3>
+                            <h4>{{duration}}</h4>
+                        </div>
+                        <div class="info">
+                            <h3> اﻷولويـــة : </h3>
+                            <h4>{{priority}}</h4>
+                        </div>
+                        <button id="update-btn" class="btn" type="submit">اتخاذ اجراء</button>
+                     </div>
+               </div>
                 <div class="update-section">
-                    <label for="status">Status</label>
-                    <select id="status" name="status" placeholder="Status">
-                        <option value="{{this.status_type}}">{{this.status_type}}</option>
-                        <option value="solved">solved</option>
-                        <option value="in progress">in progress</option>
-                    </select>
-
-                      <label for="it-emp">IT Employee</label>
-                      <input type="text" id="it-employee" name="it-emp" placeholder="IT Employee" value="{{this.it_employee}}">
-
-                        <label for="desc">Tech.Desc</label>
-                      <input type="text" id="desc" name="desc" placeholder="Description" value="{{this.technical_desc}}">
-
-                    <button id="done-btn" type="submit">تم</button>
-                    <button id="close-btn" type="submit">اغلاق</button>
-                </div>
-            </a>
+                    <h4>اتخذ إجراء وأدخل البيانات اﻵتية </h4>
+                     <div class="form">
+                         <label for="status"> - الحالة : </label>
+                        <select id="status" required name="status" placeholder="Status">
+                            <option value="{{this.status_type}}">{{this.status_type}}</option>
+                            <option value="solved">solved</option>
+                            <option value="in progress">in progress</option>
+                        </select>
+                    </div>
+                    <div class="form">
+                        <label for="it-emp"> - موظف قسم (IT) او المدير :  </label>
+                        <input type="text" id="it-employee" required name="it-emp" placeholder="IT Employee" value="{{this.it_employee}}">
+                    </div>
+                    <div class="form last">
+                        <label for="desc"> - الوصف التـــقني  :  </label>
+                        <textarea id="desc" required name="desc" placeholder="Description" cols="30" rows="10">{{this.technical_desc}}</textarea>
+                    </div>
+                     <div class="btns">
+                       <button id="done-btn" class="btn" type="submit"> تحديث وإرسال اﻹجراء</button>
+                       <button id="close-btn" class="cencle" type="submit">إلغاء</button>
+                    </div> 
         {{/each }}
         <p class="error"></p>
     </div>
