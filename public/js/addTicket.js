@@ -40,11 +40,12 @@ const error = document.querySelector('.error');
 // ADD SUPPORT TICKET
 
 btnAdd.addEventListener('click', (e) => {
+  error.textContent = '';
   e.preventDefault();
-  if (employeeName && employeeDep && probType && tSubject && tType && tPriority
-    && tDuration && pdesc) {
-    const employee = employeeName.toLowerCase();
-    const department = employeeDep.toLowerCase();
+  if (employeeName && employeeDep && probType && tSubject.value.trim().length !== 0 && tType && tPriority
+    && tDuration && pdesc.value.trim().length !== 0) {
+    const employee = employeeName.textContent.toLowerCase();
+    const department = employeeDep.textContent.toLowerCase();
     const problemType = probType.value.toLowerCase();
     const problemDesc = pdesc.value.toLowerCase();
     const subject = tSubject.value.toLowerCase();
@@ -70,11 +71,14 @@ btnAdd.addEventListener('click', (e) => {
     })
       .then(response => response.json())
       .then(() => {
+        error.textContent = '';
         succMsg.textContent = 'NEW TICKET ADDED SUCCESSFULLY !';
       })
       .catch(() => {
         error.textContent = 'THERE IS ERROR';
       });
+  } else {
+    error.textContent = ('رجااءً أدخل  الحقول الفارغة  ');
   }
 });
 
@@ -92,10 +96,12 @@ const btnAddSupport = document.querySelector('#btn-add-support');
 const Msg = document.querySelector('.msg-support');
 const errMsg = document.querySelector('.error-support');
 
+
 btnAddSupport.addEventListener('click', (e) => {
+  errMsg.textContent = '';
   e.preventDefault();
-  if (empName && empDep && pType && tSub && ticketType && ticketPriority
-    && ticketDuration && problemdesc) {
+  if (empName && empDep && pType && tSub.value.trim().length !== 0 && ticketType && ticketPriority
+    && ticketDuration && problemdesc.value.trim().length !== 0) {
     const employee = empName.textContent.toLowerCase();
     const department = empDep.textContent.toLowerCase();
     const problemType = pType.value.toLowerCase();
@@ -104,7 +110,6 @@ btnAddSupport.addEventListener('click', (e) => {
     const duration = ticketDuration.value.toLowerCase();
     const type = ticketType.value.toLowerCase();
     const priority = ticketPriority.value.toLowerCase();
-
     const newTicket = {
       employee,
       department,
@@ -115,8 +120,6 @@ btnAddSupport.addEventListener('click', (e) => {
       type,
       priority,
     };
-    console.log(newTicket);
-    
     fetch('/add-ticket', {
       method: 'POST',
       credentials: 'same-origin',
@@ -125,10 +128,13 @@ btnAddSupport.addEventListener('click', (e) => {
     })
       .then(response => response.json())
       .then(() => {
+        errMsg.textContent = '';
         Msg.textContent = 'NEW TICKET ADDED SUCCESSFULLY !';
       })
       .catch(() => {
         errMsg.textContent = 'THERE IS ERROR';
       });
+  } else {
+    errMsg.textContent = ('رجااءً أدخل  الحقول الفارغة  ');
   }
 });
