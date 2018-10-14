@@ -83,13 +83,13 @@ const collectData = () => ({
   netport: netport.value,
   status: status.value,
 });
-// SEARCH
-searchBrand.addEventListener('click', (e) => {
-  console.log(searchBrand.value);
-});
-searchDevice.addEventListener('click', (e) => {
-  console.log(e.target.value);
-});
+// SEARCH Section was terminated BECAUSE Of Time 
+// searchBrand.addEventListener('click', (e) => {
+//   console.log(searchBrand.value);
+// });
+// searchDevice.addEventListener('click', (e) => {
+//   console.log(e.target.value);
+// });
 
 // Add Inventory Button Event Listener
 addInventButton.addEventListener('click', () => {

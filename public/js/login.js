@@ -45,7 +45,10 @@ signButton.addEventListener('click', () => {
         if (res.Error) {
           errMsg.textContent = res.Error;
         } else {
-          window.location = res.result;
+          setTimeout(() => {
+            window.location = res.result;
+          }, 3000);
+          swal('مرحبا','أهلاً بك', 'success')
         }
       })
       .catch(() => {
