@@ -12,6 +12,9 @@ const netport = document.querySelector('.netport');
 const status = document.querySelector('.status');
 const updateInventButton = document.querySelector('.updateInventButton');
 
+
+const img = 'http://qattanfoundation.org/sites/all/themes/qf/logo.svg';
+
 // Mending DOM
 const MendDate = document.querySelector('.MendDate');
 const type = document.querySelector('.type');
@@ -68,15 +71,31 @@ updateInventButton.addEventListener('click', () => {
           setTimeout(() => {
             window.location = '/inventory';
           }, 3000);
-          swal('تم الإضافة', res.result, 'success');
+          swal({
+            title: 'تمت العملية:',
+            text: res.result,
+            icon: img,
+            button: 'حسناً',
+          });
         }
       })
       .catch((error) => {
-        swal('خطأ ما', error.message, 'error');
+        swal({
+          dangerMode: true,
+          title: 'فشلت العملية',
+          text:  error.message,
+          icon: img,
+          button: 'أعد المحاولة',
+        });
       });
-  }
-  else {
-  swal('خطأ','أرجو إدخال البيانات رقمية','error')
+  } else {
+    swal({
+      dangerMode: true,
+      title: 'فشلت العملية',
+      text: 'أرجو إدخال البيانات رقمية',
+      icon: img,
+      button: 'أعد المحاولة',
+    });
   }
 });
 
@@ -94,16 +113,33 @@ mendInventButton.addEventListener('click', () => {
       .then(res => res.json())
       .then((res) => {
         if (res.Error) {
-          swal('خطأ ما', res.Error, 'error');
+          swal({
+            dangerMode: true,
+            title: 'فشلت العملية',
+            text: res.Error,
+            icon: img,
+            button: 'أعد المحاولة',
+          });
         } else {
           setTimeout(() => {
             window.location = '/inventory';
           }, 3000);
-          swal('تم الإضافة', res.result, 'success');
+          swal({
+            title: 'تمت العملية:',
+            text: res.result,
+            icon: img,
+            button: 'حسناً',
+          });
         }
       })
       .catch((error) => {
-        swal('خطأ ما', error.message, 'error');
+        swal({
+          dangerMode: true,
+          title: 'فشلت العملية',
+          text:  error.message,
+          icon: img,
+          button: 'أعد المحاولة',
+        });
       });
   }
 });

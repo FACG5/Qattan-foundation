@@ -21,6 +21,9 @@ const notes = document.querySelector('.notes');
 const netport = document.querySelector('.netport');
 const status = document.querySelector('.status');
 const addInventButton = document.querySelector('.addInventButton');
+
+const img = 'http://qattanfoundation.org/sites/all/themes/qf/logo.svg';
+
 // Delete Button
 const deleteInventoryButtons = document.querySelectorAll('.deleteInventoryButton');
 
@@ -39,12 +42,24 @@ deleteInventoryButtons.forEach((button) => {
     })).then(res => res.json())
       .then((res) => {
         if (res.Error) {
-          swal('خطأ ما', res.Error, 'error');
+          swal({
+            dangerMode: true,
+            title: 'فشلت العملية',
+            text: res.Error,
+            icon: img,
+            button: 'أعد المحاولة',
+          });
         } else {
           setTimeout(() => {
             window.location = '/inventory';
           }, 3000);
-          swal('النتيجة', res.result, res.opType);
+          swal({
+            sucessMode: true,
+            title: 'النتيجة',
+            text: res.result,
+            icon: img,
+            button: 'حسـناً',
+          });
         }
       })
       .catch((error) => {
@@ -93,7 +108,13 @@ const collectData = () => ({
 
 // Add Inventory Button Event Listener
 addInventButton.addEventListener('click', () => {
-  if (purchaseDate.value == '' || inventoryId.value == '') swal('أرجوك أدخل القيم الفارغة ','خطأ','error')
+  if (purchaseDate.value == '' || inventoryId.value == '')  swal({
+    dangerMode: true,
+    title: 'فشلت العملية',
+    text: 'أرجوك أدخل القيم الفارغة ',
+    icon: img,
+    button: 'أعد المحاولة',
+  });
 
   else {
     fetch('/inventory', ({
@@ -106,16 +127,33 @@ addInventButton.addEventListener('click', () => {
     })).then(res => res.json())
       .then((res) => {
         if (res.Error) {
-          swal('خطأ ما', res.Error, 'error');
+          swal({
+            dangerMode: true,
+            title: 'فشلت العملية',
+            text: res.Error,
+            icon: img,
+            button: 'أعد المحاولة',
+          });
         } else {
           setTimeout(() => {
             window.location = '/inventory';
           }, 3000);
-          swal('تم الإضافة', res.result, 'success');
+          swal({
+            title: 'تمت العملية:',
+            text: res.result,
+            icon: img,
+            button: 'حسناً',
+          });
         }
       })
       .catch((error) => {
-        swal('خطأ ما', error.message, 'error');
+        swal({
+          dangerMode: true,
+          title: 'فشلت العملية',
+          text: error.message,
+          icon: img,
+          button: 'أعد المحاولة',
+        });
       });
   }
 });
