@@ -3,12 +3,15 @@
   #98012e   #c00036   #5a6e7b   #8e8378   #e5e5e5  #fff 
 */
 
-.form{
+.form , .viewAll .data{
     padding: 5px 15px;
     display: grid;
     grid-template-columns: 25% 75%;
 } 
 
+.viewAll .data{
+    font-size: 20px;
+}
 .form input,select,option{
     padding: 12px;
     border-radius: 5px;
