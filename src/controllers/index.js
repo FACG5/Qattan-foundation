@@ -5,6 +5,7 @@ const supports = require('./support');
 const loans = require('./loans');
 const loanDetails = require('./loanDetails');
 const supportDetails = require('./supportDetails');
+const reports = require('./reports');
 const employee = require('./employee');
 const solved = require('./solved');
 const notSolved = require('./notSolved');
@@ -30,6 +31,10 @@ router.route('/support')
 
 router.route('/loans')
   .get(loans.get);
+
+router.route('/report')
+  .get(reports.get)
+  .post(reports.post);
 
 router.route('/loan/:id')
   .get(loanDetails.get)

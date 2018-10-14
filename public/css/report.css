@@ -1,0 +1,235 @@
+/*  
+                ----    General Style    ---- 
+
+/*   #98012e   #c00036   #5a6e7b   #8e8378   #e5e5e5  #fff  */
+h3{   
+    margin: 20px 0px 30px 0px;
+    font-size:20px;
+}
+.switch{
+    width:100%;
+    display:grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    margin: 5px 0px 5px 0px;
+}
+.tap{
+    width: 100%;
+    border:#98012e solid 1px;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 12px;
+    outline: none;
+    color:#98012e;
+}
+.tap:hover{
+    color:#fff;
+    background:#98012e;
+}
+.selected{
+    width: 100%;
+    border: #98012e solid 1px;
+    font-weight: bold;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+    color:#fff;
+    background:#98012e;
+}
+.btnClicked{
+    border: #444444 solid 1px;
+    font-weight: bold;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    color:#fff !important;
+    background:#444444 !important;
+}
+.form{
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    font-size: 17px;
+}
+.dis-active{
+    padding: 7px;
+    border-radius: 5px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    outline: none;
+    border: none;
+    background: #AAAAAA;
+    color: #444444;
+    width: 100px;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+}
+.form input{
+    padding: 7px;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+    margin-right: 15px;
+}
+.form .btn{
+    padding: 7px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background: #98012e;
+    color: #fff;
+    width: 100px;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+}
+#switch{
+    width:80%;
+    margin: 5px auto 5px auto;
+}
+.switch .btn{
+    padding: 7px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background: #98012e;
+    color: #fff;
+    width: 150px;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+}
+.form .btn:active ,.dis-active:active{
+    transform: translateY(4px);
+}
+
+table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+table.viewTable {
+    background-color: #fff;
+    width: 95%;
+    border-collapse: collapse;
+    padding: 15px;
+    margin: 0px auto 50px auto;
+    box-shadow: 1px 1px 3px 2px #5a6e7b47;
+}
+    table.viewTable td, table.viewTable th {
+    border-bottom: 1px dashed #AAAAAA;
+    padding: 3px 15px;
+    min-width: 100px;
+}
+table.viewTable tbody td {
+    font-size: 14px;
+    text-transform: capitalize;
+    min-width: 100px;
+}
+table.viewTable tr:nth-child(even) {
+    background: #fff;
+}
+table.viewTable thead {
+    border-bottom: 1px dashed #444444;
+}
+    table.viewTable thead th {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: right;
+    border-bottom: 1px dashed #444444;
+}
+        
+table.viewTable a  {
+    text-align: center;
+    color: #98012e !important;
+}
+@media only screen and (max-width:600px){
+h3{   
+    margin: 20px 0px 30px 0px;
+    font-size:18px;
+}
+.switch{
+    width:100%;
+    display:grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    margin: 5px 0px 5px 0px;
+}
+.tap{
+    width: 100%;
+    border:#98012e solid 1px;
+    background: none;
+    font-size:15px;
+    cursor: pointer;
+    padding: 12px;
+    outline: none;
+    color:#98012e;
+}
+.tap:hover{
+    color:#fff;
+    background:#98012e;
+}
+.selected{
+    width: 100%;
+    border: #98012e solid 1px;
+    font-weight: normal;
+    background: none;
+    font-size: 15px;
+    cursor: pointer;
+    outline: none;
+    color:#fff;
+    background:#98012e;
+}
+.btnClicked{
+    border: #444444 solid 1px;
+    font-weight: bold;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    color:#fff !important;
+    background:#444444 !important;
+}
+.form{
+    display: block;
+    padding: 15px;
+    font-size: 15px;
+}
+.dis-active{
+    padding: 7px;
+    border-radius: 5px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    outline: none;
+    border: none;
+    background: #AAAAAA;
+    color: #444444;
+    width: 100px;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+}
+.form input{
+    padding:2px;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+    margin:0 auto 20px auto;
+}
+.form .btn{
+    padding: 7px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background: #98012e;
+    color: #fff;
+    width: 100%;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+}
+#switch{
+    width:100%;
+    margin: 5px auto 5px auto;
+}
+}

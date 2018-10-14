@@ -1,0 +1,295 @@
+<section>
+    <h2 class="page-title" >    التقارير  <i class="fas fa-file-alt"></i>  </h2>
+    <h3 class="report-title">إختر ألية عرض التقرير التي تريد    </h3>
+
+    <div class="switch">
+        <button type="submit" class="btn-switch tap" ID="period-button">تقرير حسب التاريخ </button>
+        <button type="submit" class="btn-switch tap" ID="status-button">تقرير حسب الحالة </button>
+        <button type="submit" class="btn-switch tap" ID="type-button">تقرير حسب النوع </button>
+        <button type="submit" class="btn-switch tap" ID="all-button">تقرير كلي   </button>
+    </div>
+
+    <div class="period-section">
+        <div class="ticket-view">
+            <h3>أدخل المدة المطلوبة : </h3>
+            <div class="form">
+                <div class="min">
+                    <label for="min-date">أدنى تاريخ  : </label>
+                    <input type="date" name="min-date" id="min-date">
+                </div>
+                 <div class="min">
+                     <label for="max-date">أعلى تاريخ : </label>
+                    <input type="date" name="max-date" id="max-date">
+                </div>
+                <button type="submit" id="btn-period" class="btn" >أخرج التقرير </button>
+            </div>
+            <p class="error"></p>
+            <div class="period-result">
+                <table class="viewTable">
+                    <thead>
+                        <th>رقم البطاقة </th>
+                        <th>تاريخ الطلب </th>
+                        <th>اسم الموظف </th>
+                        <th>عنوان الطلب</th>
+                        <th>وصف للطلب</th>
+                        <th>الحالة </th>
+                        <th>النوع</th>
+                        <th> المشكلة </th>
+                         <th>موظف اﻹدارة  / قسم IT</th>
+                        <th>المدة </th>
+                    </thead>
+                    <tbody class="ticket-list">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="report">
+            <div id="switch" class="switch switch-status">
+                <h3> إختر الحالة لعرض التقرير :  </h3>
+                <button type="submit" class="btn-switch dis-active" ID="solved-button">Solved</button>
+                <button type="submit" class="btn-switch  dis-active" ID="not-solved-button">Not Solved</button>
+                <button type="submit" class="btn-switch  dis-active" ID="in-progress-button">In progress</button>
+            </div>
+
+            <div id="switch" class="switch switch-type">
+                <h3> إختر النوع لعرض التقرير :  </h3>
+                <button type="submit" class="btn-switch dis-active" ID="loan-button">Loans</button>
+                <button type="submit" class="btn-switch dis-active"  ID="support-button">Support</button>
+            </div>
+
+         {{!-- all --}}
+        <div class="all">
+             <h3> إليك التقرير :   </h3>
+             <table class="viewTable">
+                    <thead>
+                        <th>رقم البطاقة </th>
+                        <th>اسم الموظف </th>
+                        <th>عنوان الطلب</th>
+                        <th>وصف للطلب</th>
+                        <th>الحالة </th>
+                        <th>النوع</th>
+                        <th> المشكلة </th>
+                        <th>موظف اﻹدارة  / قسم IT</th>
+                        <th>وصف تقني</th>
+                        <th>المدة </th>
+                        <th> details </th>
+                    </thead>
+                    <tbody>
+                          {{#each result}}
+                        <tr>
+                            <td>{{ticket_no}}</td>
+                            <td>{{employee}}</td>
+                            <td>{{subject}}</td>
+                            <td>{{status_type}}</td>
+                            <td>{{type}}</td>
+                            <td>{{problem_type}}</td>
+                            <td>{{problem_desc}}</td>
+                            <td>{{it_employee}}</td>
+                            <td>{{technical_desc}}</td>
+                            <td>{{duration}}</td>
+                            <td> <a href="{{type}}/{{ticket_no}}">عرص التفاصيل</a></td>
+                        </tr>
+                         {{/each }}
+                    </tbody>
+                </table>
+            </div>
+
+        <div class="status-filter">
+
+         {{!-- filter by statut (solved) --}}
+        <div class="solved">
+              <h3> إليك التقرير :   </h3>
+             <table class="viewTable">
+                    <thead>
+                        <th>رقم البطاقة </th>
+                        <th>اسم الموظف </th>
+                        <th>عنوان الطلب</th>
+                        <th>وصف للطلب</th>
+                        <th>الحالة </th>
+                        <th>النوع</th>
+                        <th> المشكلة </th>
+                        <th>موظف اﻹدارة  / قسم IT</th>
+                        <th>وصف تقني</th>
+                        <th>المدة </th>
+                        <th> details </th>
+                    </thead>
+                    <tbody>
+                          {{#each solve}}
+                        <tr>
+                            <td>{{ticket_no}}</td>
+                            <td>{{employee}}</td>
+                            <td>{{subject}}</td>
+                            <td>{{status_type}}</td>
+                            <td>{{type}}</td>
+                            <td>{{problem_type}}</td>
+                            <td>{{problem_desc}}</td>
+                            <td>{{it_employee}}</td>
+                            <td>{{technical_desc}}</td>
+                            <td>{{duration}}</td>
+                            <td> <a href="{{type}}/{{ticket_no}}">عرص التفاصيل</a></td>
+                        </tr>
+                         {{/each }}
+                    </tbody>
+                </table>
+            </div>
+
+              {{!-- filter by statut (not solved) --}}
+        <div class="notSolved">
+              <h3> إليك التقرير :   </h3>
+             <table class="viewTable">
+                    <thead>
+                        <th>رقم البطاقة </th>
+                        <th>اسم الموظف </th>
+                        <th>عنوان الطلب</th>
+                        <th>وصف للطلب</th>
+                        <th>الحالة </th>
+                        <th>النوع</th>
+                        <th> المشكلة </th>
+                        <th>موظف اﻹدارة  / قسم IT</th>
+                        <th>وصف تقني</th>
+                        <th>المدة </th>
+                        <th> details </th>
+                    </thead>
+                    <tbody>
+                          {{#each notSolved}}
+                        <tr>
+                            <td>{{ticket_no}}</td>
+                            <td>{{employee}}</td>
+                            <td>{{subject}}</td>
+                            <td>{{status_type}}</td>
+                            <td>{{type}}</td>
+                            <td>{{problem_type}}</td>
+                            <td>{{problem_desc}}</td>
+                            <td>{{it_employee}}</td>
+                            <td>{{technical_desc}}</td>
+                            <td>{{duration}}</td>
+                            <td> <a href="{{type}}/{{ticket_no}}">عرص التفاصيل</a></td>
+                        </tr>
+                         {{/each }}
+                    </tbody>
+                </table>
+            </div>
+
+              {{!-- filter by statut (in progress) --}}
+        <div class="progress">
+              <h3> إليك التقرير :   </h3>
+             <table class="viewTable">
+                    <thead>
+                        <th>رقم البطاقة </th>
+                        <th>اسم الموظف </th>
+                        <th>عنوان الطلب</th>
+                        <th>وصف للطلب</th>
+                        <th>الحالة </th>
+                        <th>النوع</th>
+                       <th> المشكلة </th>
+                        <th>موظف اﻹدارة  / قسم IT</th>
+                        <th>وصف تقني</th>
+                        <th>المدة </th>
+                        <th> details </th>
+                    </thead>
+                    <tbody>
+                          {{#each inProgress}}
+                        <tr>
+                            <td>{{ticket_no}}</td>
+                            <td>{{employee}}</td>
+                            <td>{{subject}}</td>
+                            <td>{{status_type}}</td>
+                            <td>{{type}}</td>
+                            <td>{{problem_type}}</td>
+                            <td>{{problem_desc}}</td>
+                            <td>{{it_employee}}</td>
+                            <td>{{technical_desc}}</td>
+                            <td>{{duration}}</td>
+                            <td> <a href="{{type}}/{{ticket_no}}">عرص التفاصيل</a></td>
+                        </tr>
+                         {{/each }}
+                    </tbody>
+                </table>
+            </div>
+  </div>
+
+  <div class="type-filter">
+
+                {{!-- filter by type (loan) --}}
+            <div class="loan">
+                  <h3> إليك التقرير :   </h3>
+             <table class="viewTable">
+                    <thead>
+                        <th>رقم البطاقة </th>
+                        <th>اسم الموظف </th>
+                        <th>عنوان الطلب</th>
+                        <th>وصف للطلب</th>
+                        <th>الحالة </th>
+                        <th>النوع</th>
+                        <th> المشكلة </th>
+                        <th>موظف اﻹدارة  / قسم IT</th>
+                        <th>وصف تقني</th>
+                        <th>المدة </th>
+                        <th> details </th>
+                    </thead>
+                    {{#each loans}}
+                    <tbody>
+                        <tr>
+                            <td>{{ticket_no}}</td>
+                            <td>{{employee}}</td>
+                            <td>{{subject}}</td>
+                            <td>{{status_type}}</td>
+                            <td>{{type}}</td>
+                            <td>{{problem_type}}</td>
+                            <td>{{problem_desc}}</td>
+                            <td>{{it_employee}}</td>
+                            <td>{{technical_desc}}</td>
+                            <td>{{duration}}</td>
+                            <td> <a href="{{type}}/{{ticket_no}}">عرص التفاصيل</a></td>
+                        </tr>
+                    </tbody>
+                    {{/each }}
+                </table>
+            </div>
+
+               {{!-- filter by type (support) --}}
+            <div class="support">
+                  <h3> إليك التقرير :   </h3>
+             <table class="viewTable">
+                    <thead>
+                        <th>رقم البطاقة </th>
+                        <th>اسم الموظف </th>
+                        <th>عنوان الطلب</th>
+                        <th>وصف للطلب</th>
+                        <th>الحالة </th>
+                        <th>النوع</th>
+                        <th> المشكلة </th>
+                        <th>موظف اﻹدارة  / قسم IT</th>
+                        <th>وصف تقني</th>
+                        <th>المدة </th>
+                        <th> details </th>
+                    </thead>
+                    {{#each supports}}
+                    <tbody>
+                        <tr class="supportRow">
+                            <td>{{ticket_no}}</td>
+                            <td>{{employee}}</td>
+                            <td>{{subject}}</td>
+                            <td>{{status_type}}</td>
+                            <td>{{type}}</td>
+                            <td>{{problem_type}}</td>
+                            <td>{{problem_desc}}</td>
+                            <td>{{it_employee}}</td>
+                            <td>{{technical_desc}}</td>
+                            <td>{{duration}}</td>
+                            <td> <a href="{{type}}/{{ticket_no}}">عرص التفاصيل</a></td>
+                        </tr>
+                    </tbody>
+                    {{/each }}
+                </table>
+            </div>
+
+  </div>
+        </div>
+
+</section>
