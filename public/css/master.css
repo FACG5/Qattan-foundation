@@ -11,14 +11,90 @@
     font-family: 'Mada', sans-serif;
 }
 
-/*
-             ------     SWEET ALERT STYLE       ------
-*/
-/* .swal-modal {
-  background-color: rgba(63,255,106,0.69);
-  border: 3px solid white;
-} */
-
+.tabset > input[type="radio"] {
+    position: absolute;
+    right: -200vw;
+  }
+  
+  .tabset{
+      margin: 0 auto;
+  }
+  .tabset .tab-panel {
+    display: none;
+  }
+  
+  .tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+  .tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+  .tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+  .tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+  .tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+  .tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+    display: block;
+  }
+  
+  /*
+   Styling
+  */  
+  .tabset > label {
+    position: relative;
+    display: inline-block;
+    padding: 15px 15px 25px;
+    border: 2px solid #c00036;
+    border-bottom: 0;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  
+  .tabset > label::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
+    width: 22px;
+    height: 4px;
+    background: #c00036;
+  }
+  
+  .tabset > label:hover,
+  .tabset > input:focus + label {
+    color:#c00036;
+  }
+  
+  .tabset > label:hover::after,
+  .tabset > input:focus + label::after,
+  .tabset > input:checked + label::after {
+    background:#fff;
+  }
+  
+  .tabset > input:checked + label {
+    border-color: #c00036;
+    color: #fff;
+    border-bottom: 1px solid #c00036;
+    margin-bottom: -1px;
+    background: #c00036;
+  }
+  
+  .tab-panel {
+    padding: 30px 20px 10px 0px;
+    background:#fff;
+    width: 100%;
+  }
+  .tab-panel h2{
+    color: #c00036;
+    margin-bottom: 20px;
+  }
+  
+  /*
+   Demo purposes only
+  */
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  } 
+  .tabset {
+    max-width: 65em;
+  }
 /*
              ------     END OF SWEET ALERT STYLE       ------
 */
@@ -135,6 +211,14 @@ ul.list li.list-item{
         z-index: 1000;
         box-shadow: 1px 1px 1px 2px rgba(0,0,0,0.2)
     }
+    footer{
+        text-align: center;
+        font-weight: normal;
+        letter-spacing:0px;
+        font-size:12px;
+        margin: 5% 0px 30px 0px;
+        color:#5a6e7b;
+    }
     #sidebar.active {
     transform:perspective(1200px) rotateY(0deg);
     }
@@ -143,14 +227,6 @@ ul.list li.list-item{
     left:30px;
     top:20px;
     transition:left 200ms linear 0ms,transform 300ms ease 100ms;
-    }
-    footer{
-        text-align: center;
-        font-weight: normal;
-        letter-spacing:0px;
-        font-size:12px;
-        margin: 5% 0px 30px 0px;
-        color:#5a6e7b;
     }
     header .title{
         display: none;
@@ -167,10 +243,6 @@ ul.list li.list-item{
         top:0;
         left:0;
         z-index: 1000;
-    }
-    #toggle-btn.active span:nth-child(3) {
-    top:-10px;
-    transform:rotate(-45deg);
     }
     #sidebar {
         position:absolute;
@@ -447,3 +519,43 @@ footer{
     margin: 5% 0px 30px 0px;
     color:#5a6e7b;
 }
+
+
+/* SWEET ALLERTS STYLE */
+.swal-overlay {
+}
+.swal-modal {
+border: 2px solid #c00036;
+border-radius: 15px;
+text-align: center;
+}
+.swal-title {
+ margin: 0px;
+ font-size: 20px;
+ margin-bottom: 28px;
+}
+.swal-text {
+ padding: 17px;
+ display: block;
+ margin: 12px;
+ text-align: center;
+ color: #c00036;
+}
+.swal-footer {
+ margin-top:12px;
+ overflow: hidden;
+ text-align: center;
+  border-top: 1px solid rgb(194, 194, 192);
+}
+.swal-button {
+ padding: 7px 19px;
+ border-radius: 2px;
+ background-color: #c00036;
+ font-size: 15px;
+ color:#fff;
+ border: 1px solid #444444;
+ font-weight: 700px;
+}
+.swal-icon{
+   width:120px;
+} 

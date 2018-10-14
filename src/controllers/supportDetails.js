@@ -23,9 +23,9 @@ exports.put = (req, res, next) => {
   updateTicket(data)
     .then((response) => {
       if (response.rowCount === 1) {
-        res.send({ result: 'تم اتخاذ اجراء' });
+        res.send({ result: 'اتخاذ اجراء للطلب ' });
       } else {
-        res.send({ error: 'اعد المحاولة ' });
+        res.send({ error: 'خطأ في المحاولة ' });
       }
     })
     .catch((err) => {

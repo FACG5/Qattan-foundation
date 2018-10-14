@@ -1,125 +1,165 @@
 <section>
   <h2 class="page-title">الأدوات/الأجهزة</h2>
-  <div class="">
-    بلااااااه
-  </div>
-  <div class="">
-    <button type="button" name="button">عرض الأجهزة</button>
-    <button type="button" name="button"> إضافة جهاز</button>
-    <button type="button" name="button"> عرض ما تم إصلاحه</button>
-  </div>
-
-  <!-- **************************************** SEARCH SECTION *********************************** -->
-  <div class="search">
-    <input type="number" name="" value="" placeholder="البحث بالرقم التسلسلي">
-    <select class="searchBrand">
-  <option selected disabled >البحث بـ العلامة التجارية</option>
-    {{#each brands}}
-    <option value="{{this.brand}}">{{this.brand}}</option>
-    {{/each}}
-  </select>
-
-    <select class="searchDevice">
-  <option selected disabled>البحث بنوع الجهاز</option>
-    {{#each devices}}
-    <option value="{{this.device}}">{{this.device}}</option>
-    {{/each}}
-  </select>
-  </div>
-
-  <div class="Search Reasult">
-
-  </div>
-  <!-- **************************************** END SEARCH  *********************************** -->
-  <!--
-*
-*
-*
--->
-  <!-- ******************************* VIEW ALL INVENTORIES SECTION ******************************* -->
-  <div class="viewAll">
+ 
+   {{!--      Taps     --}}
+<div class="tabset">
+  <!-- Tab 1 -->
+  <input type="radio" name="tabset" id="tab1" aria-controls="view" checked>
+  <label for="tab1">عرض الأجهزة</label>
+  <!-- Tab 2 -->
+  <input type="radio" name="tabset" id="tab2" aria-controls="add">
+  <label for="tab2">إضافة جهاز </label>
+  <!-- Tab 3 -->
+  <input type="radio" name="tabset" id="tab3" aria-controls="veiw-repaird">
+  <label for="tab3">  عرض ما تم إصلاحه </label>
+   <div class="tab-panels">
+    <section id="view" class="tab-panel">
+       <div class="viewAll">
     {{#each inventories}}
-      <h6>Inventory id {{this.id}}</h6>
+      <div class="data">
+        <h5>رقم الجهاز : </h5>
+        <h6>Inventory id {{this.id}}</h6>
+      </div>
       {{#if this.ass_no}}
+      <div class="data">
+        <h5> الرقم التسلسلي للتسجيل:  </h5>
         <h6>assign number {{this.ass_no}}</h6>
+      </div>
       {{/if}}
       {{#if this.inventory_id}}
+      <div class="data">
+        <h5> الرقم الخاص  :  </h5>
         <h6>ID{{this.inventory_id}}</h6>
+      </div>
       {{/if}}
       {{#if this.device}}
-        <h6>Device Type {{this.device}}</h6>
+      <div class="data">
+        <h5>  نوع الجهـاز   :  </h5>
+       <h6>Device Type {{this.device}}</h6>
+      </div>
       {{/if}}
       {{#if this.name}}
+       <div class="data">
+        <h5>  اسـم الجهـاز   :  </h5>
         <h6>Name{{this.name}}</h6>
+      </div>
       {{/if}}
       {{#if this.brand}}
+       <div class="data">
+        <h5>  برانـد الجهـاز   :  </h5>
         <h6>Device Brand{{this.brand}}</h6>
+      </div>
       {{/if}}
       {{#if this.description}}
+       <div class="data">
+        <h5>   الوصـف   :  </h5>
         <h6>Discription{{this.description}}</h6>
+      </div>
       {{/if}}
       {{#if this.cdkey}}
+       <div class="data">
+        <h5>   مفتاح (CD)   :  </h5>
         <h6>CD Key{{this.cdkey}}</h6>
+      </div>
       {{/if}}
       {{#if this.employee}}
+       <div class="data">
+        <h5>    الموظــف :  </h5>
         <h6>employee (owner){{this.employee}}</h6>
+      </div>
       {{/if}}
       {{#if this.place}}
-        <h6>Place{{this.place}}</h6>
+       <div class="data">
+        <h5>    المـكان :  </h5>
+         <h6>Place{{this.place}}</h6>
+      </div>
       {{/if}}
       {{#if this.vendor}}
+       <div class="data">
+        <h5>    المـزود :  </h5>
         <h6>vendor{{this.vendor}}</h6>
+      </div>
       {{/if}}
       {{#if this.price_usd}}
+      <div class="data">
+        <h5>    السـعر (USD):  </h5>
         <h6>Price{{this.price_usd}}</h6>
+      </div>
       {{/if}}
       {{#if this.price_nis}}
-        <h6>Price/NIS{{this.price_nis}}</h6>
+       <div class="data">
+        <h5>     السـعر (NIS):  </h5>
+         <h6>Price/NIS{{this.price_nis}}</h6>
+      </div>
       {{/if}}
       {{#if this.purchase_date}}
-        <h6>purchase date{{this.purchase_date}}</h6>
+       <div class="data">
+        <h5>     تاريـخ الشـراء  </h5>
+         <h6>purchase date{{this.purchase_date}}</h6>
+      </div>
       {{/if}}
       {{#if this.warranty}}
-        <h6>warranty{{this.warranty}}</h6>
+       <div class="data">
+        <h5> الصـلاحية  </h5>
+          <h6>warranty{{this.warranty}}</h6>
+      </div>
       {{/if}}
       {{#if this.serial_no}}
-        <h6>Serial Number{{this.serial_no}}</h6>
+        <div class="data">
+        <h5> الرقم التسلسلي المعتمد  </h5>
+           <h6>Serial Number{{this.serial_no}}</h6>
+      </div>
       {{/if}}
       {{#if this.processor}}
-        <h6>processor{{this.processor}}</h6>
+        <div class="data">
+        <h5>   المعالج :  </h5>
+            <h6>processor{{this.processor}}</h6>
+      </div>
       {{/if}}
       {{#if this.ram}}
-        <h6>Ram{{this.ram}}</h6>
+        <div class="data">
+        <h5>   الذاكـرة :  </h5>
+           <h6>Ram{{this.ram}}</h6>
+      </div>
       {{/if}}
       {{#if this.hd1}}
-        <h6>hd1{{this.hd1}}</h6>
+       <div class="data">
+        <h5>   القرص رقم واحد  :  </h5>
+          <h6>hd1{{this.hd1}}</h6>
+      </div>
       {{/if}}
       {{#if this.hd2}}
-        <h6>hd2{{this.hd2}}</h6>
+      <div class="data">
+        <h5>   القرص رقم اثنين  :  </h5>
+          <h6>hd2{{this.hd2}}</h6>
+      </div>
       {{/if}}
       {{#if this.notes}}
-        <h6>notes{{this.notes}}</h6>
+       <div class="data">
+        <h5>  ملاحظــات   :  </h5>
+            <h6>notes{{this.notes}}</h6>
+      </div>
       {{/if}}
       {{#if this.netport}}
-        <h6>netport{{this.netport}}</h6>
+       <div class="data">
+        <h5>  الانترنت Port   :  </h5>
+           <h6>netport{{this.netport}}</h6>
+      </div>
       {{/if}}
       {{#if this.status}}
-        <h6>status{{this.status}}</h6>
+       <div class="data">
+        <h5>    الحالـة  :  </h5>
+            <h6>status{{this.status}}</h6>
+      </div>
       {{/if }}
       <button type="button" name="button"> <a href="/updateInventoryPage/{{this.id}}">edit</a> </button>
         <button type="button" name="button" class="deleteInventoryButton" id="{{this.id}}">delete </button>
       <hr>
     {{/each}}
-  </div>
-  <!-- **************************************** END OF VIEW*********************************** -->
-  <!--
-  *
-  *
-  *
-  -->
-  <!-- **************************************** ADDING SECTION *********************************** -->
-
-  <div class="">
+    </div>
+    </section>
+      <section id="add" class="tab-panel">
+         <div class="">
     <h1>أدخل البيانات </h1>
 
     <div class="">
@@ -252,16 +292,10 @@
     <button type="submit" name="button" class="addInventButton"> إضافة</button>
 
   </div>
-  <!-- **************************************** END *********************************** -->
-  <!--
-*
-*
-*
--->
-  <!-- ******************************* VIEW Repaired Inventries******************************* -->
-  <div class="viewRepair">
+    </section>
 
-
+      <section id="veiw-repaird" class="tab-panel">
+ <div class="viewRepair">
     {{#each repaired}}
       <h6> رقم التصليح {{this.id}}</h6>
         <h6>رقم الجهاز {{this.no}}</h6>
@@ -280,7 +314,10 @@
       {{/if}}
       <hr>
 {{/each}}
-
   </div>
+    </section>
+ 
+  <!-- ******************************* VIEW Repaired Inventries******************************* -->
+ 
 
 </section>

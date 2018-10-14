@@ -4,6 +4,8 @@ const password = document.querySelector('.password');
 const errMsg = document.querySelector('.errMsg');
 const signButton = document.querySelector('.signButton');
 
+const img = 'http://qattanfoundation.org/sites/all/themes/qf/logo.svg';
+
 const collectData = () => ({
   username: name.value,
   password: password.value,
@@ -48,7 +50,13 @@ signButton.addEventListener('click', () => {
           setTimeout(() => {
             window.location = res.result;
           }, 3000);
-          swal('مرحبا','أهلاً بك', 'success')
+          swal({
+            successMode: true,
+            title: 'مرحبا',
+            text: ' أهلاً بك',
+            icon: img,
+            button:'اهلا',
+          });
         }
       })
       .catch(() => {

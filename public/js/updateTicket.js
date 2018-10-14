@@ -1,24 +1,15 @@
 /* global document fetch window */
 
-const img = 'http://qattanfoundation.org/sites/all/themes/qf/logo.svg';
-
 const updateBtn = document.getElementById('update-btn');
 const updateSection = document.querySelector('.update-section');
 const closeBtn = document.querySelector('#close-btn');
 const doneBtn = document.querySelector('#done-btn');
 const error = document.querySelector('.error');
-const ticketNo = document.querySelector('#ticket-no');
-
-const editSection = document.querySelector('.update-section');
-
 const status = document.querySelector('#status');
-const statusError = document.querySelector('#status-eroor');
-
 const itEmployee = document.querySelector('#it-employee');
-const employeeError = document.querySelector('#employee-error');
-
 const desc = document.querySelector('#desc');
-const descError = document.querySelector('#desc-error');
+const img = 'http://qattanfoundation.org/sites/all/themes/qf/logo.svg';
+
 
 updateSection.style.visibility = 'hidden';
 
@@ -32,7 +23,7 @@ closeBtn.addEventListener('click', () => {
   updateBtn.style.visibility = 'visible';
 });
 
-doneBtn.addEventListener('click', (e) => {
+doneBtn.addEventListener('click', () => {
   if (status && itEmployee && desc) {
     const url = window.location.href;
     const splitUrl = url.split('/');
@@ -43,41 +34,36 @@ doneBtn.addEventListener('click', (e) => {
     const data = {
       statusType, description, itEmployeeName, ticketNo,
     };
-    fetch(`/support/${ticketNo}`, {
+    fetch(`/loan/${ticketNo}`, {
       method: 'PUT',
       credentials: 'same-origin',
       headers: { 'Content-Type': 'application/json; charset=utf-8' },
       body: JSON.stringify(data),
     })
       .then(response => response.json())
-      if (response.error) {
+      .then((response) => {
+        if (response.error) {
+          swal('خطأ', response.error, 'error');
+        } else {
+          setTimeout(() => {
+            window.location = '/loans';
+          }, 3000);
+          swal({
+            title: 'تمت العملية:',
+            text: response.result,
+            icon: img,
+            button: 'حسناً',
+          });
+        }
+      })
+      .catch(() => {
         swal({
           dangerMode: true,
           title: 'فشلت العملية',
-          text: response.error,
+          text: 'خطأ في اﻹدخال',
           icon: img,
           button: 'أعد المحاولة',
         });
-      } else {
-        setTimeout(() => {
-          window.location = '/support';
-        }, 3000);
-        swal({
-          title: 'تمت العملية:',
-          text: response.result,
-          icon: img,
-          button: 'حسناً',
-        });
-      }
-    })
-    .catch(() => {
-      swal({
-        dangerMode: true,
-        title: 'فشلت العملية',
-        text: 'خطأ في اﻹدخال',
-        icon: img,
-        button: 'أعد المحاولة',
       });
-    });
   }
 });

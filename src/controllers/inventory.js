@@ -19,6 +19,7 @@ exports.viewInventory = async (req, res, next) => {
         style: 'master',
         title: 'الأجهزة',
         manager: true,
+        style_special: 'form',
         dom: 'inventory',
         inventories: inventoriesdb.rows,
         employees: employeesdb.rows,
