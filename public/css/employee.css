@@ -75,7 +75,7 @@ text-align: center;
     position: relative;
     display: inline-block;
     padding: 15px 15px 25px;
-    border: 2px solid #AAAAAA;
+    border: 2px solid #c00036;
     border-bottom: 0;
     cursor: pointer;
     font-weight: 600;
@@ -103,16 +103,16 @@ text-align: center;
   }
   
   .tabset > input:checked + label {
-    border-color: #AAAAAA;
+    border-color: #fff;
     color: #c00036;
-    border-bottom: 1px solid #AAAAAA;
+    border-bottom: 1px solid #fff;
     margin-bottom: -1px;
-    background: #AAAAAA;
+    background: #fff;
   }
   
   .tab-panel {
     padding: 30px 20px 10px 0px;
-    background:#AAAAAA;
+    background:#fff;
     width: 100%;
   }
   .tab-panel h2{
@@ -485,10 +485,11 @@ footer{
 
   .card__face--front {
     background: #fff;
-    box-shadow: 1px 1px 1px 1px #777777, -1px -1px 1px 1px #777777;
+    padding-left: 25px;
   }
   
   .card__face--back {
+    padding-left: 25px;
     background:#fff;
     transform: rotateY( 180deg );
   }  
