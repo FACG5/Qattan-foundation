@@ -28,7 +28,9 @@
     border-radius: 5px;
     outline: none;
 }
-
+.fas{
+    font-size: 25px;
+}
 .tab-btn ,#add button, #add-btn{
     text-align: center;
     margin-bottom: 20px;
@@ -46,25 +48,29 @@
     text-transform: capitalize;
     padding: 12px;
 }
-
+.action-btn {
+    text-align: left;
+    border-bottom: 1px #ccc solid;
+    margin: 20px;
+    padding: 15px;
+}
 .action-btn button{
     text-align: center;
     cursor: pointer;
     display: inline-block;
     width:150px;
     margin: 20px auto 0 auto;
-    color: #fff;
+    color: #c00036;
     outline: none;
     font-weight: bold;
-    background: #c00036;
-    border: #c00036 2px solid;
-    border-radius: 15px;
-    font-size: 16px;
+    background: none;
+    border: none;
+    font-size: 20px;
     text-transform: capitalize;
     padding: 7px;
 }
- 
-.tab-btn:hover ,.action-btn button:hover ,#add button:hover , #add-btn:hover{
+/* ,.action-btn button:hover ,#add button:hover , #add-btn:hover */
+.tab-btn:hover {
     text-align: center;
     cursor: pointer;
     margin: 20px auto 0 auto;
@@ -78,7 +84,7 @@
     font-size: 16px;
 }
 .action-btn button a{
-    color: #fff !important;
+    color: #c00036 !important;
 }
 .action-btn button:hover a{
     color: #c00036 !important;

@@ -153,11 +153,9 @@
       </div>
       {{/if }}
       <div class="action-btn">
-  <button type="button" name="button"> <a href="/updateInventoryPage/{{this.id}}">edit</a> </button>
-        <button type="button" name="button" class="deleteInventoryButton" id="{{this.id}}">delete </button>
-    
+       <button type="button" name="button"> <a href="/updateInventoryPage/{{this.id}}"><i class="fas fa-edit"></i></a> </button>
+        <button type="button" name="button" class="deleteInventoryButton" id="{{this.id}}"><i class="fas fa-trash-alt"></i></button>
       </div>
-           <hr>
 
     {{/each}}
     </div>
