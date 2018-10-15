@@ -82,6 +82,9 @@ btnAdd.addEventListener('click', (e) => {
             button: 'أعد المحاولة',
           });
         } else {
+          setTimeout(() => {
+            window.location = '/home-employee';
+          }, 3000);
           swal({
             successMode: true,
             title: 'تمت العملية',
@@ -166,6 +169,9 @@ btnAddSupport.addEventListener('click', (e) => {
             button: 'أعد المحاولة',
           });
         } else {
+          setTimeout(() => {
+            window.location = '/home-employee';
+          }, 3000);
           swal({
             successMode: true,
             title: 'تمت العملية',
