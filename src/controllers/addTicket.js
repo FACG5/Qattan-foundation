@@ -1,19 +1,23 @@
 const { addTicket } = require('../model/queries/ticket');
 
 exports.get = (req, res) => {
-  const department = res.locals.unlockCookie.department;
-  const employee = res.locals.unlockCookie.name;
-  res.render('addTicket', {
-    title: 'اضافة تذكرة',
-    style: 'employee',
-    style_special: 'form',
-    dom: 'addTicket',
-    headerFound: true,
-    footerFound: true,
-    manager: false,
-    department,
-    employee,
-  });
+  if (res.locals.unlockCookie) {
+    const department = res.locals.unlockCookie.department;
+    const employee = res.locals.unlockCookie.name;
+    res.render('addTicket', {
+      title: 'اضافة تذكرة',
+      style: 'employee',
+      style_special: 'form',
+      dom: 'addTicket',
+      headerFound: true,
+      footerFound: true,
+      manager: false,
+      department,
+      employee,
+    });
+  } else {
+    res.redirect(401, '/login');
+  }
 };
 
 exports.post = (req, res, next) => {
