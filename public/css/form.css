@@ -3,13 +3,13 @@
   #98012e   #c00036   #5a6e7b   #8e8378   #e5e5e5  #fff 
 */
 
-.form , .viewAll .data{
+.form , .viewAll .data ,.viewRepair .data{
     padding: 5px 15px;
     display: grid;
     grid-template-columns: 25% 75%;
 } 
 
-.viewAll .data{
+.viewAll .data ,.viewRepair .data{
     font-size: 20px;
 }
 .form input,select,option{
@@ -29,8 +29,9 @@
     outline: none;
 }
 
-.tab-btn{
+.tab-btn ,#add button, #add-btn{
     text-align: center;
+    margin-bottom: 20px;
     cursor: pointer;
     display: block;
     width:30%;
@@ -42,25 +43,46 @@
     border: #c00036 2px solid;
     border-radius: 15px;
     font-size: 16px;
+    text-transform: capitalize;
     padding: 12px;
 }
 
-.tab-btn:hover{
+.action-btn button{
     text-align: center;
     cursor: pointer;
-    display: block;
-    width:30%;
+    display: inline-block;
+    width:150px;
     margin: 20px auto 0 auto;
-    color: #c00036;
+    color: #fff;
+    outline: none;
+    font-weight: bold;
+    background: #c00036;
+    border: #c00036 2px solid;
+    border-radius: 15px;
+    font-size: 16px;
+    text-transform: capitalize;
+    padding: 7px;
+}
+ 
+.tab-btn:hover ,.action-btn button:hover ,#add button:hover , #add-btn:hover{
+    text-align: center;
+    cursor: pointer;
+    margin: 20px auto 0 auto;
+    color: #c00036 !important;
+    text-transform: capitalize;
     outline: none;
     font-weight: bold;
     background: #fff;
     border: #c00036 2px solid;
     border-radius: 15px;
     font-size: 16px;
-    padding: 12px;
 }
-
-.tab-btn:active{
+.action-btn button a{
+    color: #fff !important;
+}
+.action-btn button:hover a{
+    color: #c00036 !important;
+} 
+.tab-btn:active ,.action-btn button:active{
     transform: translateY(4px);
 }

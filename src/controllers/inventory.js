@@ -62,25 +62,23 @@ exports.updateInventoryPage = async (req, res, next) => {
       const actiondb = await getAction();
       const partdb = await getParts();
 
-      res.render('updateInventoryPage', {
-        style: 'master',
-        title: 'الأجهزة',
-        manager: true,
-        dom: 'updateInventoryPage',
-        inventory: inventorydb.rows[0],
-        employees: employeesdb.rows,
-        brands: brandsdb.rows,
-        devices: devicesdb.rows,
-        places: placesdb.rows,
-        vendors: vendorsdb.rows,
-        PurchDateObj: JSON.parse(PurchDate),
-        type: typedb.rows,
-        action: actiondb.rows,
-        parts: partdb.rows,
-      });
-    } else {
-      res.redirect(401, '/login');
-    }
+    res.render('updateInventoryPage', {
+      style: 'master',
+      title: 'الأجهزة',
+      manager: true,
+      style_special: 'form',
+      dom: 'updateInventoryPage',
+      inventory: inventorydb.rows[0],
+      employees: employeesdb.rows,
+      brands: brandsdb.rows,
+      devices: devicesdb.rows,
+      places: placesdb.rows,
+      vendors: vendorsdb.rows,
+      PurchDateObj: JSON.parse(PurchDate),
+      type: typedb.rows,
+      action: actiondb.rows,
+      parts: partdb.rows,
+    });
   } catch (error) {
     next(error);
   }
